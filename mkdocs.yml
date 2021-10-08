@@ -12,12 +12,35 @@ theme:
   feature:
     tabs: true
   language: pt
+  static_templates:
+    - 404.html
+  include_search_page: false
+  search_index_only: true
+
+copyright: '&copy; 2020 Rubeus todos os direitos reservados'
 
 extra_css:
   - 'assets/stylesheets/extra.css'
 
 extra_javascript:
   - 'assets/javascripts/extra.js'
+
+extra:
+  search:
+    language: 'pt'
+  social:
+    - type: globe
+      link: https://rubeus.com.br/
+    - type: instagram
+      link: https://www.instagram.com/canalrubeus/
+    - type: facebook
+      link: https://www.facebook.com/CanalRubeus/
+    - type: linkedin
+      link: https://www.linkedin.com/company/rubeus/
+    - type: twitter
+      link: https://twitter.com/CanalRubeus
+    - type: github
+      link: https://github.com/RubeusTI
 
 nav:
   - API CRM:

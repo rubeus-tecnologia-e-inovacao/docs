@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Rubeus Developers
 theme:
   name: material
   palette:
@@ -48,3 +48,8 @@ nav:
   - Tabelas auxiliares: tabelasauxiliares.md
   - Gerador de URL's: urlbuilder.md
   # - Testar API's: methodstest.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences

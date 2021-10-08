@@ -15,9 +15,10 @@ Essa configuração permite enviar dados do CRM Rubeus para outras aplicações 
 **URL:** cole a URL da ferramenta que vai receber os dados do CRM Rubeus com as informações enviadas;
 **Gatilho:** escolha o gatilho que vai acionar o envio da notificação:
 * Ao clicar no botão **Salvar**, você vai ser redirecionado para a tela de *Webhooks* configurados. Nela, você pode validar se a integração com o *webhook* funcionou. Para isso, clique no botão **Testar**;
+
 !!! note "Nota"
 
-Se a integração estiver funcionando corretamente, você vai receber uma resposta positiva. Caso contrário, você vai receber uma mensagem de erro com indicação do que você deve fazer em seguida para corrigir o problema.
+    Se a integração estiver funcionando corretamente, você vai receber uma resposta positiva. Caso contrário, você vai receber uma mensagem de erro com indicação do que você deve fazer em seguida para corrigir o problema.
 
 ## Observações importantes
 A resposta negativa abaixo é a mais comum, indica que a URL destino não representa um servidor disponível (está incorreta). Em ambos os casos, o ideal é validar esses pontos com o seu desenvolvedor ou suporte da ferramenta que lhe forneceu a URL.

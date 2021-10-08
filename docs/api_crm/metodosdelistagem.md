@@ -224,24 +224,44 @@ Método utilizado para listar as bases legais disponíveis no Rubeus para poster
     "success": true,
     "dados": [
         {
-            "id": "1",
-            "base": "Interesse legítimo - potencial cliente"
-        },
-        {
-            "id": "2",
-            "base": "Interesse legítimo - cliente existente"
-        },
-        {
             "id": "3",
-            "base": "Obrigação contratual"
+            "base": "Execução de contrato"
         },
         {
             "id": "4",
-            "base": "Livre consentimento"
+            "base": "Consentimento do titular"
         },
         {
             "id": "5",
             "base": "Não aplicável"
+        },
+        {
+            "id": "6",
+            "base": "Legítimo interesse"
+        },
+        {
+            "id": "7",
+            "base": "Obrigação legal"
+        },
+        {
+            "id": "8",
+            "base": "Estudos e pesquisa"
+        },
+        {
+            "id": "9",
+            "base": "Exercício de direitos "
+        },
+        {
+            "id": "10",
+            "base": "Tutela da saúde"
+        },
+        {
+            "id": "11",
+            "base": "Proteção da vida"
+        },
+        {
+            "id": "12",
+            "base": "Proteção ao crédito"
         }
     ]
 }

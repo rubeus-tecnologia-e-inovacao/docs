@@ -173,3 +173,17 @@ function outFunc() {
   var tooltip = document.getElementById("tooltip");
   tooltip.innerHTML = "Copiar para a área de transferência";
 }
+
+function changeTableColor() {
+  const tableCells = document.getElementsByTagName('td');
+  for (const key in tableCells) {
+    if (Object.hasOwnProperty.call(tableCells, key)) {
+      if (tableCells[key].textContent.indexOf('↳') >= 0) {
+        tableCells[key].parentElement.className = 'child-row';
+        if (tableCells[key-1].textContent.indexOf('↳') < 0) {
+          tableCells[key-1].parentElement.className = 'father-row';
+        }
+      }
+    }
+  }
+}

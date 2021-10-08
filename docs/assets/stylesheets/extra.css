@@ -310,6 +310,14 @@
   opacity: 1;
 }
 
+tr.child-row {
+  background-color: #e3e3e3;
+}
+
+tr.father-row {
+  background-color: #ececec;
+}
+
 @media only screen and (max-width: 700px) {
   .inputSelect {
     display: block;

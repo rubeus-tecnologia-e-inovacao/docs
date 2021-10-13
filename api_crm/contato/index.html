@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.min.css">
     
     
   </head>
@@ -829,13 +829,13 @@
 <td>Deve ser informado um objeto com os dados necessários para vincular o contato a uma <a href="/api_crm/metodosdelistagem/#listar-cidades">cidade</a>.<br><strong>Se não for encontrada uma cidade com esse nome nessa UF, o contato não será vinculado a uma cidade.</strong></td>
 </tr>
 <tr>
-<td>↳ <code>cidade</code></td>
+<td><strong>↳</strong> <code>cidade</code></td>
 <td><code>string</code></td>
 <td>Não</td>
 <td>Nome da cidade</td>
 </tr>
 <tr>
-<td>↳ <code>estado</code></td>
+<td><strong>↳</strong> <code>estado</code></td>
 <td><code>string</code></td>
 <td>Não</td>
 <td>Utiliza-se a UF do estado, exemplo: <code>MG</code> para Minas Gerais</td>
@@ -883,13 +883,13 @@
 <td>Usado para informar a(s) deficiência(s) do contato.<hr><strong>Usar os dados da tabela de</strong> <a href="/tabelasauxiliares/#deficiencias">deficiências</a>.</td>
 </tr>
 <tr>
-<td>↳ <code>id</code></td>
+<td><strong>↳</strong> <code>id</code></td>
 <td><code>integer</code></td>
 <td>Não</td>
 <td>Identificação da deficiência.</td>
 </tr>
 <tr>
-<td>↳ <code>tipos</code></td>
+<td><strong>↳</strong> <code>tipos</code></td>
 <td><code>array[]</code></td>
 <td>Não</td>
 <td>Usar o método listarDeficiencias para obter o campo <code>id</code> para a passagem de parâmetro.</td>
@@ -937,37 +937,37 @@
 <td>Utilizado para criar um evento ao realizar o cadastro do contato.</td>
 </tr>
 <tr>
-<td>↳ <code>tipo</code></td>
+<td><strong>↳</strong> <code>tipo</code></td>
 <td><code>integer</code></td>
 <td>Não</td>
 <td>Id do tipo de evento.</td>
 </tr>
 <tr>
-<td>↳ <code>codTipo</code></td>
+<td><strong>↳</strong> <code>codTipo</code></td>
 <td><code>string</code></td>
 <td>Não</td>
 <td>código do tipo de evento.</td>
 </tr>
 <tr>
-<td>↳ <code>camposPersonalizados</code></td>
+<td><strong>↳</strong> <code>camposPersonalizados</code></td>
 <td><code>object</code></td>
 <td>Não</td>
 <td>Usado para atribuir algum campo específico de evento que não está presente no escopo da API.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code>#!json camposPersonalizados : { coluna: "valor" }</code><hr>Os nomes das colunas dos campos personalizados são informados no método <a href="/api_crm/campopersonalizados/#listar-campos-personalizados">Instituicao/campoPersonalizado</a>.</td>
 </tr>
 <tr>
-<td>↳ <code>descricao</code></td>
+<td><strong>↳</strong> <code>descricao</code></td>
 <td><code>string</code></td>
 <td>Não</td>
 <td>Texto HTML personalizado para agregar informações na exibição do evento.</td>
 </tr>
 <tr>
-<td>↳ <code>codOferta</code></td>
+<td><strong>↳</strong> <code>codOferta</code></td>
 <td><code>string</code></td>
 <td>Não</td>
 <td>Para vincular o evento a uma oferta de curso é preciso informar este campo junto com o <code>codCurso</code>  correspondente.</td>
 </tr>
 <tr>
-<td>↳ <code>codCurso</code></td>
+<td><strong>↳</strong> <code>codCurso</code></td>
 <td><code>string</code></td>
 <td>Não</td>
 <td>Para vincular o evento a uma oferta de curso, é preciso informar este campo junto com o codOferta correspondente.</td>
@@ -981,7 +981,7 @@
 <tr>
 <td><code>baseLegal</code></td>
 <td><code>integer</code></td>
-<td>Condicional</td>
+<td><rb-tooltip text="Obrigatório somente com a LGPD ativa">Condicional </rb-tooltip></td>
 <td>Usado para atribuir uma <a href="/api_crm/metodosdelistagem/#listar-bases-legais">base legal</a> ao contato.</td>
 </tr>
 <tr>
@@ -991,7 +991,7 @@
 <td>Utilizado para atribuir as <a href="/api_crm/metodosdelistagem/#listar-assinaturas-ativas">assinaturas</a> para o contato.</td>
 </tr>
 <tr>
-<td>↳ <code>id</code></td>
+<td><strong>↳</strong> <code>id</code></td>
 <td><code>integer</code></td>
 <td></td>
 <td>Identificação da assinatura.</td>
@@ -1506,7 +1506,7 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
       
       <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
       
-        <script src="../../assets/javascripts/extra.js"></script>
+        <script src="../../assets/javascripts/extra.min.js"></script>
       
     
     

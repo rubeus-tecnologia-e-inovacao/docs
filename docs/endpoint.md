@@ -60,8 +60,8 @@ Utilize essa estrutura quando quiser sincronizar os contatos de uma aplicação 
 | `exaluno` | `boolean` | Não. | Usado para atribuir se o contato é ex-aluno. |
 | `anoFormacao` | `integer` | Não. | Usado para atribuir ao contato o último ano sendo aluno. <br>**Padrão: xxxx** |
 | `deficiencias` | `array[]` | Não. | Usado para informar se o contato possui alguma deficiência. |
-|   ˪ `id` | `integer` | Condicional. | - |
-|   ˪ `tipos` | `array[]` | Condicional. | - |
+| **↳** `id` | `integer` | Condicional. | - |
+| **↳** `tipos` | `array[]` | Condicional. | - |
 | `outrasDeficiencias` | `string` | Não. | Usado para descrever qual a deficiência. |
 | `estadoCivil` | `integer` | Não. | Usado para informar o estado civil. |
 | `cor` | `integer` | Não. | Usado para informar a cor da pele do contato. |
@@ -69,7 +69,7 @@ Utilize essa estrutura quando quiser sincronizar os contatos de uma aplicação 
 | `camposPersonalizados` | `object` | Não. | Usado para atribuir algum campo específico que não está presente no escopo da API. |
 | `baseLegal` | `integer` | Sim | Usado para atribuir uma [base legal](/api_crm/metodosdelistagem/#listar-bases-legais) ao contato. | 
 | `assinaturas` | `array[] of objects` | Não | Utilizado para atribuir as [assinaturas](/api_crm/metodosdelistagem/#listar-assinaturas-ativas) para o contato. | 
-| ↳ `id` | `integer` |  | Identificação da assinatura. |
+| **↳** `id` | `integer` |  | Identificação da assinatura. |
 | `origem` | `integer` | Não. | Usado para especificar de onde o contato se originou. <br>**Caso não especificado, a origem padrão será o CRM.** |
 
 ``` JSON tab="JSON"
@@ -130,7 +130,7 @@ Utilize essa estrutura quando quiser enviar informações relacionadas a um cont
 | `codCurso` | `string` | Não | Usado para informar o código do curso. |
 | `codLocalOferta` | `string` | Não | Usado para informar o Local Oferta |
 | `camposPersonalizados` | `array[]` | Não | Utilizado para informar campos adicionais que não estejam no escopo da API. |
-|   ˪ `selecionouAgendamento` | `integer` | Não | - |
+| **↳** `selecionouAgendamento` | `integer` | Não | - |
 
 ``` JSON tab="JSON"
 [{

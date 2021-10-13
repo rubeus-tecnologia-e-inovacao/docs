@@ -20,8 +20,8 @@ Este método tem a função de vincular ou remover contatos secundários de um r
 | `codOferta` | `string` | Condicional | Código da oferta do curso principal. | 
 | `processo` | `integer` | Sim | Processo no qual o registro é pertencente. | 
 | `pessoas` | `array[]` | Sim | Neste modelo com os contatos secundários que vão ser vinculadas a um registro de processo. | 
-| ↳ `codigo` | `string` | Não | Código de identificação externa do contato. | 
-| ↳ `tipo` | `integer` | Não | Código de identificação do tipo do contato. <br><br>[Listar tipos do contato](/api_crm/metodosdelistagem/#listar-tipos-do-contato)<br>**Enviar o campo** `id` | 
+| **↳** `codigo` | `string` | Não | Código de identificação externa do contato. | 
+| **↳** `tipo` | `integer` | Não | Código de identificação do tipo do contato. <br><br>[Listar tipos do contato](/api_crm/metodosdelistagem/#listar-tipos-do-contato)<br>**Enviar o campo** `id` | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

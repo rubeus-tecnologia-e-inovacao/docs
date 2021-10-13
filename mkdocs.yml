@@ -20,10 +20,10 @@ theme:
 copyright: '&copy; 2020 Rubeus todos os direitos reservados'
 
 extra_css:
-  - 'assets/stylesheets/extra.css'
+  - 'assets/stylesheets/extra.min.css'
 
 extra_javascript:
-  - 'assets/javascripts/extra.js'
+  - 'assets/javascripts/extra.min.js'
 
 extra:
   search:

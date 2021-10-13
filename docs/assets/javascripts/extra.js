@@ -179,11 +179,92 @@ function changeTableColor() {
   for (const key in tableCells) {
     if (Object.hasOwnProperty.call(tableCells, key)) {
       if (tableCells[key].textContent.indexOf('↳') >= 0) {
-        tableCells[key].parentElement.className = 'child-row';
-        if (tableCells[key-1].textContent.indexOf('↳') < 0) {
-          tableCells[key-1].parentElement.className = 'father-row';
+        // tableCells[key].parentElement.className = 'child-row';
+        tableCells[key].style.whiteSpace = 'nowrap';
+        if (tableCells[key-4].textContent.indexOf('↳') < 0 && key%4 == 0) {
+          // tableCells[key - 4].parentElement.className = 'father-row';
         }
       }
     }
   }
 }
+changeTableColor();
+class Tooltip extends HTMLElement {
+  constructor() {
+    super();
+
+    const shadow = this.attachShadow({ mode: 'open' });
+
+    const customElement = this;
+    const motherDiv = document.createElement('div');
+    motherDiv.setAttribute('class', "div-tooltip");
+    motherDiv.textContent = customElement.textContent;
+    const div = document.createElement('div');
+    div.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#E3E3E3"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>'
+    div.setAttribute('class', 'tooltip');
+    const span = document.createElement('span');
+    span.setAttribute('class', 'tooltiptext');
+    const text = customElement.getAttribute('text');
+    span.textContent = text;
+    div.appendChild(span);
+    motherDiv.appendChild(div);
+  
+    const style = document.createElement('style');
+
+    style.textContent = /*css*/
+      `div.div-tooltip {
+        display: flex;
+        align-items: stretch;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        height: 18px
+      }
+
+      .spanTooltip {
+        cursor: pointer;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 140px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -75px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }`;
+
+    shadow.appendChild(style);
+    shadow.appendChild(motherDiv);
+  }
+}
+
+customElements.define('rb-tooltip', Tooltip);

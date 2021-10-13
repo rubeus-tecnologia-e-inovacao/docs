@@ -19,8 +19,8 @@
 | `bairro` | `string` | Não | Bairro. Limite de caracteres: 255. | 
 | `cep` | `string` | Não | CEP do endereço. | 
 | `estadoCidade` | `object` | Não | Deve ser informado um objeto com os dados necessários para vincular o contato a uma cidade.<br>**Se não for encontrada uma cidade com esse nome nessa UF o contato não será vinculada a uma cidade.** | 
-| ↳ `cidade` | `string` | Não | - | 
-| ↳ `estado` | `string` | Não | - | 
+| **↳** `cidade` | `string` | Não | - | 
+| **↳** `estado` | `string` | Não | - | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

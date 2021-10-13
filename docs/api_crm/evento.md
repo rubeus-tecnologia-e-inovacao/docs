@@ -34,9 +34,9 @@ Método para cadastro de eventos no CRM Rubeus.
 | `dataVencimento` | `dateTime` | Não | Data de vencimento da atividade que será criada caso seja configurado no fluxo de automação. | 
 | `camposPersonalizados` | `object` | Não | Usado para atribuir algum campo específico que não está presente no escopo da API.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json camposPersonalizados : { coluna: "valor" }`<hr>Os nomes das colunas dos campos personalizados são informados no método [cadastro de campo personalizado](/api_crm/campopersonalizados/#listar-campos-personalizados), o valor poderá ser uma string normal ou um array de strings caso o campo seja multi valorado. | 
 | `dadosOportunidade` | `object` | Não | Serve para poder enviar os dados do registro de processo caso queira alterá-la. | 
-| ↳ `codOferta` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
-| ↳ `codCurso` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
-| ↳ `codPessoa` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
+| **↳** `codOferta` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
+| **↳** `codCurso` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
+| **↳** `codPessoa` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

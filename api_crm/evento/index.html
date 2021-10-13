@@ -711,13 +711,13 @@
 <td><code>pessoa</code></td>
 <td><code>object</code></td>
 <td>Sim</td>
-<td>Vincule o contato ao evento. <hr><em>Veja abaixo um exemplo do formato para envio.</em><br><code>#!json { "codigo": "1" }</code> (O mesmo código enviado no cadastro do contato) ou <code>#!json { "id": 1 }</code> (O id retornado no cadastro do contato.)</td>
+<td>Vincule o contato ao evento. <hr><em>Veja abaixo um exemplo do formato para envio.</em><br><code class="highlight"><span class="p">{</span> <span class="nt">&quot;codigo&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span> <span class="p">}</span></code> (O mesmo código enviado no cadastro do contato) ou <code class="highlight"><span class="p">{</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span></code> (O id retornado no cadastro do contato.)</td>
 </tr>
 <tr>
 <td><code>pessoasSecundarias</code></td>
 <td><code>array</code></td>
 <td>Não</td>
-<td>Vincule um ou mais contatos secundários à um registro de processo. <hr><em>Veja abaixo um exemplo do formato para envio.</em><br><code>#!json [{ "codigo": "1" }]</code> (O mesmo código enviado no cadastro do contato).</td>
+<td>Vincule um ou mais contatos secundários à um registro de processo. <hr><em>Veja abaixo um exemplo do formato para envio.</em><br><code class="highlight"><span class="p">[{</span> <span class="nt">&quot;codigo&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span> <span class="p">}]</span></code> (O mesmo código enviado no cadastro do contato).</td>
 </tr>
 <tr>
 <td><code>codOferta</code></td>
@@ -807,7 +807,7 @@
 <td><code>camposPersonalizados</code></td>
 <td><code>object</code></td>
 <td>Não</td>
-<td>Usado para atribuir algum campo específico que não está presente no escopo da API.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code>#!json camposPersonalizados : { coluna: "valor" }</code><hr>Os nomes das colunas dos campos personalizados são informados no método <a href="/api_crm/campopersonalizados/#listar-campos-personalizados">cadastro de campo personalizado</a>, o valor poderá ser uma string normal ou um array de strings caso o campo seja multi valorado.</td>
+<td>Usado para atribuir algum campo específico que não está presente no escopo da API.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="err">camposPerso</span><span class="kc">nal</span><span class="err">izados</span> <span class="p">:</span> <span class="p">{</span> <span class="err">colu</span><span class="kc">na</span><span class="p">:</span> <span class="s2">&quot;valor&quot;</span> <span class="p">}</span></code><hr>Os nomes das colunas dos campos personalizados são informados no método <a href="/api_crm/campopersonalizados/#listar-campos-personalizados">cadastro de campo personalizado</a>, o valor poderá ser uma string normal ou um array de strings caso o campo seja multi valorado.</td>
 </tr>
 <tr>
 <td><code>dadosOportunidade</code></td>

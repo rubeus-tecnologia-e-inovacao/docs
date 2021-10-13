@@ -732,7 +732,7 @@
 <td><code>camposPersonalizados</code></td>
 <td><code>object</code></td>
 <td>Não</td>
-<td>Usado para atribuir algum campo específico que não está presente no escopo da API.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code>#!json "camposPersonalizados" : { coluna: "valor" }</code><hr>Os nomes das colunas dos campos personalizados são informados no método <a href="/api_crm/campopersonalizados/#listar-campos-personalizados">cadastro de campo personalizado</a>, o valor poderá ser uma string normal ou um array de strings caso o campo seja multi valorado.</td>
+<td>Usado para atribuir algum campo específico que não está presente no escopo da API.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="nt">&quot;camposPersonalizados&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="err">colu</span><span class="kc">na</span><span class="p">:</span> <span class="s2">&quot;valor&quot;</span> <span class="p">}</span></code><hr>Os nomes das colunas dos campos personalizados são informados no método <a href="/api_crm/campopersonalizados/#listar-campos-personalizados">cadastro de campo personalizado</a>, o valor poderá ser uma string normal ou um array de strings caso o campo seja multi valorado.</td>
 </tr>
 <tr>
 <td><code>origem</code></td>
@@ -878,7 +878,7 @@
 <td><code>codLocalOferta</code></td>
 <td><code>array[]</code></td>
 <td>Sim</td>
-<td>Array com os códigos externos de identificação do local de oferta cadastrado.<hr><em>Veja abaixo um exemplo do formato para envio.</em><br><code>#!json "codLocalOferta": ["codigo do local de oferta"]</code></td>
+<td>Array com os códigos externos de identificação do local de oferta cadastrado.<hr><em>Veja abaixo um exemplo do formato para envio.</em><br><code class="highlight"><span class="nt">&quot;codLocalOferta&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;codigo do local de oferta&quot;</span><span class="p">]</span></code></td>
 </tr>
 <tr>
 <td><code>codNivelEnsino</code></td>

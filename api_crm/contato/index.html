@@ -952,7 +952,7 @@
 <td><strong>↳</strong> <code>camposPersonalizados</code></td>
 <td><code>object</code></td>
 <td>Não</td>
-<td>Usado para atribuir algum campo específico de evento que não está presente no escopo da API.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code>#!json camposPersonalizados : { coluna: "valor" }</code><hr>Os nomes das colunas dos campos personalizados são informados no método <a href="/api_crm/campopersonalizados/#listar-campos-personalizados">Instituicao/campoPersonalizado</a>.</td>
+<td>Usado para atribuir algum campo específico de evento que não está presente no escopo da API.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="err">camposPerso</span><span class="kc">nal</span><span class="err">izados</span> <span class="p">:</span> <span class="p">{</span> <span class="err">colu</span><span class="kc">na</span><span class="p">:</span> <span class="s2">&quot;valor&quot;</span> <span class="p">}</span></code><hr>Os nomes das colunas dos campos personalizados são informados no método <a href="/api_crm/campopersonalizados/#listar-campos-personalizados">Instituicao/campoPersonalizado</a>.</td>
 </tr>
 <tr>
 <td><strong>↳</strong> <code>descricao</code></td>
@@ -976,7 +976,7 @@
 <td><code>camposPersonalizados</code></td>
 <td><code>object</code></td>
 <td>Não</td>
-<td>Usado para atribuir algum campo específico que não está presente no escopo da API.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code>#!json camposPersonalizados : { coluna: "valor" }</code><hr>Os nomes das colunas dos campos personalizados são informados no método <a href="/api_crm/campopersonalizados/#listar-campos-personalizados">Instituicao/campoPersonalizado</a>, e o valor poderá ser uma string normal ou um array de strings caso o campo seja multi valorado.</td>
+<td>Usado para atribuir algum campo específico que não está presente no escopo da API.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="err">camposPerso</span><span class="kc">nal</span><span class="err">izados</span> <span class="p">:</span> <span class="p">{</span> <span class="err">colu</span><span class="kc">na</span><span class="p">:</span> <span class="s2">&quot;valor&quot;</span> <span class="p">}</span></code><hr>Os nomes das colunas dos campos personalizados são informados no método <a href="/api_crm/campopersonalizados/#listar-campos-personalizados">Instituicao/campoPersonalizado</a>, e o valor poderá ser uma string normal ou um array de strings caso o campo seja multi valorado.</td>
 </tr>
 <tr>
 <td><code>baseLegal</code></td>
@@ -1145,8 +1145,8 @@
 </div>
 <h4 id="buscar-por-nome-email-telefone-ou-cpf">Buscar por nome, email, telefone ou CPF</h4>
 <p>Semelhante ao método acima, este também faz a consulta de contatos no Rubeus, mas, os parâmetros são <code>nome</code>, <code>email</code>, <code>telefone</code> e/ou <code>cpf</code>.
-Todos os campos deverão ser buscados com o operador <code>#!sql LIKE</code>, portanto, acentos e letras maiúsculas/minúsculas deverão ser ignoradas, por exemplo, uma busca feita por nome <code>#!sql "Carl"</code> deverá retornar os dados dos contatos que possuem <code>#!sql "carl"</code> em alguma parte de seu nome.
-O operador utilizado entre as entidades de busca é <code>#!sql AND</code>, por isso se for buscado <code>#!sql nome = "carls"</code> e <code>#!sql cpf = "781"</code>, o método retornará todos os dados dos contatos que possuem <code>#!sql nome LIKE "%carls%" AND cpf LIKE "%781%"</code>. Todas as entidades trabalharão desta maneira.
+Todos os campos deverão ser buscados com o operador <code class="highlight"><span class="k">LIKE</span></code>, portanto, acentos e letras maiúsculas/minúsculas deverão ser ignoradas, por exemplo, uma busca feita por nome <code class="highlight"><span class="ss">&quot;Carl&quot;</span></code> deverá retornar os dados dos contatos que possuem <code class="highlight"><span class="ss">&quot;carl&quot;</span></code> em alguma parte de seu nome.
+O operador utilizado entre as entidades de busca é <code class="highlight"><span class="k">AND</span></code>, por isso se for buscado <code class="highlight"><span class="n">nome</span> <span class="o">=</span> <span class="ss">&quot;carls&quot;</span></code> e <code class="highlight"><span class="n">cpf</span> <span class="o">=</span> <span class="ss">&quot;781&quot;</span></code>, o método retornará todos os dados dos contatos que possuem <code class="highlight"><span class="n">nome</span> <span class="k">LIKE</span> <span class="ss">&quot;%carls%&quot;</span> <span class="k">AND</span> <span class="n">cpf</span> <span class="k">LIKE</span> <span class="ss">&quot;%781%&quot;</span></code>. Todas as entidades trabalharão desta maneira.
 Nas entidades de telefone e e-mail, será validada através de todos os e-mails/telefone que um contato possa ter, sendo considerados os principais e secundários na hora da busca.
 Os dados retornados estarão disponíveis dentro de um array, estruturados exatamente igual ao método da API Pessoa/dadosPessoa.</p>
 <div class="admonition done">

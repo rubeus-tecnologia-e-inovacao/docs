@@ -16,11 +16,16 @@ Os campos personalizados tem o objetivo de auxiliar a armazenar dados não prese
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success":true
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+	``` JSON
+	{
+		"success":true
+	}
+	```
 
 ## Listar campos personalizados
 
@@ -33,18 +38,23 @@ Os campos personalizados tem o objetivo de auxiliar a armazenar dados não prese
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-	"success": true,
-	"dados": [{
-		"id": "1",
-		"nome": "Lista de origem",
-		"coluna": "listadeorigem",
-		"tipo": "1",
-		"tipoNome": "Texto",
-		"tipoLocal": "1",
-		"tipoLocalNome": "Contato"
-	}]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+	``` JSON
+	{
+		"success": true,
+		"dados": [{
+			"id": "1",
+			"nome": "Lista de origem",
+			"coluna": "listadeorigem",
+			"tipo": "1",
+			"tipoNome": "Texto",
+			"tipoLocal": "1",
+			"tipoLocalNome": "Contato"
+		}]
+	}
+	```
 

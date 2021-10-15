@@ -37,6 +37,7 @@ Logo após, será necessário recuperar o código do tipo de evento criado utili
 
 #### Exemplo 1
 
+=== "Exemplo 1"
 ``` javascript tab="JavaScript"
 evento = {
     eventData : {

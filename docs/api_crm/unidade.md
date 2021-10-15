@@ -15,11 +15,16 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-	"success": true
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+	``` JSON
+	{
+		"success": true
+	}
+	```
 
 ## Listar unidades
 
@@ -32,15 +37,20 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-	"dados": [{
-		"id": "1",
-		"nome": "Nome da unidade",
-		"descricao": "Descrição da unidade",
-		"codigo": "000"
-	}]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+	``` JSON
+	{
+		"success": true,
+		"dados": [{
+			"id": "1",
+			"nome": "Nome da unidade",
+			"descricao": "Descrição da unidade",
+			"codigo": "000"
+		}]
+	}
+	```
 

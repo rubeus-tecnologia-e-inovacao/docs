@@ -15,18 +15,23 @@ Assim como descrito na seção de [autenticação](/api_crm/apresentacao/#autent
 
 Método utilizado para listar os níveis de ensino para posteriormente utilizar como parâmetro em outro método.
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "1",
-            "codigo": "1",
-            "titulo": "Graduação"
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "codigo": "1",
+                "titulo": "Graduação"
+            }
+        ]
+    }
+    ```
 
 ---
 
@@ -38,17 +43,22 @@ Método utilizado para listar os níveis de ensino para posteriormente utilizar 
 
 Método utilizado para listar os tipos de contatos para posteriormente utilizar como parâmetro em outro método.
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "1",
-            "titulo": "Aluno"
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "titulo": "Aluno"
+            }
+        ]
+    }
+    ```
 
 ---
 
@@ -60,47 +70,52 @@ Método utilizado para listar os tipos de contatos para posteriormente utilizar 
 
 Método utilizado para listar os tipos de deficiências para posteriormente utilizar como parâmetro em outro método.
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "1",
-            "nome": "Deficiente F\u00edsico",
-            "tipos": [
-                {
-                    "id": "1",
-                    "nome": "Paraplegia"
-                },
-                {
-                    "id": "2",
-                    "nome": "Tetraplegia"
-                },
-                {
-                    "id": "3",
-                    "nome": "Hemiplegia"
-                },
-                {
-                    "id": "4",
-                    "nome": "Paralisia Cerebral"
-                },
-                {
-                    "id": "5",
-                    "nome": "Amputa\u00e7\u00e3o"
-                },
-                {
-                    "id": "6",
-                    "nome": "Defici\u00eancia F\u00edsica"
-                },
-                {
-                    "id": "7",
-                    "nome": "Defici\u00eancia M\u00faltipla"
-                }
-            ]
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "nome": "Deficiente F\u00edsico",
+                "tipos": [
+                    {
+                        "id": "1",
+                        "nome": "Paraplegia"
+                    },
+                    {
+                        "id": "2",
+                        "nome": "Tetraplegia"
+                    },
+                    {
+                        "id": "3",
+                        "nome": "Hemiplegia"
+                    },
+                    {
+                        "id": "4",
+                        "nome": "Paralisia Cerebral"
+                    },
+                    {
+                        "id": "5",
+                        "nome": "Amputa\u00e7\u00e3o"
+                    },
+                    {
+                        "id": "6",
+                        "nome": "Defici\u00eancia F\u00edsica"
+                    },
+                    {
+                        "id": "7",
+                        "nome": "Defici\u00eancia M\u00faltipla"
+                    }
+                ]
+            }
+        ]
+    }
+    ```
 
 ---
 
@@ -114,46 +129,51 @@ Método utilizado para listar os tipos de deficiências para posteriormente util
 | --- | --- | --- | --- |
 | `retornarUsuarios` | `integer` | Não | Retorna os usuários que contêm o perfil perfil. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "1",
-            "nome": "Administrador",
-            "cor": "#808080",
-            "permissoes": "198",
-            "ultimaAlteracao": {
-                "momento": null,
-                "usuario": null,
-                "usuarioNome": null
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "nome": "Administrador",
+                "cor": "#808080",
+                "permissoes": "198",
+                "ultimaAlteracao": {
+                    "momento": null,
+                    "usuario": null,
+                    "usuarioNome": null
+                }
+            },
+            {
+                "id": "2",
+                "nome": "Líder de equipe",
+                "cor": "#FFB946",
+                "permissoes": "110",
+                "ultimaAlteracao": {
+                    "momento": null,
+                    "usuario": null,
+                    "usuarioNome": null
+                }
+            },
+            {
+                "id": "3",
+                "nome": "Consultor",
+                "cor": "#F7685B",
+                "permissoes": "44",
+                "ultimaAlteracao": {
+                    "momento": null,
+                    "usuario": null,
+                    "usuarioNome": null
+                }
             }
-        },
-        {
-            "id": "2",
-            "nome": "Líder de equipe",
-            "cor": "#FFB946",
-            "permissoes": "110",
-            "ultimaAlteracao": {
-                "momento": null,
-                "usuario": null,
-                "usuarioNome": null
-            }
-        },
-        {
-            "id": "3",
-            "nome": "Consultor",
-            "cor": "#F7685B",
-            "permissoes": "44",
-            "ultimaAlteracao": {
-                "momento": null,
-                "usuario": null,
-                "usuarioNome": null
-            }
-        }
-    ]
-}
-```
+        ]
+    }
+    ```
 
 ---
 
@@ -172,22 +192,27 @@ Método utilizado para listar os tipos de deficiências para posteriormente util
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "dados": "JSON com os dados enviados",
-            "resposta": "{\"success\":true,\"dados\":1}",
-            "metodo": "Pessoa/cadastro",
-            "sucesso": "1",
-            "origem": "3",
-            "origemNome": "Ficha de inscrição",
-            "momento": "2018-12-04 15:14:14"
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "dados": "JSON com os dados enviados",
+                "resposta": "{\"success\":true,\"dados\":1}",
+                "metodo": "Pessoa/cadastro",
+                "sucesso": "1",
+                "origem": "3",
+                "origemNome": "Ficha de inscrição",
+                "momento": "2018-12-04 15:14:14"
+            }
+        ]
+    }
+    ```
 
 ## Listar cidades
 
@@ -197,19 +222,24 @@ Método utilizado para listar os tipos de deficiências para posteriormente util
 
 Método utilizado para listar as cidades para posteriormente utilizar como parâmetro em outro método.
 
-``` JSON tab="Resposta"
-{
-    "resultado": {
-        "success": true,
-        "dados": [
-            {
-                "id": "79",
-                "titulo": "Acrelândia - AC"
-            }
-        ]
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "resultado": {
+            "success": true,
+            "dados": [
+                {
+                    "id": "79",
+                    "titulo": "Acrelândia - AC"
+                }
+            ]
+        }
     }
-}
-```
+    ```
 
 ## Listar bases legais
 
@@ -219,53 +249,58 @@ Método utilizado para listar as cidades para posteriormente utilizar como parâ
 
 Método utilizado para listar as bases legais disponíveis no Rubeus para posteriormente utilizar como parâmetro em outro método.
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "3",
-            "base": "Execução de contrato"
-        },
-        {
-            "id": "4",
-            "base": "Consentimento do titular"
-        },
-        {
-            "id": "5",
-            "base": "Não aplicável"
-        },
-        {
-            "id": "6",
-            "base": "Legítimo interesse"
-        },
-        {
-            "id": "7",
-            "base": "Obrigação legal"
-        },
-        {
-            "id": "8",
-            "base": "Estudos e pesquisa"
-        },
-        {
-            "id": "9",
-            "base": "Exercício de direitos "
-        },
-        {
-            "id": "10",
-            "base": "Tutela da saúde"
-        },
-        {
-            "id": "11",
-            "base": "Proteção da vida"
-        },
-        {
-            "id": "12",
-            "base": "Proteção ao crédito"
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "3",
+                "base": "Execução de contrato"
+            },
+            {
+                "id": "4",
+                "base": "Consentimento do titular"
+            },
+            {
+                "id": "5",
+                "base": "Não aplicável"
+            },
+            {
+                "id": "6",
+                "base": "Legítimo interesse"
+            },
+            {
+                "id": "7",
+                "base": "Obrigação legal"
+            },
+            {
+                "id": "8",
+                "base": "Estudos e pesquisa"
+            },
+            {
+                "id": "9",
+                "base": "Exercício de direitos "
+            },
+            {
+                "id": "10",
+                "base": "Tutela da saúde"
+            },
+            {
+                "id": "11",
+                "base": "Proteção da vida"
+            },
+            {
+                "id": "12",
+                "base": "Proteção ao crédito"
+            }
+        ]
+    }
+    ```
 
 ## Listar assinaturas ativas
 
@@ -275,16 +310,21 @@ Método utilizado para listar as bases legais disponíveis no Rubeus para poster
 
 Método utilizado para listar as assinaturas disponíveis no Rubeus para posteriormente utilizar como parâmetro em outro método.
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "1",
-            "nome": "Comunicação de atendimento ao cliente",
-            "descricao": "Receba solicitações de feedback e informações de atendimento ao cliente.",
-            "assinatura": "Serviço E-mail | Comunicação de atendimento ao cliente"
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "nome": "Comunicação de atendimento ao cliente",
+                "descricao": "Receba solicitações de feedback e informações de atendimento ao cliente.",
+                "assinatura": "Serviço E-mail | Comunicação de atendimento ao cliente"
+            }
+        ]
+    }
+    ```

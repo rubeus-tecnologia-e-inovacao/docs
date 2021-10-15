@@ -63,16 +63,96 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-!!! info ""
+??? Exemplos
 
-O valor do campo `dados` no exemplo de retorno abaixo é o `id` que foi criado no processo.
+    === "Envio"
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": 10
-}
-```
+         _JSON_:
+        ``` JSON
+        {
+            "codigo": "contato-1",
+            "id": 1,
+            "nome": "John Dude",
+            "nomeSocial": "Alex",
+            "dataNascimento": "1998-15-03",
+            "telefonePrincipal": "+55 (32) 91234-5678",
+            "emailPrincipal": "johndude@email.com",
+            "telefone": [
+                "+55 (32) 98765-4321"
+            ],
+            "email": [
+                "johndude2@email.com"
+            ],
+            "cpf": "910.108.870-09",
+            "endereco": "Rua exemplo",
+            "cep": "12457-342",
+            "numero": "13",
+            "bairro": "Exemplo",
+            "sexo": 1,
+            "imagemUrl": "https://imagem.com/img/template.png",
+            "estadoCidade": {
+                "cidade": "Muriaé",
+                "estado": "MG"
+            },
+            "canhoto": 0,
+            "profissao": "Tester",
+            "aluno": 0,
+            "exaluno": 0,
+            "escolaOrigem": "Escola Exemplo",
+            "anoFormacao": "2015",
+            "deficiencias": {
+                "id": 1,
+                "tipos": [
+                    1
+                ]
+            },
+            "outrasDeficiencias": "TDAH",
+            "estadoCivil": 7,
+            "cor": 2,
+            "grauInstrucao": 7,
+            "tags": "exemplo",
+            "tagsRemovidas": "teste",
+            "evento": {
+                "tipo": "3",
+                "codTipo": "teste",
+                "camposPersonalizados": {
+                    "exemplo_compl_proc": "teste"
+                },
+                "descricao": "Exemplo",
+                "codOferta": "oferta-1",
+                "codCurso": "oferta-2"
+            },
+            "camposPersonalizados": {
+                "exemplo_compl_cont": "exemplo",
+                "exemplo2_compl_cont": [
+                    "teste",
+                    "exemplo"
+                ]
+            },
+            "baseLegal": "3",
+            "assinaturas": {
+                "id": "1"
+            },
+            "origem": "1",
+            "token": "token"
+        }
+        ```
+
+    === "Resposta"
+        
+        
+        !!! info ""
+
+            O valor do campo `dados` no exemplo de retorno abaixo é o `id` que foi criado no processo.
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true,
+            "dados": 10
+        }
+        ```
+
 
 ## Dados do contato
 
@@ -88,85 +168,90 @@ O valor do campo `dados` no exemplo de retorno abaixo é o `id` que foi criado n
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": {
-        "id": "155",
-        "nome": "Nome Exemplo",
-        "nomeSocial": null,
-        "codigo": "000",
-        "imagem": "null",
-        "cpf": "977.250.067-10",
-        "datanascimento": "1996-07-02",
-        "endereco": "Rua Heitor Tadeu",
-        "cep": "xxxxx-xxx",
-        "numero": "752",
-        "bairro": "Barra",
-        "cidade": "2354",
-        "cidadeNome": "Sete Lagoas - MG",
-        "sexo": "1",
-        "sexoNome": "Masculino",
-        "origemId": "1",
-        "origemNome": "CRM",
-        "urlPublicaRdStation": "null",
-        "canhoto": null,
-        "profissao": null,
-        "aluno": null,
-        "exaluno": null,
-        "anoFormacao": null,
-        "estadoCivil": null,
-        "estadoCivilNome": null,
-        "cor": null,
-        "corNome": null,
-        "grauInstrucao": null,
-        "grauInstrucaoNome": null,
-        "outrasDeficiencias": null,
-        "mesclada": "1",
-        "verificada": "0",
-        "desinscreveu": "0",
-        "camposPersonalizados": [
-            {
-                "nome": "Campo Personalizado",
-                "coluna": "campopersonalizado",
-                "tipo": "1",
-                "valor": "valor"
-            }
-        ],
-        "pessoasRelacionadas": false,
-        "telefones": {
-            "principal": {
-                "id": "1534",
-                "telefone": "(31)154689835"
-            },
-            "secundarios": [
-                {}
-            ]
-        },
-        "emails": {
-            "principal": {
-                "id": "1598",
-                "email": "email@email.com"
-            },
-            "secundarios": [
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": {
+            "id": "155",
+            "nome": "Nome Exemplo",
+            "nomeSocial": null,
+            "codigo": "000",
+            "imagem": "null",
+            "cpf": "977.250.067-10",
+            "datanascimento": "1996-07-02",
+            "endereco": "Rua Heitor Tadeu",
+            "cep": "xxxxx-xxx",
+            "numero": "752",
+            "bairro": "Barra",
+            "cidade": "2354",
+            "cidadeNome": "Sete Lagoas - MG",
+            "sexo": "1",
+            "sexoNome": "Masculino",
+            "origemId": "1",
+            "origemNome": "CRM",
+            "urlPublicaRdStation": "null",
+            "canhoto": null,
+            "profissao": null,
+            "aluno": null,
+            "exaluno": null,
+            "anoFormacao": null,
+            "estadoCivil": null,
+            "estadoCivilNome": null,
+            "cor": null,
+            "corNome": null,
+            "grauInstrucao": null,
+            "grauInstrucaoNome": null,
+            "outrasDeficiencias": null,
+            "mesclada": "1",
+            "verificada": "0",
+            "desinscreveu": "0",
+            "camposPersonalizados": [
                 {
-                    "id": "1600",
-                    "email": "email2@email.com"
+                    "nome": "Campo Personalizado",
+                    "coluna": "campopersonalizado",
+                    "tipo": "1",
+                    "valor": "valor"
                 }
-            ]
-        },
-        "tags": false,
-        "origemCanal": false,
-        "origens": [
-            {
-                "id": "1",
-                "titulo": "CRM"
-            }
-        ],
-        "deficiencias": false
+            ],
+            "pessoasRelacionadas": false,
+            "telefones": {
+                "principal": {
+                    "id": "1534",
+                    "telefone": "(31)154689835"
+                },
+                "secundarios": [
+                    {}
+                ]
+            },
+            "emails": {
+                "principal": {
+                    "id": "1598",
+                    "email": "email@email.com"
+                },
+                "secundarios": [
+                    {
+                        "id": "1600",
+                        "email": "email2@email.com"
+                    }
+                ]
+            },
+            "tags": false,
+            "origemCanal": false,
+            "origens": [
+                {
+                    "id": "1",
+                    "titulo": "CRM"
+                }
+            ],
+            "deficiencias": false
+        }
     }
-}
-```
+    ```
 
 #### Buscar por nome, email, telefone ou CPF
 
@@ -205,12 +290,17 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "id": "9"
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "id": "9"
+    }
+    ```
 
 ## Excluir contato
 
@@ -225,19 +315,17 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta com um id"
-{
-    "success": true,
-    "id": 9
-}
-```
+??? Exemplos
 
-``` JSON tab="Resposta com mais id’s"
-{
-    "success": true,
-    "id": 1633
-}
-```
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "id": 9
+    }
+    ```
 
 ## Listar Oportunidades
 
@@ -253,50 +341,55 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta com mais id’s"
-{
-    "resultado": {
-        "success": true,
-        "dados": [
-            {
-                "id": "63",
-                "curso": "1",
-                "cursoNome": "Oferta de Curso",
-                "origem": "13",
-                "origemNome": "Oportunidade",
-                "etapa": "1",
-                "etapaNome": "Confirmado",
-                "status": "1",
-                "statusNome": "Em andamento",
-                "processo": "1",
-                "razaoOportunidade": "1",
-                "razaoOportunidadeNome": "Não contactado",
-                "processoNome": "Captação",
-                "localOferta": "1",
-                "localOfertaNome": "Local de oferta",
-                "processoSeletivo": "1",
-                "processoSeletivoNome": "Processo",
-                "modalidadeNome": "EaD",
-                "unidade": "1",
-                "unidadeNome": "Unidade",
-                "responsavelNome": "João",
-                "responsavel": "5",
-                "responsavelEmail": "joaoexemplo@email.com.br",
-                "notaEnem": "900",
-                "valorCurso": "5000",
-                "ofertaCursoNome": "Oferta de Curso",
-                "objecao_id": "1",
-                "objecaoNome": "Objecao",
-                "dataProva": "2020-07-21 15:16:00",
-                "momento": "2020-05-29 13:05:05",
-                "minutosEtapa": "5",
-                "agendamento": "3",
-                "agendamentoNome": "Sem Agendar",
-                "camposPersonalizados": {
-                    "campo_compl_proc": "campo"
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "resultado": {
+            "success": true,
+            "dados": [
+                {
+                    "id": "63",
+                    "curso": "1",
+                    "cursoNome": "Oferta de Curso",
+                    "origem": "13",
+                    "origemNome": "Oportunidade",
+                    "etapa": "1",
+                    "etapaNome": "Confirmado",
+                    "status": "1",
+                    "statusNome": "Em andamento",
+                    "processo": "1",
+                    "razaoOportunidade": "1",
+                    "razaoOportunidadeNome": "Não contactado",
+                    "processoNome": "Captação",
+                    "localOferta": "1",
+                    "localOfertaNome": "Local de oferta",
+                    "processoSeletivo": "1",
+                    "processoSeletivoNome": "Processo",
+                    "modalidadeNome": "EaD",
+                    "unidade": "1",
+                    "unidadeNome": "Unidade",
+                    "responsavelNome": "João",
+                    "responsavel": "5",
+                    "responsavelEmail": "joaoexemplo@email.com.br",
+                    "notaEnem": "900",
+                    "valorCurso": "5000",
+                    "ofertaCursoNome": "Oferta de Curso",
+                    "objecao_id": "1",
+                    "objecaoNome": "Objecao",
+                    "dataProva": "2020-07-21 15:16:00",
+                    "momento": "2020-05-29 13:05:05",
+                    "minutosEtapa": "5",
+                    "agendamento": "3",
+                    "agendamentoNome": "Sem Agendar",
+                    "camposPersonalizados": {
+                        "campo_compl_proc": "campo"
+                    }
                 }
-            }
-        ]
+            ]
+        }
     }
-}
-```
+    ```

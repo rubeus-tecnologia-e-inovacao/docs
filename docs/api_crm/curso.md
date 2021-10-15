@@ -16,12 +16,17 @@ O sistema entende que um curso pode ser ofertado em diversos momentos e com vari
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success":true,
-    "id":"1"
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success":true,
+        "id":"1"
+    }
+    ```
 
 ## Cadastro de oferta de curso
 
@@ -57,12 +62,17 @@ Após realizar o cadastro do curso, você pode cadastrar suas ofertas. É a ofer
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-	"success":true,
-	"id":"1"
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success":true,
+        "id":"1"
+    }
+    ```
 
 ## Listar cursos
 
@@ -76,21 +86,26 @@ Após realizar o cadastro do curso, você pode cadastrar suas ofertas. É a ofer
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "1",
-            "nome": "Nome do curso",
-            "descricao": null,
-            "codigo": "000",
-            "origem": "1",
-            "origemNome": "CRM"
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "nome": "Nome do curso",
+                "descricao": null,
+                "codigo": "000",
+                "origem": "1",
+                "origemNome": "CRM"
+            }
+        ]
+    }
+    ```
 
 ## Listar ofertas
 
@@ -105,36 +120,41 @@ Após realizar o cadastro do curso, você pode cadastrar suas ofertas. É a ofer
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "1",
-            "nome": "Nome da oferta de curso",
-            "complemento": null,
-            "codigo": "000",
-            "codCurso": "000",
-            "inicioInscricao": null,
-            "terminoInscricao": null,
-            "inicioMatricula": null,
-            "terminoMatricula": null,
-            "inicioCurso": null,
-            "terminoCurso": null,
-            "unidade": "1",
-            "unidadeNome": "Unidade",
-            "nivelEnsino": "1",
-            "nivelEnsinoNome": "Graduação",
-            "modalidade": "1",
-            "modalidadeNome": "Presencial",
-            "origem": "1",
-            "origemNome": "CRM",
-            "processoSeletivo": "1",
-            "processoSeletivoNome": "Nome do processo seletivo"
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "nome": "Nome da oferta de curso",
+                "complemento": null,
+                "codigo": "000",
+                "codCurso": "000",
+                "inicioInscricao": null,
+                "terminoInscricao": null,
+                "inicioMatricula": null,
+                "terminoMatricula": null,
+                "inicioCurso": null,
+                "terminoCurso": null,
+                "unidade": "1",
+                "unidadeNome": "Unidade",
+                "nivelEnsino": "1",
+                "nivelEnsinoNome": "Graduação",
+                "modalidade": "1",
+                "modalidadeNome": "Presencial",
+                "origem": "1",
+                "origemNome": "CRM",
+                "processoSeletivo": "1",
+                "processoSeletivoNome": "Nome do processo seletivo"
+            }
+        ]
+    }
+    ```
 
 ## Dados da oferta de curso
 
@@ -149,35 +169,40 @@ Após realizar o cadastro do curso, você pode cadastrar suas ofertas. É a ofer
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": {
-        "id": "1",
-        "nome": "CURSO DE MEDICINA - IPATINGA",
-        "complemento": null,
-        "vagasMinimas": "1",
-        "vagasMaximas": "40",
-        "valor": "0",
-        "codigo": "ADM_3",
-        "inicioInscricao": null,
-        "terminoInscricao": null,
-        "inicioMatricula": "2018-01-01",
-        "terminoMatricula": "2018-01-31",
-        "inicioCurso": null,
-        "terminoCurso": null,
-        "curso": "1",
-        "unidade": "1",
-        "nivelEnsino": "1",
-        "modalidade": "1",
-        "processoSeletivo": "1",
-        "origem": "1",
-        "localOferta": [
-            "1"
-        ]
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": {
+            "id": "1",
+            "nome": "CURSO DE MEDICINA - IPATINGA",
+            "complemento": null,
+            "vagasMinimas": "1",
+            "vagasMaximas": "40",
+            "valor": "0",
+            "codigo": "ADM_3",
+            "inicioInscricao": null,
+            "terminoInscricao": null,
+            "inicioMatricula": "2018-01-01",
+            "terminoMatricula": "2018-01-31",
+            "inicioCurso": null,
+            "terminoCurso": null,
+            "curso": "1",
+            "unidade": "1",
+            "nivelEnsino": "1",
+            "modalidade": "1",
+            "processoSeletivo": "1",
+            "origem": "1",
+            "localOferta": [
+                "1"
+            ]
+        }
     }
-}
-```
+    ```
 
 ## Listar modalidades
 
@@ -190,14 +215,19 @@ Após realizar o cadastro do curso, você pode cadastrar suas ofertas. É a ofer
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "1",
-            "titulo": "Presencial"
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "titulo": "Presencial"
+            }
+        ]
+    }
+    ```

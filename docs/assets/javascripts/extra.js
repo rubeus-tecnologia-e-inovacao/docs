@@ -214,7 +214,7 @@ class Tooltip extends HTMLElement {
     style.textContent = /*css*/
       `div.div-tooltip {
         display: flex;
-        align-items: stretch;
+        align-items: center;
         flex-direction: row;
         justify-content: flex-start;
       }

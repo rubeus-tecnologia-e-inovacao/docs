@@ -24,11 +24,16 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Retorno"
-{
-    "success": true
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true
+    }
+    ```
 
 ## Dados do local da oferta
 
@@ -42,24 +47,29 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Retorno"
-{
-	"success": true,
-	"dados": {
-		"id": "2",
-		"codigo": "local-1",
-		"titulo": "Local Oferta Exemplo",
-		"descricao": "EXEMPLO",
-		"telefone": null,
-		"email": null,
-		"endereco": null,
-		"numero": null,
-		"bairro": null,
-		"cep": null,
-		"cidade": null
-	}
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": {
+            "id": "2",
+            "codigo": "local-1",
+            "titulo": "Local Oferta Exemplo",
+            "descricao": "EXEMPLO",
+            "telefone": null,
+            "email": null,
+            "endereco": null,
+            "numero": null,
+            "bairro": null,
+            "cep": null,
+            "cidade": null
+        }
+    }
+    ```
 
 ## Excluir local de oferta
 
@@ -73,11 +83,16 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Retorno"
-{
-    "success": true
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true
+    }
+    ```
 
 ## Listar local de oferta
 
@@ -91,17 +106,22 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [{
-    "id": "1",
-    "codigo": "000",
-    "titulo": "Nome do local de oferta",
-    "descricao": null,
-    "telefone": null,
-    "email": null
-}]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [{
+        "id": "1",
+        "codigo": "000",
+        "titulo": "Nome do local de oferta",
+        "descricao": null,
+        "telefone": null,
+        "email": null
+    }]
+    }
+    ```
 

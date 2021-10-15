@@ -32,54 +32,62 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Envio"
-{
-    "nome": "João Ferreira",
-    "email": "joe@teste.com",
-    "permissao": [
-        {
-            "localOferta": "1",
-            "niveis": [
-                "1",
-                "2",
-                "4",
-                "3"
-            ]
-        }
-    ],
-    "permissaoContato": 1,
-    "exportarContato": 1,
-    "verOportunidadesDeOutrosUsuarios": 1,
-    "verAgendamentosDeOutrosUsuarios": 1,
-    "vincularAgendamentosAOutrosUsuarios": 1,
-    "vincularNovosProcessos": 1,
-    "vincularNovosLocaisOferta": 1,
-    "permitirSerResponsavel": 1,
-    "superAdmin": 1,
-    "ativado": 1,
-    "processo": [
-        1,
-        2
-    ],
-    "perfil": [
-        1
-    ],
-    "grupoUsuario": [
-        1,
-        2,
-        3
-    ],
-    "origem": 1,
-    "token": "tokendevalidacao"
-}
-```
+??? Exemplos
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "id": 16
-}
-```
+    === "Envio"
+
+        _JSON_:
+        ``` JSON
+        {
+            "nome": "João Ferreira",
+            "email": "joe@teste.com",
+            "permissao": [
+                {
+                    "localOferta": "1",
+                    "niveis": [
+                        "1",
+                        "2",
+                        "4",
+                        "3"
+                    ]
+                }
+            ],
+            "permissaoContato": 1,
+            "exportarContato": 1,
+            "verOportunidadesDeOutrosUsuarios": 1,
+            "verAgendamentosDeOutrosUsuarios": 1,
+            "vincularAgendamentosAOutrosUsuarios": 1,
+            "vincularNovosProcessos": 1,
+            "vincularNovosLocaisOferta": 1,
+            "permitirSerResponsavel": 1,
+            "superAdmin": 1,
+            "ativado": 1,
+            "processo": [
+                1,
+                2
+            ],
+            "perfil": [
+                1
+            ],
+            "grupoUsuario": [
+                1,
+                2,
+                3
+            ],
+            "origem": 1,
+            "token": "tokendevalidacao"
+        }
+        ```
+
+    === "Resposta"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true,
+            "id": 16
+        }
+        ```
 
 ## Editar dados de usuários
 
@@ -109,12 +117,17 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "id": 16
-}
-```
+??? Exemplos
+
+    === "Envio"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true,
+            "id": 16
+        }
+        ```
 
 ## Excluir usuário
 
@@ -128,12 +141,17 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "id": 16
-}
-```
+??? Exemplos
+
+    === "Envio"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true,
+            "id": 16
+        }
+        ```
 
 ## Ativar/desativar usuário
 
@@ -148,12 +166,17 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "status": "0"
-}
-```
+??? Exemplos
+
+    === "Envio"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true,
+            "status": "0"
+        }
+        ```
 
 ## Listar usuário
 
@@ -168,84 +191,89 @@
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
+??? Exemplos
+
+    === "Envio"
+
+        _JSON_:
+        ``` JSON
         {
-            "id": "1",
-            "nome": "Maria Silva",
-            "email": "joaosilva@instituicao.com.br",
-            "ativado": "1",
-            "superAdmin": "1",
-            "perfis": [
+            "success": true,
+            "dados": [
                 {
                     "id": "1",
-                    "nome": "Administrador",
-                    "cor": "#808080"
+                    "nome": "Maria Silva",
+                    "email": "joaosilva@instituicao.com.br",
+                    "ativado": "1",
+                    "superAdmin": "1",
+                    "perfis": [
+                        {
+                            "id": "1",
+                            "nome": "Administrador",
+                            "cor": "#808080"
+                        },
+                        {
+                            "id": "2",
+                            "nome": "Líder de equipe",
+                            "cor": "#FFB946"
+                        },
+                        {
+                            "id": "3",
+                            "nome": "Consultor",
+                            "cor": "#F7685B"
+                        }
+                    ],
+                    "gruposUsuario": [
+                        {
+                            "id": "1",
+                            "nome": "Consultores",
+                            "cor": "#808080"
+                        }
+                    ],
+                    "permissao": [
+                        {
+                            "localOferta": "1",
+                            "niveis": [
+                                "1",
+                                "2",
+                                "4",
+                                "3"
+                            ]
+                        }
+                    ],
+                    "processos": [
+                        "1"
+                    ]
                 },
                 {
                     "id": "2",
-                    "nome": "Líder de equipe",
-                    "cor": "#FFB946"
-                },
-                {
-                    "id": "3",
-                    "nome": "Consultor",
-                    "cor": "#F7685B"
-                }
-            ],
-            "gruposUsuario": [
-                {
-                    "id": "1",
-                    "nome": "Consultores",
-                    "cor": "#808080"
-                }
-            ],
-            "permissao": [
-                {
-                    "localOferta": "1",
-                    "niveis": [
-                        "1",
-                        "2",
-                        "4",
-                        "3"
+                    "nome": "Joaquim Fonseca",
+                    "email": "joaquimfonseca@instituicao.com.br",
+                    "ativado": "1",
+                    "superAdmin": "1",
+                    "perfis": [
+                        {
+                            "id": "1",
+                            "nome": "Administrador",
+                            "cor": "#808080"
+                        }
+                    ],
+                    "gruposUsuario": false,
+                    "permissao": [
+                        {
+                            "localOferta": "1",
+                            "niveis": [
+                                "1",
+                                "2",
+                                "3",
+                                "4"
+                            ]
+                        }
+                    ],
+                    "processos": [
+                        "1"
                     ]
                 }
-            ],
-            "processos": [
-                "1"
-            ]
-        },
-        {
-            "id": "2",
-            "nome": "Joaquim Fonseca",
-            "email": "joaquimfonseca@instituicao.com.br",
-            "ativado": "1",
-            "superAdmin": "1",
-            "perfis": [
-                {
-                    "id": "1",
-                    "nome": "Administrador",
-                    "cor": "#808080"
-                }
-            ],
-            "gruposUsuario": false,
-            "permissao": [
-                {
-                    "localOferta": "1",
-                    "niveis": [
-                        "1",
-                        "2",
-                        "3",
-                        "4"
-                    ]
-                }
-            ],
-            "processos": [
-                "1"
             ]
         }
-    ]
-}
-```
+        ```

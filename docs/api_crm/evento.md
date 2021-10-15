@@ -40,22 +40,27 @@ Método para cadastro de eventos no CRM Rubeus.
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": {
-        "id": "14",
-        "descricao": "<p><b style=\"padding-top:10px\">Descri\u00e7\u00e3o: <\/b>EXEMPLO<br><b style=\"padding-top:10px\">Respons\u00e1vel: <\/b>Matheus Amaral<\/p>",
-        "momento": "2019-02-22 11:12:28",
-        "pessoa": "9",
-        "tipo": "1",
-        "tipoNome": "Foi cadastrado",
-        "imagem": null,
-        "origem": "1",
-        "origemNome": "CRM"
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": {
+            "id": "14",
+            "descricao": "<p><b style=\"padding-top:10px\">Descri\u00e7\u00e3o: <\/b>EXEMPLO<br><b style=\"padding-top:10px\">Respons\u00e1vel: <\/b>Matheus Amaral<\/p>",
+            "momento": "2019-02-22 11:12:28",
+            "pessoa": "9",
+            "tipo": "1",
+            "tipoNome": "Foi cadastrado",
+            "imagem": null,
+            "origem": "1",
+            "origemNome": "CRM"
+        }
     }
-}
-```
+    ```
 
 ## Cadastro de tipos de evento
 
@@ -73,12 +78,17 @@ Os tipos de eventos são utilizados para categorizar os eventos externos enviado
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-	"success": true,
-	"id": 57
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "id": 57
+    }
+    ```
 
 ## Verificar se o evento já foi cadastrado
 
@@ -98,12 +108,17 @@ Os tipos de eventos são utilizados para categorizar os eventos externos enviado
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
-``` JSON tab="Resposta"
-{
-	"success": true,
-	"dados": 11
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": 11
+    }
+    ```
 
 ## Listar tipos de eventos
 
@@ -113,17 +128,22 @@ Os tipos de eventos são utilizados para categorizar os eventos externos enviado
 
 Método utilizado para listar os tipos de evento para posteriormente utilizar como parâmetro em outro método.
 
-``` JSON tab="Resposta"
-{
-    "success": true,
-    "dados": [
-        {
-            "id": "1",
-            "titulo": "Cadastrou-se",
-            "codigo": "CADASTRO",
-            "origem": "1",
-            "origemNome": "CRM"
-        }
-    ]
-}
-```
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "titulo": "Cadastrou-se",
+                "codigo": "CADASTRO",
+                "origem": "1",
+                "origemNome": "CRM"
+            }
+        ]
+    }
+    ```

@@ -9,16 +9,21 @@ Para realizar a integração com o Monitoramento de página via API no backend d
 
 Os atributos adicionais devem estar dispostos da seguinte maneira ao realizar o envio de dados para o backend de sua aplicação.
 
-``` javascript tab="JavaScript"
-var dados = {
-    /**
-     * conteúdo do formulário
-     */
-    session_id: RBTracking.getHash(),
-    hostClient: RBTracking.getHostClient(),
-    substitute_id: RBTracking.idGenerator()
-};
-```
+??? Exemplos
+
+    === "Envio"
+
+        _JavaScript_:
+        ``` javascript
+        var dados = {
+            /**
+            * conteúdo do formulário
+            */
+            session_id: RBTracking.getHash(),
+            hostClient: RBTracking.getHostClient(),
+            substitute_id: RBTracking.idGenerator()
+        };
+        ```
 
 ## Enviando contato ao Rubeus
 
@@ -37,33 +42,41 @@ Na requisição que fora enviada, deverá conter os dados adicionais do tracking
 
 O envio deverá ser um JSON, tal como no cabeçalho deste tópico e a estrutura é semelhante ao [cadastro de contato ao Rubeus](https://docs.rubeus.com.br/api_crm/contato/) nativo, mas com os campos adicionais inclusos com o mesmo molde apresentado acima.
 
-``` php tab="PHP de envio"
-<?php
-// ...
-/**
- * Dados meramente ilustrativos
- */
-$dados = [
-    "hostClient" => "hostclientexemplo",
-    "nome" => "João Silva",
-    "origem" => 0,
-    "session_id" => "sessaoexemplo",
-    "substitute_id" => "substituteexemplo",
-    "token" => "tokenexemplo"
-];
+??? Exemplos
 
-$dadosJson = json_encode($dados);
-// ...
-```
+    === "Envio"
 
-``` JSON tab="JSON de resposta"
-{
-	"success": true,
-	"dados": {
-		"id": "155"
-	}
-}
-```
+        _PHP_:
+        ``` php
+        <?php
+        // ...
+        /**
+        * Dados meramente ilustrativos
+        */
+        $dados = [
+            "hostClient" => "hostclientexemplo",
+            "nome" => "João Silva",
+            "origem" => 0,
+            "session_id" => "sessaoexemplo",
+            "substitute_id" => "substituteexemplo",
+            "token" => "tokenexemplo"
+        ];
+
+        $dadosJson = json_encode($dados);
+        // ...
+        ```
+
+    === "Resposta"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true,
+            "dados": {
+                "id": "155"
+            }
+        }
+        ```
 
 ## Enviando evento ao Rubeus
 
@@ -84,35 +97,43 @@ A estrutura referente ao [cadastro de eventos do Rubeus](https://docs.rubeus.com
 
 No mesmo nível de `event` temos a presença dos dados adicionais do tracking.
 
-``` php tab="PHP de envio"
-<?php
-// ...
-/**
- * Dados meramente ilustrativos
- */
-$evento = [
-    "event" => [
-        "codCurso" => "1",
-        "codOferta" => "1",
-        "codLocalOferta" => "1-2",
-        "tipo" => "1",
-        "origem" => 0,
-        "token" => "tokenexemplo",
-    ],
-    "hostClient" => "hostclientexemplo",
-    "session_id" => "sessaoexemplo",
-];
+??? Exemplos
 
-$eventoJson = json_encode($evento);
-// ...
-```
+    === "Envio"
 
-``` JSON tab="JSON de resposta"
-{
-	"success": true,
-	"dados": 1
-}
-```
+        _PHP_:
+        ``` php
+        <?php
+        // ...
+        /**
+        * Dados meramente ilustrativos
+        */
+        $evento = [
+            "event" => [
+                "codCurso" => "1",
+                "codOferta" => "1",
+                "codLocalOferta" => "1-2",
+                "tipo" => "1",
+                "origem" => 0,
+                "token" => "tokenexemplo",
+            ],
+            "hostClient" => "hostclientexemplo",
+            "session_id" => "sessaoexemplo",
+        ];
+
+        $eventoJson = json_encode($evento);
+        // ...
+        ```
+
+    === "Resposta"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true,
+            "dados": 1
+        }
+        ```
 
 ## RBTracking.clearSession()
 

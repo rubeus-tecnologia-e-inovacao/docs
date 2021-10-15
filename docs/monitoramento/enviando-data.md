@@ -13,24 +13,29 @@ Utilizando a função `sendData()` para enviar os dados do contato ao CRM Rubeus
 | `callbackSuccess` | `function` | Não | Função que irá ser executada quando a requisição retornar com o status como **sucesso**. |
 | `callbackError` | `function` | Não | Função que irá ser executada quando a requisição retornar com o status como **erro**. |
 
-### Retorno
-``` JSON tab="Return"
-{
-	"success": true,
-	"data": {
-		"id": "50"
-	}
-}
-```
 
-### Código Exemplo
+??? Exemplos
 
-``` javascript tab="JavaScript"
-data = {
-    nome: "João da Silva",
-    emailPrincipal: "joãosilva@rubeus.com",
-    dataNascimento: "1998-12-31"
-};
-RBTracking.sendData(data);
-```
+	=== "Envio"
 
+		_JavaScript_:
+		``` javascript
+		data = {
+			nome: "João da Silva",
+			emailPrincipal: "joãosilva@rubeus.com",
+			dataNascimento: "1998-12-31"
+		};
+		RBTracking.sendData(data);
+		```
+
+	=== "Resposta"
+
+		_JSON_:
+		``` JSON
+		{
+			"success": true,
+			"data": {
+				"id": "50"
+			}
+		}
+		```

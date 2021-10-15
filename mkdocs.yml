@@ -4,20 +4,18 @@ theme:
   palette:
     primary: Teal
     accent: Teal
-  logo: "assets/images/logo.svg"
-  favicon: assets/images/favicon.png
+  logo: 'assets/images/logo.svg'
+  favicon: 'assets/images/icon.svg'
   font:
     text: Roboto
     code: Roboto Mono
-  feature:
-    tabs: true
   language: pt
   static_templates:
     - 404.html
   include_search_page: false
   search_index_only: true
 
-copyright: '&copy; 2020 Rubeus todos os direitos reservados'
+# copyright: '&copy; 2020 Rubeus todos os direitos reservados'
 
 extra_css:
   - 'assets/stylesheets/extra.min.css'
@@ -29,18 +27,18 @@ extra:
   search:
     language: 'pt'
   social:
-    - type: globe
-      link: https://rubeus.com.br/
-    - type: instagram
-      link: https://www.instagram.com/canalrubeus/
-    - type: facebook
-      link: https://www.facebook.com/CanalRubeus/
-    - type: linkedin
-      link: https://www.linkedin.com/company/rubeus/
-    - type: twitter
-      link: https://twitter.com/CanalRubeus
-    - type: github
-      link: https://github.com/RubeusTI
+    - icon: fontawesome/solid/globe
+      link: 'https://rubeus.com.br/'
+    - icon: fontawesome/brands/instagram
+      link: 'https://www.instagram.com/canalrubeus/'
+    - icon: fontawesome/brands/facebook
+      link: 'https://www.facebook.com/CanalRubeus/'
+    - icon: fontawesome/brands/linkedin
+      link: 'https://www.linkedin.com/company/rubeus/'
+    - icon: fontawesome/brands/twitter
+      link: 'https://twitter.com/CanalRubeus'
+    - icon: fontawesome/brands/github
+      link: 'https://github.com/RubeusTI'
 
 nav:
   - API CRM:
@@ -73,6 +71,8 @@ nav:
   # - Testar API's: methodstest.md
 
 markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences

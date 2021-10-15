@@ -22,43 +22,45 @@ Os tipos de eventos que serão enviados, devem ser gerados pelo meio que o CRM d
 
 Logo após, será necessário recuperar o código do tipo de evento criado utilizando-se da API para a [listagem dos tipos de evento](/api_crm/evento/#listar-tipos-de-eventos) do CRM, podendo-se utilizar a página de [testes](/methodstest) disponível na própria documentação.
 
-### Código Exemplo
+??? Exemplos
 
-#### Exemplo
+    === "Envio"
 
-``` javascript tab="JavaScript"
-const evento = {
-    descricao: '<p><b style="padding-top: 10px”>Exemplo: </b>AAA<br><b style=”padding-top: 10px”>Dispositivo: </b>Desktop<br></p>',
-    tipo: '123'
-};
+		_JavaScript_:
+		``` javascript
+		const evento = {
+			descricao: '<p><b style="padding-top: 10px”>Exemplo: </b>AAA<br><b style=”padding-top: 10px”>Dispositivo: </b>Desktop<br></p>',
+			tipo: '123'
+		};
 
-const callback = function (resposta) {
-    return resposta.responseText;
-};
+		const callback = function (resposta) {
+			return resposta.responseText;
+		};
 
-RBTracking.sendEvent(evento);
+		RBTracking.sendEvent(evento);
+		```
 
-```
+    === "Resposta"
 
-## Retorno
+		| Caso | Tipo de retorno | Descrição |
+		| --- | --- | --- |
+		| `Sucesso` | `boolean` | Retorna um JSON contendo os dados do `eventData` enviados caso a operação seja efetuada com sucesso. |
+		| `Falha` | `string` | Retorna um JSON contendo o erro encontrado no processo. |
 
-| Caso | Tipo de retorno | Descrição |
-| --- | --- | --- |
-| `Sucesso` | `boolean` | Retorna um JSON contendo os dados do `eventData` enviados caso a operação seja efetuada com sucesso. |
-| `Falha` | `string` | Retorna um JSON contendo o erro encontrado no processo. |
+		=== "Sucesso"
+		
+			``` javascript
+			{
+    			"success" : true,
+			}
+			```
 
-``` javascript tab="Sucesso"
-{
-  ”success” : true
-}
+		=== "Falha"
 
-```
-
-``` javascript tab="Falha"
-{
-  ”success” : false,
-  ”error” : ”event without type”,
-}
-
-```
+			``` javascript
+			{
+				"success" : false,
+				"error" : "event without type",
+			}
+			```
 

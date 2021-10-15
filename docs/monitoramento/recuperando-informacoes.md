@@ -18,38 +18,47 @@ Para fazer o requerimento dos dados dos eventos atribuídos previamente à um us
 | `callbackError` | `function` | Não | Callback que será responsável por entregar a resposta contendo o erro do  servidor ao cliente | 
 
 ### Código Exemplo
+??? Exemplos
 
-``` javascript tab="JavaScript"
-callbackSuccess = function (r) {
-    return (r);
-}
-callbackError = function (r) {
-    return ('Error: ' + r);
-}
+    === "Envio"
 
-RBTracking.getData(callbackSuccess, callbackError);
-```
+        _JavaScript_:
+        ``` javascript
+        callbackSuccess = function (r) {
+            return (r);
+        }
+        callbackError = function (r) {
+            return ('Error: ' + r);
+        }
 
-### Retorno
+        RBTracking.getData(callbackSuccess, callbackError);
+        ```
+    === "Resposta"
 
-| Caso | Tipo de retorno | Descrição | 
-| --- | --- | --- |
-| `Sucesso` | `array[]` | Retorna um array contendo os dados de evento do usuário caso a operação seja efetuada com sucesso. | 
-| `Falha` | `string` | Retorna uma string contendo o erro encontrado no processo. | 
+        | Caso | Tipo de retorno | Descrição | 
+        | --- | --- | --- |
+        | `Sucesso` | `array[]` | Retorna um array contendo os dados de evento do usuário caso a operação seja efetuada com sucesso. | 
+        | `Falha` | `string` | Retorna uma string contendo o erro encontrado no processo. | 
 
-``` json tab="Sucesso"
-{
-    'agrupamento': 34,
-    'codeUser': 'USUARIO20837420'
-}
-```
+        === "Sucesso"
 
-``` json tab="Falha"
-{
-    'error': 'Hash não enviado',
-    'status': 'fail'
-}
-```
+            _JSON_:
+            ``` json
+            {
+                'agrupamento': 34,
+                'codeUser': 'USUARIO20837420'
+            }
+            ```
+
+        === "Falha"
+
+            _JSON_:
+            ``` json
+            {
+                'error': 'Hash não enviado',
+                'status': 'fail'
+            }
+            ```
 
 ## Aplicação no uso
 

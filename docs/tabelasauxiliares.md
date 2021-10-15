@@ -1,8 +1,3 @@
-<style>
-    .md-typeset .md-typeset__table{
-        width: 100%;
-    }
-</style>
 # Tabelas Auxiliares
 
 Tabelas com as informações de identificadores das entidades juntamente com sua descrição.

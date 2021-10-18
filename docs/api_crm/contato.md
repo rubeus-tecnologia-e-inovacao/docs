@@ -20,8 +20,8 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | `nome` | `string` | Sim | Nome. | 
 | `nomeSocial` | `string` | Não | Nome Social. | 
 | `dataNascimento` | `date` | Não | Data de Nascimento.<br>**Padrão: YYYY-MM-DD** | 
-| `telefonePrincipal` | `string` | Condicional | Telefone principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
-| `emailPrincipal` | `string` | Condicional | E-mail principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
+| `telefonePrincipal` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um email">Condicional </rb-tooltip> | Telefone principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
+| `emailPrincipal` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um telefone">Condicional </rb-tooltip> | E-mail principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
 | `telefone` | `array[]` | Não | É possível enviar uma lista de telefones secundários para o cadastro de contato. | 
 | `email` | `array[]` | Não | É possível enviar uma lista de emails secundários para o cadastro de contato. | 
 | `cpf` | `string` | Não | CPF do contato.<br>**Padrão: xxxxxxxxxxx** | 
@@ -124,7 +124,7 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
             },
             "camposPersonalizados": {
                 "exemplo_compl_cont": "exemplo",
-                "exemplo2_compl_cont": [
+                "exemplo_multi_compl_cont": [
                     "teste",
                     "exemplo"
                 ]

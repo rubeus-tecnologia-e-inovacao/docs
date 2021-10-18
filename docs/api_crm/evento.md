@@ -13,11 +13,11 @@ Método para cadastro de eventos no CRM Rubeus.
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
 | `codigo` | `string` | Não | Chave única de identificação do evento enviado. <br>**Caso queira editar um evento criado basta informar o código do evento criado.** | 
-| `tipo` | `integer` | Condicional | Código de identificação do tipo do evento. <br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `id`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
-| `codTipo` | `string` | Condicional | Código externo enviado no cadastro do tipo de evento.<br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `codigo`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
+| `tipo` | `integer` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um `codTipo`">Condicional </rb-tooltip> | Código de identificação do tipo do evento. <br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `id`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
+| `codTipo` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um `tipo`">Condicional </rb-tooltip> | Código externo enviado no cadastro do tipo de evento.<br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `codigo`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
 | `descricao` | `string` | Não | A Descrição pode ser enviada no formato HTML para deixar a apresentação dos dados do evento na linha do tempo mais organizados.<br><i>**É opcional o envio com as tags HTML.**</i> | 
 | `pessoa` | `object` | Sim | Vincule o contato ao evento. <hr>*Veja abaixo um exemplo do formato para envio.*<br>`#!json { "codigo": "1" }` (O mesmo código enviado no cadastro do contato) ou `#!json { "id": 1 }` (O id retornado no cadastro do contato.) | 
-| `pessoasSecundarias` | `array` | Não | Vincule um ou mais contatos secundários à um registro de processo. <hr>*Veja abaixo um exemplo do formato para envio.*<br>`#!json [{ "codigo": "1" }]` (O mesmo código enviado no cadastro do contato). | 
+| `pessoasSecundarias` | `array` | Não | Vincule um ou mais contatos secundários à um registro de processo, utilizando o atributo `tipo` para informar o [tipo do contato](/api_crm/metodosdelistagem/#listar-tipos-do-contato). <hr>*Veja abaixo um exemplo do formato para envio.*<br>`#!json [{ "codigo": "1", "tipo": "1" }]` (O mesmo código enviado no cadastro do contato). | 
 | `codOferta` | `string` | Não | Código de identificação da oferta do curso.<br>**O código da oferta do curso e o código do curso são obrigatórios para vincular o evento ao um curso no CRM Rubeus.** | 
 | `codCurso` | `string` | Não | Código de identificação do curso. | 
 | `codRegistro` | `string` | Não | Habilita a criação de mais registros por oferta, sempre ‘criando um **novo registro**  independente dos dados, desde que, o código passado seja único. | 
@@ -26,7 +26,7 @@ Método para cadastro de eventos no CRM Rubeus.
 | ↳`codCurso` | `string` | Não | - | 
 | `codLocalOferta` | `string` | Não | Código de identificação do local da oferta. | 
 | `data` | `dateTime` | Não | A data do evento é utilizada para configurar gatilhos de fluxo que são disparados X (tempo) antes da data enviada.<br>Essa data é muito utilizada para atividades como data da prova, entrevista e visitas dos candidatos.<br>**Padrão: YYYY-MM-DD hh:mm:ss** | 
-| `tipoData` | `string` | Não | O tipo da data tem o propósito de diferenciar os eventos com datas um do outro caso seja usado mais de uma atividade. Para a data da atividade funcionar corretamente este campo é necessário. | 
+| `tipoData` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado a `data` no campo acima">Condicional </rb-tooltip> | O tipo da data tem o propósito de diferenciar os eventos com datas um do outro caso seja usado mais de uma atividade. Para a data da atividade funcionar corretamente este campo é necessário. | 
 | `momento` | `dateTime` | Não | Momento no qual o evento ocorreu. Caso não seja informado o sistema irá informar a data e hora atual.<br>**Padrão: YYYY-MM-DD hh:mm:ss** | 
 | `notaEnem` | `float` | Não | A nota do enem é usada para ser vinculada a um registro de processo caso o evento esteja vinculado a um curso. | 
 | `compareceuAtividade` | `integer` | Não | Campo para informar se o contato compareceu à atividade<br>**Padrão: 1 para** `sim` **ou 0 para** `não` | 
@@ -42,25 +42,77 @@ Método para cadastro de eventos no CRM Rubeus.
 
 ??? Exemplos
 
+    === "Envio"
+
+        _JSON_:
+        ``` JSON
+        {
+            "codigo": "evento-1",
+            "tipo": "5",
+            "codTipo": "primeira-etapa",
+            "descricao": "Primeira etapa do processo seletivo",
+            "pessoa": {
+                "codigo": "contato-1",
+                "id": "1"
+            },
+            "pessoasSecundarias": [
+                {
+                    "codigo": "contato-2",
+                    "id": "2",
+                    "tipo": "1"
+                }
+            ],
+            "codOferta": "oferta-1",
+            "codCurso": "curso-1",
+            "codRegistro": "registro-1",
+            "cursosSecundarios": {
+                "codOferta": "oferta-2",
+                "codCurso": "curso-2"
+            },
+            "codLocalOferta": "local-oferta-1",
+            "data": "2021-10-18 18:30:00",
+            "tipoData": "prova",
+            "momento": "2021-09-18 10:45:13",
+            "notaEnem": "706.78",
+            "compareceuAtividade": "0",
+            "formaIngresso": "",
+            "dataVencimento": "2021-10-19 18:30:00",
+            "camposPersonalizados": {
+                "exemplo_compl_proc": "teste",
+                "exemplo-multi_compl_proc": [
+                    "teste",
+                    "exemplo"
+                ]
+            },
+            "dadosOportunidade": {
+                "codOferta": "",
+                "codCurso": "",
+                "codPessoa": ""
+            },
+            "origem": "",
+            "token": ""
+        }
+        ```
+
     === "Resposta"
 
-    _JSON_:
-    ``` JSON
-    {
-        "success": true,
-        "dados": {
-            "id": "14",
-            "descricao": "<p><b style=\"padding-top:10px\">Descri\u00e7\u00e3o: <\/b>EXEMPLO<br><b style=\"padding-top:10px\">Respons\u00e1vel: <\/b>Matheus Amaral<\/p>",
-            "momento": "2019-02-22 11:12:28",
-            "pessoa": "9",
-            "tipo": "1",
-            "tipoNome": "Foi cadastrado",
-            "imagem": null,
-            "origem": "1",
-            "origemNome": "CRM"
+        _JSON_:
+        ``` JSON
+        {
+            "success": true,
+            "dados": {
+                "id": "14",
+                "descricao": "<p><b style=\"padding-top:10px\">Descri\u00e7\u00e3o: <\/b>EXEMPLO<br><b style=\"padding-top:10px\">Respons\u00e1vel: <\/b>Matheus Amaral<\/p>",
+                "momento": "2019-02-22 11:12:28",
+                "pessoa": "9",
+                "tipo": "1",
+                "tipoNome": "Foi cadastrado",
+                "imagem": null,
+                "origem": "1",
+                "origemNome": "CRM"
+            }
         }
-    }
-    ```
+        ```
 
 ## Cadastro de tipos de evento
 

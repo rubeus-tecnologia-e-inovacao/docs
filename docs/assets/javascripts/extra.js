@@ -205,7 +205,7 @@ class Tooltip extends HTMLElement {
     const span = document.createElement('span');
     span.setAttribute('class', 'tooltiptext');
     const text = customElement.getAttribute('text');
-    span.textContent = text;
+    span.innerHTML = text;
     div.appendChild(span);
     motherDiv.appendChild(div);
   
@@ -217,6 +217,10 @@ class Tooltip extends HTMLElement {
         align-items: center;
         flex-direction: row;
         justify-content: flex-start;
+      }
+
+      code {
+        color: lightblue
       }
 
       .tooltip {

@@ -32,8 +32,8 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | `sexo` | `integer` | Não | Para informar o sexo utilize: **1** para Masculino e **2** para Feminino. | 
 | `imagemUrl` | `string` | Não | URL para foto de perfil do contato.<br>**Em alguns casos, o contato pode já estar cadastrado em um sistema e ter uma foto de perfil. Caso esteja disponível para acesso externo, basta informar a URL de acesso.** | 
 | `estadoCidade` | `object` | Não | Deve ser informado um objeto com os dados necessários para vincular o contato a uma [cidade](/api_crm/metodosdelistagem/#listar-cidades).<br>**Se não for encontrada uma cidade com esse nome nessa UF, o contato não será vinculado a uma cidade.** | 
-| **↳** `cidade` | `string` | Não | Nome da cidade | 
-| **↳** `estado` | `string` | Não | Utiliza-se a UF do estado, exemplo: `MG` para Minas Gerais | 
+| **↳** `estadoCidade.cidade` | `string` | Não | Nome da cidade | 
+| **↳** `estadoCidade.estado` | `string` | Não | Utiliza-se a UF do estado, exemplo: `MG` para Minas Gerais | 
 | `canhoto` | `integer` | Não | Campo para informar se o contato é ou não canhoto.<br>**Padrão: 1 para** `sim` **ou 0 para** `não`. | 
 | `profissao` | `string` | Não | Profissão. | 
 | `aluno` | `integer` | Não | Se o contato é ou não aluno.<br>**Padrão: 1 para quando for aluno e 0 para quando não for aluno.** | 
@@ -41,8 +41,8 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | `escolaOrigem` | `string` | Não | Escola de origem do contato | 
 | `anoFormacao` | `string` | Não | Ano de formação do contato.<br>**Padrão: YYYY** | 
 | `deficiencias` | `object` | Não | Usado para informar a(s) deficiência(s) do contato.<hr>**Usar os dados da tabela de** [deficiências](/tabelasauxiliares/#deficiencias). | 
-| **↳** `id` | `integer` | Não | Identificação da deficiência. | 
-| **↳** `tipos` | `array[]` | Não | Usar o método listarDeficiencias para obter o campo `id` para a passagem de parâmetro. | 
+| **↳** `deficiencias.id` | `integer` | Não | Identificação da deficiência. | 
+| **↳** `deficiencias.tipos` | `array[]` | Não | Usar o método listarDeficiencias para obter o campo `id` para a passagem de parâmetro. | 
 | `outrasDeficiencias` | `string` | Não | Campo destinado à descrição da deficiência do contato se ela não existir nas opções pré-definidas. | 
 | `estadoCivil` | `integer` | Não | Utilizar os dados da tabela [estado civil](/tabelasauxiliares/#estado-civil). | 
 | `cor` | `integer` | Não | Utilizar os dados da tabela [cor](/tabelasauxiliares/#cor). | 
@@ -50,16 +50,16 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | `tags` | `array[]` | Não | Utilizado para enviar as tags do contato. | 
 | `tagsRemovidas` | `array[]` | Não | Utilizado para remover as tags do contato. | 
 | `evento` | `object` | Não | Utilizado para criar um evento ao realizar o cadastro do contato. | 
-| **↳** `tipo` | `integer` | Não | Id do tipo de evento. | 
-| **↳** `codTipo` | `string` | Não | código do tipo de evento. | 
-| **↳** `camposPersonalizados` | `object` | Não | Usado para atribuir algum campo específico de evento que não está presente no escopo da API.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json camposPersonalizados : { coluna: "valor" }`<hr>Os nomes das colunas dos campos personalizados são informados no método [Instituicao/campoPersonalizado](/api_crm/campopersonalizados/#listar-campos-personalizados). | 
-| **↳** `descricao` | `string` | Não | Texto HTML personalizado para agregar informações na exibição do evento. | 
-| **↳** `codOferta` | `string` | Não | Para vincular o evento a uma oferta de curso é preciso informar este campo junto com o `codCurso`  correspondente. | 
-| **↳** `codCurso` | `string` | Não | Para vincular o evento a uma oferta de curso, é preciso informar este campo junto com o codOferta correspondente. | 
+| **↳** `evento.tipo` | `integer` | Não | Id do tipo de evento. | 
+| **↳** `evento.codTipo` | `string` | Não | código do tipo de evento. | 
+| **↳** `evento.camposPersonalizados` | `object` | Não | Usado para atribuir algum campo específico de evento que não está presente no escopo da API.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json camposPersonalizados : { coluna: "valor" }`<hr>Os nomes das colunas dos campos personalizados são informados no método [Instituicao/campoPersonalizado](/api_crm/campopersonalizados/#listar-campos-personalizados). | 
+| **↳** `evento.descricao` | `string` | Não | Texto HTML personalizado para agregar informações na exibição do evento. | 
+| **↳** `evento.codOferta` | `string` | Não | Para vincular o evento a uma oferta de curso é preciso informar este campo junto com o `codCurso`  correspondente. | 
+| **↳** `evento.codCurso` | `string` | Não | Para vincular o evento a uma oferta de curso, é preciso informar este campo junto com o codOferta correspondente. | 
 | `camposPersonalizados` | `object` | Não | Usado para atribuir algum campo específico que não está presente no escopo da API.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json camposPersonalizados : { coluna: "valor" }`<hr>Os nomes das colunas dos campos personalizados são informados no método [Instituicao/campoPersonalizado](/api_crm/campopersonalizados/#listar-campos-personalizados), e o valor poderá ser uma string normal ou um array de strings caso o campo seja multi valorado. | 
 | `baseLegal` | `integer` | <rb-tooltip text="Obrigatório somente com a LGPD ativa">Condicional </rb-tooltip> | Usado para atribuir uma [base legal](/api_crm/metodosdelistagem/#listar-bases-legais) ao contato. | 
 | `assinaturas` | `array[] of objects` | Não | Utilizado para atribuir as [assinaturas](/api_crm/metodosdelistagem/#listar-assinaturas-ativas) para o contato. | 
-| **↳** `id` | `integer` |  | Identificação da assinatura. | 
+| **↳** `assinaturas.id` | `integer` |  | Identificação da assinatura. | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

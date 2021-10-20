@@ -21,12 +21,12 @@ Método para cadastro de eventos no CRM Rubeus.
 | `codOferta` | `string` | Não | Código de identificação da oferta do curso.<br>**O código da oferta do curso e o código do curso são obrigatórios para vincular o evento ao um curso no CRM Rubeus.** | 
 | `codCurso` | `string` | Não | Código de identificação do curso. | 
 | `codRegistro` | `string` | Não | Habilita a criação de mais registros por oferta, sempre ‘criando um **novo registro**  independente dos dados, desde que, o código passado seja único. | 
-| `cursosSecundarios` | `array[]` | Não | O campo serve para definir os cursos secundários do registro de processo. | 
-| ↳`codOferta` | `string` | Não | - | 
-| ↳`codCurso` | `string` | Não | - | 
+| `cursosSecundarios` | `array[] of objects` | Não | O campo serve para definir os cursos secundários do registro de processo. | 
+| **↳** `cursosSecundarios.codOferta` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado o atributo `codCurso` no objeto">Condicional </rb-tooltip> | Informação obrigatória caso seja enviado o cursosSecundarios<br>`#!json [{"codOferta": "oferta-1"}]` | 
+| **↳** `cursosSecundarios.codCurso` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado o atributo `codOferta` no objeto">Condicional </rb-tooltip> | Informação obrigatória caso seja enviado o cursosSecundarios<br>`#!json [{"codCurso": "curso-1"}]` | 
 | `codLocalOferta` | `string` | Não | Código de identificação do local da oferta. | 
 | `data` | `dateTime` | Não | A data do evento é utilizada para configurar gatilhos de fluxo que são disparados X (tempo) antes da data enviada.<br>Essa data é muito utilizada para atividades como data da prova, entrevista e visitas dos candidatos.<br>**Padrão: YYYY-MM-DD hh:mm:ss** | 
-| `tipoData` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado a `data` no campo acima">Condicional </rb-tooltip> | O tipo da data tem o propósito de diferenciar os eventos com datas um do outro caso seja usado mais de uma atividade. Para a data da atividade funcionar corretamente este campo é necessário. | 
+| `tipoData` | `string` | <rb-tooltip text="Torna-se obrigatório caso seja informado a `data` no campo acima">Condicional </rb-tooltip> | O tipo da data tem o propósito de diferenciar os eventos com datas um do outro caso seja usado mais de uma atividade. Para a data da atividade funcionar corretamente este campo é necessário. | 
 | `momento` | `dateTime` | Não | Momento no qual o evento ocorreu. Caso não seja informado o sistema irá informar a data e hora atual.<br>**Padrão: YYYY-MM-DD hh:mm:ss** | 
 | `notaEnem` | `float` | Não | A nota do enem é usada para ser vinculada a um registro de processo caso o evento esteja vinculado a um curso. | 
 | `compareceuAtividade` | `integer` | Não | Campo para informar se o contato compareceu à atividade<br>**Padrão: 1 para** `sim` **ou 0 para** `não` | 
@@ -34,9 +34,9 @@ Método para cadastro de eventos no CRM Rubeus.
 | `dataVencimento` | `dateTime` | Não | Data de vencimento da atividade que será criada caso seja configurado no fluxo de automação. | 
 | `camposPersonalizados` | `object` | Não | Usado para atribuir algum campo específico que não está presente no escopo da API.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json camposPersonalizados : { coluna: "valor" }`<hr>Os nomes das colunas dos campos personalizados são informados no método [cadastro de campo personalizado](/api_crm/campopersonalizados/#listar-campos-personalizados), o valor poderá ser uma string normal ou um array de strings caso o campo seja multi valorado. | 
 | `dadosOportunidade` | `object` | Não | Serve para poder enviar os dados do registro de processo caso queira alterá-la. | 
-| **↳** `codOferta` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
-| **↳** `codCurso` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
-| **↳** `codPessoa` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
+| **↳** `dadosOportunidade.codOferta` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
+| **↳** `dadosOportunidade.codCurso` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
+| **↳** `dadosOportunidade.codPessoa` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
@@ -65,10 +65,14 @@ Método para cadastro de eventos no CRM Rubeus.
             "codOferta": "oferta-1",
             "codCurso": "curso-1",
             "codRegistro": "registro-1",
-            "cursosSecundarios": {
-                "codOferta": "oferta-2",
-                "codCurso": "curso-2"
-            },
+            "cursosSecundarios": [
+                {
+                    "codOferta": "oferta-2"
+                },
+                {
+                    "codCurso": "curso-3"
+                }
+            ],
             "codLocalOferta": "local-oferta-1",
             "data": "2021-10-18 18:30:00",
             "tipoData": "prova",
@@ -85,12 +89,12 @@ Método para cadastro de eventos no CRM Rubeus.
                 ]
             },
             "dadosOportunidade": {
-                "codOferta": "",
-                "codCurso": "",
-                "codPessoa": ""
+                "codOferta": "oferta-1",
+                "codCurso": "curso-1",
+                "codPessoa": "pessoa-1"
             },
-            "origem": "",
-            "token": ""
+            "origem": "1",
+            "token": "token"
         }
         ```
 

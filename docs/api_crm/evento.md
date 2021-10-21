@@ -1,6 +1,22 @@
 # Evento
 
-Os eventos são exibidos na linha do tempo do contato e também são utilizados como gatilhos na persona.
+Os eventos são exibidos na linha do tempo do contato (*imagem abaixo*) e também podem ser utilizados como gatilhos no fluxo de automação.
+
+<div id="modalImage" class="modal">
+    <span class="close">
+    <img src="/assets/images/baseline_clear_white_48dp.png" style="width: 32px">
+    </span>
+    <img class="modal-content" id="image">
+    <div id="caption"></div>
+</div>
+<img class="image" 
+     id="tela-eventos" 
+     alt="Tela do CRM Rubeus para acessar o canal e token da API" 
+     title="Tela do CRM Rubeus para acessar o canal e token da API" 
+     src="/assets/images/api_crm/tela-eventos.png" 
+     onclick="modalImg('tela-eventos')">
+
+Cada evento deve possuir um [tipo de evento](#listar-tipos-de-eventos) e um [contato](/api_crm/contato/#cadastro-de-contato) para serem enviados ao Rubeus, e caso o tipo de evento esteja devidamente configurado ou utilizado em um fluxo de automação, como gatilho, este evento irá criar um registro de processo.
 
 ## Cadastro de eventos
 
@@ -20,7 +36,7 @@ Método para cadastro de eventos no CRM Rubeus.
 | `pessoasSecundarias` | `array` | Não | Vincule um ou mais contatos secundários à um registro de processo, utilizando o atributo `tipo` para informar o [tipo do contato](/api_crm/metodosdelistagem/#listar-tipos-do-contato). <hr>*Veja abaixo um exemplo do formato para envio.*<br>`#!json [{ "codigo": "1", "tipo": "1" }]` (O mesmo código enviado no cadastro do contato). | 
 | `codOferta` | `string` | Não | Código de identificação da oferta do curso.<br>**O código da oferta do curso e o código do curso são obrigatórios para vincular o evento ao um curso no CRM Rubeus.** | 
 | `codCurso` | `string` | Não | Código de identificação do curso. | 
-| `codRegistro` | `string` | Não | Habilita a criação de mais registros por oferta, sempre ‘criando um **novo registro**  independente dos dados, desde que, o código passado seja único. | 
+| `codRegistro` | `string` | Não | Habilita a criação de mais registros por oferta, sempre criando um **novo registro** independente dos dados, desde que, o código passado seja único. | 
 | `cursosSecundarios` | `array[] of objects` | Não | O campo serve para definir os cursos secundários do registro de processo. | 
 | **↳** `cursosSecundarios.codOferta` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado o atributo `codCurso` no objeto">Condicional </rb-tooltip> | Informação obrigatória caso seja enviado o cursosSecundarios<br>`#!json [{"codOferta": "oferta-1"}]` | 
 | **↳** `cursosSecundarios.codCurso` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado o atributo `codOferta` no objeto">Condicional </rb-tooltip> | Informação obrigatória caso seja enviado o cursosSecundarios<br>`#!json [{"codCurso": "curso-1"}]` | 

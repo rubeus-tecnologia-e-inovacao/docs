@@ -6,7 +6,7 @@ function modalImg(imgId) {
   var captionText = document.getElementById("caption");
 
 
-  modal.style.display = "block";
+  modal.classList.add('modal-active');
   modalImg.src = img.src;
   captionText.innerHTML = img.alt;
 
@@ -19,8 +19,7 @@ function modalImg(imgId) {
 
     setTimeout(
       function () {
-        modal.style.display = 'none';
-        modal.className = 'modal';
+        modal.classList.remove('modal-active');
       }, 580);
   }
 

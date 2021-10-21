@@ -6,7 +6,7 @@ function modalImg(imgId) {
   var captionText = document.getElementById("caption");
 
 
-  modal.style.display = "block";
+  modal.classList.add('modal-active');
   modalImg.src = img.src;
   captionText.innerHTML = img.alt;
 
@@ -19,8 +19,7 @@ function modalImg(imgId) {
 
     setTimeout(
       function () {
-        modal.style.display = 'none';
-        modal.className = 'modal';
+        modal.classList.remove('modal-active');
       }, 580);
   }
 
@@ -205,7 +204,7 @@ class Tooltip extends HTMLElement {
     const span = document.createElement('span');
     span.setAttribute('class', 'tooltiptext');
     const text = customElement.getAttribute('text');
-    span.textContent = text;
+    span.innerHTML = text;
     div.appendChild(span);
     motherDiv.appendChild(div);
   
@@ -214,9 +213,13 @@ class Tooltip extends HTMLElement {
     style.textContent = /*css*/
       `div.div-tooltip {
         display: flex;
-        align-items: stretch;
+        align-items: center;
         flex-direction: row;
         justify-content: flex-start;
+      }
+
+      code {
+        color: lightblue
       }
 
       .tooltip {

@@ -17,7 +17,7 @@ Essa configuração permite consumir dados disponibilizados em um *endpoint* no 
 **URL base:** cole a URL que será utilizada como base de autenticação para o *endpoint* que que irá disponibilizar os dados;
 **Autenticação:** escolha qual forma de autenticação será utilizada para a disponibilização dos dados, você pode escolher entre *basic*, *Bearer* ou nenhuma;
 **Tipos de eventos:** será possível definir se os dados enviados serão com a estrutura de contato ou evento;
-**URL por tipo de evento:** defina qual o endereço completo para ter acesso aos dados que irão popular a informação referênte ao tipo de evento configurado;
+**URL por tipo de evento:** defina qual o endereço completo para ter acesso aos dados que irão popular a informação referente ao tipo de evento configurado;
 **Validar <i>endpoint</i> por tipo de evento:** você pode validar se a integração com o serviço funcionou. Para isso, clique no botão no menu de configurações e selecione a opção **Validar**.
 
 !!! note "Nota"

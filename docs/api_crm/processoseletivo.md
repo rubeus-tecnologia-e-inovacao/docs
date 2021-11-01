@@ -15,7 +15,7 @@ Os processos seletivos são entidades de controle que podem ser vinculadas a ofe
 | `nome` | `string` | Sim | Nome do processo seletivo. Limite de caracteres: 255. |
 | `descricao` | `string` | Não | Descrição do processo seletivo. Limite de caracteres: 255. |
 | `inicioInscricao` | `date` | Não | Data de início das inscrições.<br>**Padrão: YYYY-MM-DD** |
-| `terminoinscricao` | `date` | Não | Data de término das inscrições.<br>**Padrão: YYYY-MM-DD** |
+| `terminoInscricao` | `date` | Não | Data de término das inscrições.<br>**Padrão: YYYY-MM-DD** |
 | `inicioMatricula` | `date` | Não | Data de início das matrículas.<br>**Padrão: YYYY-MM-DD** |
 | `terminoMatricula` | `date` | Não | Data de término das matrículas.<br>**Padrão: YYYY-MM-DD** |
 | `codUnidade` | `integer` | Sim | Código único para identificação da unidade que está ofertando o curso atual.<br><br>[Listar Unidades](/api_crm/unidade/#listar-unidades)<br>**Enviar o campo** `codigo` |

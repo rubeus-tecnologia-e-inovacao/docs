@@ -40,7 +40,7 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | `exaluno` | `integer` | Não | Se o contato é ex-aluno ou não.<br>**Padrão: 1 se já foi aluno e 0 se nunca foi aluno.** | 
 | `escolaOrigem` | `string` | Não | Escola de origem do contato | 
 | `anoFormacao` | `string` | Não | Ano de formação do contato.<br>**Padrão: YYYY** | 
-| `deficiencias` | `object` | Não | Usado para informar a(s) deficiência(s) do contato.<hr>**Usar os dados da tabela de** [deficiências](/tabelasauxiliares/#deficiencias). | 
+| `deficiencias` | `array[]` | Não | Usado para informar a(s) deficiência(s) do contato.<hr>**Usar os dados da tabela de** [deficiências](/tabelasauxiliares/#deficiencias). | 
 | **↳** `deficiencias.id` | `integer` | Não | Identificação da deficiência. | 
 | **↳** `deficiencias.tipos` | `array[]` | Não | Usar o método listarDeficiencias para obter o campo `id` para a passagem de parâmetro. | 
 | `outrasDeficiencias` | `string` | Não | Campo destinado à descrição da deficiência do contato se ela não existir nas opções pré-definidas. | 
@@ -367,6 +367,7 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
                     "processoNome": "Captação",
                     "localOferta": "1",
                     "localOfertaNome": "Local de oferta",
+                    "codigoProcessoSeletivo": "cod-processo-seletivo",
                     "processoSeletivo": "1",
                     "processoSeletivoNome": "Processo",
                     "modalidadeNome": "EaD",

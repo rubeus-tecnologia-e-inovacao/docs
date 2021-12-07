@@ -60,6 +60,7 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | `baseLegal` | `integer` | <rb-tooltip text="Obrigatório somente com a LGPD ativa">Condicional </rb-tooltip> | Usado para atribuir uma [base legal](/api_crm/metodosdelistagem/#listar-bases-legais) ao contato. | 
 | `assinaturas` | `array[] of objects` | Não | Utilizado para atribuir as [assinaturas](/api_crm/metodosdelistagem/#listar-assinaturas-ativas) para o contato. | 
 | **↳** `assinaturas.id` | `integer` |  | Identificação da assinatura. | 
+| **↳** `assinaturas.status` | `integer` |  | Informa se a assinatura foi aceita ou recusada, `1` e `2` respectivamente. | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

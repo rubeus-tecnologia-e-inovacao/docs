@@ -46,26 +46,26 @@ Atualmente, possuímos os seguintes sources mapeados, recomendamos a utilizaçã
 
 | 0-E | E-R | R-Y | Y-S |
 | --- | --- | --- | --- |
-| 360.cn | Eniro | Rambler | Youtube |
-| AOL | Facebook | Search-results | go.mail.ru |
-| Alice | Facebook Messenger | Sesam | goo.ne |
-| Alltheweb | Globo | Seznam | haosou.com |
-| Altavista | Gmail | So.com | search.smt.docomo |
-| Ask | Google | Sogou | - |
+| 360.cn | Eniro | Rambler | Yandex |
+| AOL | Facebook | Search-results | Youtube |
+| Alice | Facebook Messenger | Sesam | go.mail.ru |
+| Alltheweb | Globo | Seznam | goo.ne |
+| Altavista | Gmail | So.com | haosou.com |
+| Ask | Google | Sogou | search.smt.docomo |
 | Auone | Incredimail | Startsiden | - |
 | Avg | Instagram | Szukacz | - |
 | Babylon | Kvasir | Telegram | - |
 | Baidu | LinkedIn | Terra | - |
-| Biglobe | Lycos | Tut.by | - |
-| Bing | MSN | Twitter | - |
-| CNN | Mamma | Ukr | - |
-| Centrum.cz | Mynet | Virgilio | - |
-| Comcast | Najdi | Voila | - |
-| Conduit | Naver | WhatsApp | - |
-| Daum | Netscape | Wirtulana Polska | - |
-| DuckDuckGo | ONET | Yahoo | - |
-| Ecosia | Ozu | Yam | - |
-| Ekolay | Rakuten | Yandex | - |
+| Biglobe | Lycos | TikTok | - |
+| Bing | MSN | Tut.by | - |
+| CNN | Mamma | Twitter | - |
+| Centrum.cz | Mynet | Ukr | - |
+| Comcast | Najdi | Virgilio | - |
+| Conduit | Naver | Voila | - |
+| Daum | Netscape | WhatsApp | - |
+| DuckDuckGo | ONET | Wirtulana Polska | - |
+| Ecosia | Ozu | Yahoo | - |
+| Ekolay | Rakuten | Yam | - |
 
 ### Parâmetros campaign, terms e content
 

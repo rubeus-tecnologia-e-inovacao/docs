@@ -29,7 +29,6 @@ Método para cadastro de eventos no CRM Rubeus.
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
 | `codigo` | `string` | Não | Chave única de identificação do evento enviado. <br>**Caso queira editar um evento criado basta informar o código do evento criado.** | 
-| `novoCodRegistro` | `string` | Não | O código passado neste campo atualizará o registro na próxima passagem pelo fluxo de automação | 
 | `tipo` | `integer` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um `codTipo`">Condicional </rb-tooltip> | Código de identificação do tipo do evento. <br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `id`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
 | `codTipo` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um `tipo`">Condicional </rb-tooltip> | Código externo enviado no cadastro do tipo de evento.<br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `codigo`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
 | `descricao` | `string` | Não | A Descrição pode ser enviada no formato HTML para deixar a apresentação dos dados do evento na linha do tempo mais organizados.<br><i>**É opcional o envio com as tags HTML.**</i> | 
@@ -38,6 +37,7 @@ Método para cadastro de eventos no CRM Rubeus.
 | `codOferta` | `string` | Não | Código de identificação da oferta do curso.<br>**O código da oferta do curso e o código do curso são obrigatórios para vincular o evento ao um curso no CRM Rubeus.** | 
 | `codCurso` | `string` | Não | Código de identificação do curso. | 
 | `codRegistro` | `string` | Não | Habilita a criação de mais registros por oferta, sempre criando um **novo registro** independente dos dados, desde que, o código passado seja único. | 
+| `novoCodRegistro` | `string` | Não | O código passado neste campo atualizará o registro na próxima passagem pelo fluxo de automação | 
 | `cursosSecundarios` | `array[] of objects` | Não | O campo serve para definir os cursos secundários do registro de processo. | 
 | **↳** `cursosSecundarios.codOferta` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado o atributo `codCurso` no objeto">Condicional </rb-tooltip> | Informação obrigatória caso seja enviado o cursosSecundarios<br>`#!json [{"codOferta": "oferta-1"}]` | 
 | **↳** `cursosSecundarios.codCurso` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado o atributo `codOferta` no objeto">Condicional </rb-tooltip> | Informação obrigatória caso seja enviado o cursosSecundarios<br>`#!json [{"codCurso": "curso-1"}]` | 

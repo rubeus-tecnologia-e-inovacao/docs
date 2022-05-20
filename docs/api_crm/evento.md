@@ -29,6 +29,7 @@ Método para cadastro de eventos no CRM Rubeus.
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
 | `codigo` | `string` | Não | Chave única de identificação do evento enviado. <br>**Caso queira editar um evento criado basta informar o código do evento criado.** | 
+| `novoCodRegistro` | `string` | Não | O código passado neste campo atualizará o registro na próxima passagem pelo fluxo de automação | 
 | `tipo` | `integer` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um `codTipo`">Condicional </rb-tooltip> | Código de identificação do tipo do evento. <br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `id`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
 | `codTipo` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um `tipo`">Condicional </rb-tooltip> | Código externo enviado no cadastro do tipo de evento.<br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `codigo`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
 | `descricao` | `string` | Não | A Descrição pode ser enviada no formato HTML para deixar a apresentação dos dados do evento na linha do tempo mais organizados.<br><i>**É opcional o envio com as tags HTML.**</i> | 

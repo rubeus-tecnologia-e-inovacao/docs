@@ -24,5 +24,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: MkDocs Action
-        uses: Tiryoh/actions-mkdocs@v0.15.0
+      - name: Build
+        uses: Tiryoh/actions-mkdocs@v0
+        with:
+          mkdocs_version: 'latest' # option
+          #mkdocs_version: '1.1' # option
+          requirements: 'requirements.txt' # option
+          configfile: 'mkdocs.yml' # option
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

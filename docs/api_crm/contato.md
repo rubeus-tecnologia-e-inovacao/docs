@@ -131,9 +131,11 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
                 ]
             },
             "baseLegal": "3",
-            "assinaturas": {
-                "id": "1"
-            },
+            "assinaturas": [
+                {
+                    "id": "1"
+                }
+            ],
             "origem": "1",
             "token": "token"
         }

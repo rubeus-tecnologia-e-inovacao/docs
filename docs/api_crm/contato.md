@@ -17,11 +17,11 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | --- | --- | --- | --- |
 | `codigo` | `string` | Não | Código de identificação externa. | 
 | `id` | `integer` | Não | Código de identificação do contato no CRM | 
-| `nome` | `string` | Sim | Nome. | 
+| `nome` | `string` | Não | Nome. | 
 | `nomeSocial` | `string` | Não | Nome Social. | 
 | `dataNascimento` | `date` | Não | Data de Nascimento.<br>**Padrão: YYYY-MM-DD** | 
-| `telefonePrincipal` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um email">Condicional </rb-tooltip> | Telefone principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
-| `emailPrincipal` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um telefone">Condicional </rb-tooltip> | E-mail principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
+| `telefonePrincipal` | `string` | Não | Telefone principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
+| `emailPrincipal` | `string` | Não | E-mail principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
 | `telefone` | `array[]` | Não | É possível enviar uma lista de telefones secundários para o cadastro de contato. | 
 | `email` | `array[]` | Não | É possível enviar uma lista de emails secundários para o cadastro de contato. | 
 | `cpf` | `string` | Não | CPF do contato.<br>**Padrão: xxxxxxxxxxx** | 

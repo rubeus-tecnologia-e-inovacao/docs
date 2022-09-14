@@ -356,6 +356,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dados-do-registro" class="md-nav__link">
+    Dados do registro
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -645,6 +652,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dados-do-registro" class="md-nav__link">
+    Dados do registro
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -798,6 +812,54 @@
 <details class="exemplos">
 <summary>Exemplos</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Resposta</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p><em>JSON</em>:
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</details>
+<h2 id="dados-do-registro">Dados do registro</h2>
+<p>Este método retorna os dados de um registro de processo passando a referência do id.</p>
+<div class="admonition done">
+<p><strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Registro/dados</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Atributos</th>
+<th>Tipo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Sim</td>
+<td>ID do registro de processo.</td>
+</tr>
+<tr>
+<td><code>origem</code></td>
+<td><code>integer</code></td>
+<td>Sim</td>
+<td>Código de identificação do <a href="/api_crm/apresentacao/#autenticacao">canal</a>.</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td><code>string</code></td>
+<td>Sim</td>
+<td>Chave de acesso única referente ao canal.</td>
+</tr>
+</tbody>
+</table>
+<details class="exemplos">
+<summary>Exemplos</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Resposta</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>

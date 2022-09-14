@@ -61,3 +61,28 @@ Este método tem a função de alterar o código de um registro de processo pass
         "success": true
     }
     ```
+
+## Dados do registro
+
+Este método retorna os dados de um registro de processo passando a referência do id.
+
+!!! done ""
+    
+    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Registro/dados
+
+| Atributos | Tipo | Obrigatoriedade | Descrição | 
+| --- | --- | --- | --- |
+| `id` | `string` | Sim | ID do registro de processo. |  
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
+
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true
+    }
+    ```

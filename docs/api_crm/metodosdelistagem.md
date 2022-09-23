@@ -35,6 +35,34 @@ Método utilizado para listar os níveis de ensino para posteriormente utilizar 
 
 ---
 
+## Listar modalidades
+
+!!! done ""
+
+    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Modalidade/listarModalidades
+
+Método utilizado para listar as modalidades para posteriormente utilizar como parâmetro em outro método.
+
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": [
+            {
+                "id": "1",
+                "padrao": "1",
+                "titulo": "Presencial"
+            }
+        ]
+    }
+    ```
+
+---
+
 ## Listar tipos do contato
 
 !!! done ""

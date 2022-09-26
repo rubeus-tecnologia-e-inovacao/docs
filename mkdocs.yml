@@ -52,6 +52,8 @@ nav:
     - Registro de processo: api_crm/registrodeprocesso.md
     - Unidade: api_crm/unidade.md
     - Métodos de listagem: api_crm/metodosdelistagem.md
+    - Níveis de ensino: api_crm/niveisensino.md
+    - Modalidade: api_crm/modalidades.md
     # - Usuários: api_crm/usuarios.md
   - Webhook: webhook.md
   - Endpoint: endpoint.md

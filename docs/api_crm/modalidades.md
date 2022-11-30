@@ -10,7 +10,7 @@
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
 | `id` | `integer` | Não | Código de identificação interna. |
-| `codigo` | `string` | Não | Código de identificação externa. | 
+| `codigo` | `string` | Não | Código de identificação externa. Caso seja enviado, se existir alguma modalidade com este código e a mesma origem, a modalidade será atualizada| 
 | `titulo` | `string` | Sim | Título para a modalidade. Limite de caracteres: 255. | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
@@ -22,7 +22,10 @@
     _JSON_:
     ``` JSON
     {
-        "success": true
+        "success": true,
+        "dados": {
+            "id": 1
+        }
     }
     ```
 

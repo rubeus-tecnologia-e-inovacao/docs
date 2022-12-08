@@ -116,7 +116,7 @@ Após realizar o cadastro do curso, você pode cadastrar suas ofertas. É a ofer
 
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
-| `codCurso` | `id` | Não | Caso o id da oferta de curso seja informada será retornada apenas a oferta de curso desejado. | 
+| `id` | `id` | Não | Caso o id da oferta de curso seja informada será retornada apenas a oferta de curso desejado. | 
 | `codOferta` | `string` | Não | Caso o codOferta seja informado juntamento com o codCurso será retornado apenas a oferta desejada. | 
 | `codCurso` | `string` | Não | Caso o codCurso seja informado juntamento com a codOferta será retornado apenas a oferta desejada. | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 

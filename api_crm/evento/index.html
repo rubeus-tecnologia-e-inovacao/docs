@@ -413,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../niveisensino.md" class="md-nav__link">
+      <a href="../niveisensino/" class="md-nav__link">
         Níveis de ensino
       </a>
     </li>
@@ -786,13 +786,25 @@
 <td><code>codOferta</code></td>
 <td><code>string</code></td>
 <td>Não</td>
-<td>Código de identificação da oferta do curso.<br><strong>O código da oferta do curso e o código do curso são obrigatórios para vincular o evento ao um curso no CRM Rubeus.</strong></td>
+<td>Código de identificação da oferta do curso.<br><strong>O código da oferta do curso é obrigatório caso se deseje vincular um curso em um registro no CRM Rubeus, caso o <code>oferta</code> não seja enviado.<br>O canal (origem) do evento deve ser o mesmo da oferta e do curso enviado.</strong></td>
 </tr>
 <tr>
 <td><code>codCurso</code></td>
 <td><code>string</code></td>
 <td>Não</td>
 <td>Código de identificação do curso.</td>
+</tr>
+<tr>
+<td><code>oferta</code></td>
+<td><code>string</code></td>
+<td>Não</td>
+<td>Identificação da oferta do curso.<br><strong>O id da oferta do curso é obrigatório caso se deseje vincular um curso em um registro no CRM Rubeus, caso o <code>codOferta</code> não seja enviado.<br>No cenário onde é enviado o id da oferta, o canal (origem) do evento, não precisa ser necessariamente o mesmo da oferta e do curso.</strong></td>
+</tr>
+<tr>
+<td><code>curso</code></td>
+<td><code>string</code></td>
+<td>Não</td>
+<td>Identificação do curso.</td>
 </tr>
 <tr>
 <td><code>codRegistro</code></td>
@@ -940,6 +952,8 @@
 <span class="w">    </span><span class="p">],</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;codOferta&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;oferta-1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;codCurso&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;curso-1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;oferta&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;curso&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;codRegistro&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;registro-1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;cursosSecundarios&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>

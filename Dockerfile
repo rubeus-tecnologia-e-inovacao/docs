@@ -1,5 +1,4 @@
-
-# Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -19,11 +18,39 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-# Direct dependencies
-jinja2==3.0.3
-markdown==3.3.6
-mkdocs==1.3.0
-mkdocs-material==8.3.4
-mkdocs-material-extensions==1.0.3
-pygments==2.12.0
-pymdown-extensions==9.5
+FROM python:3.11.0-alpine3.17
+
+# Build-time flags
+ARG WITH_PLUGINS=true
+
+# Environment variables
+ENV PACKAGES=/usr/local/lib/python3.11/site-packages
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Set build directory
+WORKDIR /tmp
+
+# Copy files necessary for build
+COPY requirements.txt requirements.txt
+
+# Perform build and cleanup artifacts and caches
+RUN apk upgrade --update-cache -a
+RUN apk add --no-cache cairo freetype-dev git git-fast-import jpeg-dev openssh zlib-dev
+RUN apk add --no-cache --virtual .build gcc libffi-dev musl-dev
+RUN pip install --no-cache-dir -r requirements.txt
+RUN apk del .build
+RUN rm -rf /tmp/* /root/.cache
+
+# Trust directory, required for git >= 2.35.2
+RUN git config --global --add safe.directory /docs &&\
+    git config --global --add safe.directory /site
+
+# Set working directory
+WORKDIR /docs
+
+# Expose MkDocs development server port
+EXPOSE 8000
+
+# Start development server by default
+ENTRYPOINT ["mkdocs"]
+CMD ["serve", "--dev-addr=0.0.0.0:8000"]

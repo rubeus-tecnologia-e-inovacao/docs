@@ -389,6 +389,8 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
                     "objecaoNome": "Objecao",
                     "dataProva": "2020-07-21 15:16:00",
                     "momento": "2020-05-29 13:05:05",
+                    "nivelEnsino": "4",
+                    "nivelEnsinoNome": "Graduação",
                     "minutosEtapa": "5",
                     "agendamento": "3",
                     "agendamentoNome": "Sem Agendar",

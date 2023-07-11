@@ -32,7 +32,7 @@ Método para cadastro de eventos no CRM Rubeus.
 | `tipo` | `integer` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um `codTipo`">Condicional </rb-tooltip> | Código de identificação do tipo do evento. <br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `id`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
 | `codTipo` | `string` | <rb-tooltip text="Torna-se obrigatório caso não seja informado um `tipo`">Condicional </rb-tooltip> | Código externo enviado no cadastro do tipo de evento.<br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `codigo`<br><br>[Cadastrar Tipos de Eventos](#cadastro-de-tipos-de-evento) | 
 | `descricao` | `string` | Não | A Descrição pode ser enviada no formato HTML para deixar a apresentação dos dados do evento na linha do tempo mais organizados.<br><i>**É opcional o envio com as tags HTML.**</i> | 
-| `pessoa` | `object` | Sim | Vincule o contato ao evento. <hr>*Veja abaixo um exemplo do formato para envio.*<br>`#!json { "codigo": "1" }` (O mesmo código enviado no cadastro do contato) ou `#!json { "id": 1 }` (O id retornado no cadastro do contato.) | 
+| `pessoa` | `object` | Sim | Vincule o contato ao evento. <hr>*Veja abaixo um exemplo do formato para envio.*<br>`#!json { "codigo": "1" }` (O mesmo código enviado no cadastro do contato, é necessário que a origem do contato na base e a origem do evento sejam o mesmo) ou `#!json { "id": 1 }` (O id retornado no cadastro do contato.) | 
 | `pessoasSecundarias` | `array` | Não | Vincule um ou mais contatos relacionados à um registro de processo, utilizando o atributo `tipo` para informar o [tipo do contato](/api_crm/metodosdelistagem/#listar-tipos-do-contato). <hr>*Veja abaixo um exemplo do formato para envio.*<br>`#!json [{ "codigo": "1", "tipo": "1" }]` (O mesmo código enviado no cadastro do contato). | 
 | `codOferta` | `string` | Não | Código de identificação da oferta do curso.<br>**O código da oferta do curso é obrigatório caso se deseje vincular um curso em um registro no CRM Rubeus, caso o `oferta` não seja enviado.<br>O canal (origem) do evento deve ser o mesmo da oferta e do curso enviado.** | 
 | `codCurso` | `string` | Não | Código de identificação do curso. |
@@ -55,7 +55,8 @@ Método para cadastro de eventos no CRM Rubeus.
 | `dadosOportunidade` | `object` | Não | Serve para poder enviar os dados do registro de processo caso queira alterá-la. | 
 | **↳** `dadosOportunidade.codOferta` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
 | **↳** `dadosOportunidade.codCurso` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
-| **↳** `dadosOportunidade.codPessoa` | `string` | Condicional | Informação obrigatória caso seja enviado o dadosOportunidade | 
+| **↳** `dadosOportunidade.codPessoa` | `string` | Condicional | Informação obrigatória caso não tenha `idPessoa` e seja enviado o dadosOportunidade | 
+| **↳** `dadosOportunidade.idPessoa` | `string` | Condicional | Informação obrigatória caso não tenha `codPessoa` e seja enviado o dadosOportunidade | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

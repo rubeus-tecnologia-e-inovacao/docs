@@ -774,7 +774,7 @@
 <td><code>pessoa</code></td>
 <td><code>object</code></td>
 <td>Sim</td>
-<td>Vincule o contato ao evento. <hr><em>Veja abaixo um exemplo do formato para envio.</em><br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;codigo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code> (O mesmo código enviado no cadastro do contato) ou <code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code> (O id retornado no cadastro do contato.)</td>
+<td>Vincule o contato ao evento. <hr><em>Veja abaixo um exemplo do formato para envio.</em><br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;codigo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code> (O mesmo código enviado no cadastro do contato, é necessário que a origem do contato na base e a origem do evento sejam o mesmo) ou <code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code> (O id retornado no cadastro do contato.)</td>
 </tr>
 <tr>
 <td><code>pessoasSecundarias</code></td>
@@ -912,7 +912,13 @@
 <td><strong>↳</strong> <code>dadosOportunidade.codPessoa</code></td>
 <td><code>string</code></td>
 <td>Condicional</td>
-<td>Informação obrigatória caso seja enviado o dadosOportunidade</td>
+<td>Informação obrigatória caso não tenha <code>idPessoa</code> e seja enviado o dadosOportunidade</td>
+</tr>
+<tr>
+<td><strong>↳</strong> <code>dadosOportunidade.idPessoa</code></td>
+<td><code>string</code></td>
+<td>Condicional</td>
+<td>Informação obrigatória caso não tenha <code>codPessoa</code> e seja enviado o dadosOportunidade</td>
 </tr>
 <tr>
 <td><code>origem</code></td>

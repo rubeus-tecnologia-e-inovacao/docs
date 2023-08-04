@@ -71,76 +71,73 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
          _JSON_:
         ``` JSON
         {
-            "success": true,
-            "dados": {
-                "codigo": "contato-1",
+            "codigo": "contato-1",
+            "id": 1,
+            "nome": "John Dude",
+            "nomeSocial": "Alex",
+            "dataNascimento": "1998-15-03",
+            "telefonePrincipal": "+55 (32) 91234-5678",
+            "emailPrincipal": "johndude@email.com",
+            "telefone": [
+                "+55 (32) 98765-4321"
+            ],
+            "email": [
+                "johndude2@email.com"
+            ],
+            "cpf": "910.108.870-09",
+            "endereco": "Rua exemplo",
+            "cep": "12457-342",
+            "numero": "13",
+            "bairro": "Exemplo",
+            "sexo": 1,
+            "imagemUrl": "https://imagem.com/img/template.png",
+            "estadoCidade": {
+                "cidade": "Muriaé",
+                "estado": "MG"
+            },
+            "canhoto": 0,
+            "profissao": "Tester",
+            "aluno": 0,
+            "exaluno": 0,
+            "escolaOrigem": "Escola Exemplo",
+            "anoFormacao": "2015",
+            "deficiencias": {
                 "id": 1,
-                "nome": "John Dude",
-                "nomeSocial": "Alex",
-                "dataNascimento": "1998-15-03",
-                "telefonePrincipal": "+55 (32) 91234-5678",
-                "emailPrincipal": "johndude@email.com",
-                "telefone": [
-                    "+55 (32) 98765-4321"
-                ],
-                "email": [
-                    "johndude2@email.com"
-                ],
-                "cpf": "910.108.870-09",
-                "endereco": "Rua exemplo",
-                "cep": "12457-342",
-                "numero": "13",
-                "bairro": "Exemplo",
-                "sexo": 1,
-                "imagemUrl": "https://imagem.com/img/template.png",
-                "estadoCidade": {
-                    "cidade": "Muriaé",
-                    "estado": "MG"
-                },
-                "canhoto": 0,
-                "profissao": "Tester",
-                "aluno": 0,
-                "exaluno": 0,
-                "escolaOrigem": "Escola Exemplo",
-                "anoFormacao": "2015",
-                "deficiencias": {
-                    "id": 1,
-                    "tipos": [
-                        1
-                    ]
-                },
-                "outrasDeficiencias": "TDAH",
-                "estadoCivil": 7,
-                "cor": 2,
-                "grauInstrucao": 7,
-                "tags": "exemplo",
-                "tagsRemovidas": "teste",
-                "evento": {
-                    "tipo": "3",
-                    "codTipo": "teste",
-                    "camposPersonalizados": {
-                        "exemplo_compl_proc": "teste"
-                    },
-                    "descricao": "Exemplo",
-                    "codOferta": "oferta-1",
-                    "codCurso": "oferta-2"
-                },
+                "tipos": [
+                    1
+                ]
+            },
+            "outrasDeficiencias": "TDAH",
+            "estadoCivil": 7,
+            "cor": 2,
+            "grauInstrucao": 7,
+            "tags": "exemplo",
+            "tagsRemovidas": "teste",
+            "evento": {
+                "tipo": "3",
+                "codTipo": "teste",
                 "camposPersonalizados": {
-                    "exemplo_compl_cont": "exemplo",
-                    "exemplo_multi_compl_cont": [
-                        "teste",
-                        "exemplo"
-                    ]
+                    "exemplo_compl_proc": "teste"
                 },
-                "baseLegal": "3",
-                "assinaturas": [
-                    {
-                        "id": "1"
-                    }
-                ],
-                "origem": "1",
-                "token": "token"
-            }
+                "descricao": "Exemplo",
+                "codOferta": "oferta-1",
+                "codCurso": "oferta-2"
+            },
+            "camposPersonalizados": {
+                "exemplo_compl_cont": "exemplo",
+                "exemplo_multi_compl_cont": [
+                    "teste",
+                    "exemplo"
+                ]
+            },
+            "baseLegal": "3",
+            "assinaturas": [
+                {
+                    "id": "1"
+                }
+            ],
+            "origem": "1",
+            "token": "token"
         }
         ```
 

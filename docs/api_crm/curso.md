@@ -153,6 +153,7 @@ Após realizar o cadastro do curso, você pode cadastrar suas ofertas. É a ofer
                 "origem": "1",
                 "origemNome": "CRM",
                 "processoSeletivo": "1",
+                "codProcessoSeletivo": "1-1",
                 "processoSeletivoNome": "Nome do processo seletivo"
             }
         ]
@@ -199,6 +200,7 @@ Após realizar o cadastro do curso, você pode cadastrar suas ofertas. É a ofer
             "nivelEnsino": "1",
             "modalidade": "1",
             "processoSeletivo": "1",
+            "codProcessoSeletivo": "1-1",
             "origem": "1",
             "localOferta": [
                 "1"

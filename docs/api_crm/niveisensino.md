@@ -11,7 +11,7 @@
 | --- | --- | --- | --- |
 | `id` | `integer` | Não | Código de identificação interna. |
 | `codigo` | `string` | Não | Código de identificação externa. Caso seja enviado, se existir algum nível de ensino com este código e a mesma origem, o nível será atualizado | 
-| `titulo` | `string` | Sim | Título para nível de ensino. Limite de caracteres: 255. | 
+| `titulo` | `string` | Sim | Título para nível de ensino. Limite de caracteres: 45. | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

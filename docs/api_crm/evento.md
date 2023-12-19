@@ -147,13 +147,15 @@ Os tipos de eventos são utilizados para categorizar os eventos externos enviado
 
 	<strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Evento/cadastroTipoEvento
 
-| Atributos | Tipo | Obrigatoriedade | Descrição | 
-| --- | --- | --- | --- |
-| `codigo` | `string` | Não | Código de identificação externa. | 
-| `titulo` | `string` | Sim | Título para o tipo do evento. Limite de caracteres: 255. | 
-| `fluxo` | `integer` | Não | Campo que identifica se o evento faz parte do fluxo de compra do cliente ou não. Caso faça, ele será respeitado na condição do fluxo que verifica a quanto tempo ele não avança no fluxo.<br><br><i>**1 para Sim, 0 para Não.**</i><br><br>**Padrão: 0.** | 
-| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
-| `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
+| Atributos               | Tipo    | Obrigatoriedade | Descrição                                                                                   |
+| ------------------------| ------- | ---------------- | ------------------------------------------------------------------------------------------- |
+| `codigo`                | `string`| Não              | Código de identificação externa.                                                            |
+| `titulo`                | `string`| Sim              | Título para o tipo do evento. Limite de caracteres: 255.                                    |
+| `fluxo`                 | `integer`| Não             | Campo que identifica se o evento faz parte do fluxo de compra do cliente ou não. Caso faça, ele será respeitado na condição do fluxo que verifica a quanto tempo ele não avança no fluxo.<br><br>**1 para _Sim_**, **0 para Não**. <br><br> Padrão: 0. |
+| `formaCriacaoOportunidade` | `integer` | Sim          | Campo que identifica a forma de criação da registro quando o evento chegar em fluxo de automação.<br><br>**_1 para_** O evento sempre criará um registro no processo,<br><br> **_2 para_** O evento criará um registro no processo somente se alguma ação for realizada no fluxo de automação,<br><br> **_3 para_** O evento nunca criará um registro no processo.|
+| `origem`                | `integer`| Sim              | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao).                     |
+| `token`                 | `string` | Sim              | Chave de acesso única referente ao canal.                                                    |
+
 
 ??? Exemplos
 

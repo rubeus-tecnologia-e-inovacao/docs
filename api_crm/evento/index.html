@@ -1040,7 +1040,13 @@
 <td><code>fluxo</code></td>
 <td><code>integer</code></td>
 <td>Não</td>
-<td>Campo que identifica se o evento faz parte do fluxo de compra do cliente ou não. Caso faça, ele será respeitado na condição do fluxo que verifica a quanto tempo ele não avança no fluxo.<br><br><i><strong>1 para Sim, 0 para Não.</strong></i><br><br><strong>Padrão: 0.</strong></td>
+<td>Campo que identifica se o evento faz parte do fluxo de compra do cliente ou não. Caso faça, ele será respeitado na condição do fluxo que verifica a quanto tempo ele não avança no fluxo.<br><br><strong>1 para <em>Sim</em></strong>, <strong>0 para Não</strong>. <br><br> Padrão: 0.</td>
+</tr>
+<tr>
+<td><code>formaCriacaoOportunidade</code></td>
+<td><code>integer</code></td>
+<td>Sim</td>
+<td>Campo que identifica a forma de criação da registro quando o evento chegar em fluxo de automação.<br><br><strong><em>1 para</em></strong> O evento sempre criará um registro no processo,<br><br> <strong><em>2 para</em></strong> O evento criará um registro no processo somente se alguma ação for realizada no fluxo de automação,<br><br> <strong><em>3 para</em></strong> O evento nunca criará um registro no processo.</td>
 </tr>
 <tr>
 <td><code>origem</code></td>

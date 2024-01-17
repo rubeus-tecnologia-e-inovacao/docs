@@ -168,6 +168,7 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | --- | --- | --- | --- |
 | `codigo` | `string` | Condicional | Chave única de identificação externa do contato enviado. | 
 | `id` | `integer` | Condicional | Código de identificação do contato no CRM. | 
+| `camposRetorno` | `array` | Não | Filtra quais campos do contato serão retornados. | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 
@@ -275,6 +276,7 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 | `email` | `string` | Condicional | Campo para informar o email do contato. | 
 | `telefone` | `string` | Condicional | Campo para informar o telefone do contato. | 
 | `cpf` | `string` | Condicional | Campo para informar o CPF do contato. | 
+| `camposRetorno` | `array` | Não | Filtra quais campos dos contatos serão retornados. | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao) utilizado na integração. | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal utilizado na integração. | 
 
@@ -341,6 +343,7 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 | --- | --- | --- | --- |
 | `id` | `integer` | Condicional | Id do contato. | 
 | `codigo` | `string` | Condicional | Código do contato | 
+| `camposRetorno` | `array` | Não | Filtra quais campos das oportunidades serão retornados. | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

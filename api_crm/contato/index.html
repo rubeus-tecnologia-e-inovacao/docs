@@ -1186,7 +1186,31 @@
 <td><code>camposRetorno</code></td>
 <td><code>array</code></td>
 <td>Não</td>
-<td>Filtra quais campos do contato serão retornados.</td>
+<td>Filtra quais campos do contato serão retornados.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight">[&#39;nome&#39;, &#39;dataNascimento&#39;, &#39;emailPrincipal&#39;]</code></td>
+</tr>
+<tr>
+<td><code>camposRetorno</code></td>
+<td><code>array of object</code></td>
+<td>Não</td>
+<td>Existe também uma maneira para filtrar campos de objetos retornados em um array. Neste caso você pode enviar um objeto dentro do array de campos de retorno com uma estrutura para realizar esse filtro.<br><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;camposPersonalizados&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;campos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;nome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;valor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tipo&quot;</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;filtros&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">]}]</span><span class="w"></span></code><br></td>
+</tr>
+<tr>
+<td><strong>↳</strong> <code>camposRetornos.key</code></td>
+<td><code>string</code></td>
+<td></td>
+<td>Este campo referencia a chave do objeto que contem o array de dados que será filtrado. <br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;camposPersonalizados&quot;</span><span class="p">}</span><span class="w"></span></code></td>
+</tr>
+<tr>
+<td><strong>↳</strong> <code>camposRetornos.campos</code></td>
+<td><code>array of string</code></td>
+<td></td>
+<td>Filtra quais campos do objeto serão retornados. <br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;campos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;nome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;valor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tipo&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code></td>
+</tr>
+<tr>
+<td><strong>↳</strong> <code>camposRetornos.filtros</code></td>
+<td><code>array of object</code></td>
+<td></td>
+<td>Também é possível filtrar quais objetos serão retornados com base em um filtro que será feito em cada um dos itens.<br> No exemplo abaixo, irá retornar apenas os objetos que tenham a coluna <code>tipo</code> com  <code>1</code> ou <code>9</code> .<br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;filtros&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">]}</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code></td>
 </tr>
 <tr>
 <td><code>origem</code></td>
@@ -1336,7 +1360,31 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 <td><code>camposRetorno</code></td>
 <td><code>array</code></td>
 <td>Não</td>
-<td>Filtra quais campos dos contatos serão retornados.</td>
+<td>Filtra quais campos dos contatos serão retornados.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight">[&#39;nome&#39;, &#39;dataNascimento&#39;, &#39;emailPrincipal&#39;]</code></td>
+</tr>
+<tr>
+<td><code>camposRetorno</code></td>
+<td><code>array of object</code></td>
+<td>Não</td>
+<td>Existe também uma maneira para filtrar campos de objetos retornados em um array. Neste caso você pode enviar um objeto dentro do array de campos de retorno com uma estrutura para realizar esse filtro.<br><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;camposPersonalizados&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;campos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;nome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;valor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tipo&quot;</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;filtros&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">]}]</span><span class="w"></span></code><br></td>
+</tr>
+<tr>
+<td><strong>↳</strong> <code>camposRetornos.key</code></td>
+<td><code>string</code></td>
+<td></td>
+<td>Este campo referencia a chave do objeto que contem o array de dados que será filtrado. <br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;camposPersonalizados&quot;</span><span class="p">}</span><span class="w"></span></code></td>
+</tr>
+<tr>
+<td><strong>↳</strong> <code>camposRetornos.campos</code></td>
+<td><code>array of string</code></td>
+<td></td>
+<td>Filtra quais campos do objeto serão retornados. <br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;campos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;nome&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;valor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tipo&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code></td>
+</tr>
+<tr>
+<td><strong>↳</strong> <code>camposRetornos.filtros</code></td>
+<td><code>array of object</code></td>
+<td></td>
+<td>Também é possível filtrar quais objetos serão retornados com base em um filtro que será feito em cada um dos itens.<br> No exemplo abaixo, irá retornar apenas os objetos que tenham a coluna <code>tipo</code> com  <code>1</code> ou <code>9</code> .<br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;filtros&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">]}</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code></td>
 </tr>
 <tr>
 <td><code>origem</code></td>
@@ -1490,7 +1538,25 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 <td><code>camposRetorno</code></td>
 <td><code>array</code></td>
 <td>Não</td>
-<td>Filtra quais campos das oportunidades serão retornados.</td>
+<td>Filtra quais campos das oportunidades serão retornados.<hr><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight">[&#39;id&#39;, &#39;cursoNome&#39;, &#39;processoSeletivoNome&#39;]</code></td>
+</tr>
+<tr>
+<td><code>camposRetorno</code></td>
+<td><code>array of object</code></td>
+<td>Não</td>
+<td>Existe também uma maneira para filtrar campos de objetos. Neste caso você pode enviar um objeto dentro do array de campos de retorno com uma estrutura para realizar esse filtro.<br><strong>Os campos devem ser informados como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;camposPersonalizados&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;campos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;campo_compl_proc&quot;</span><span class="p">]}</span><span class="w"></span></code><br></td>
+</tr>
+<tr>
+<td><strong>↳</strong> <code>camposRetornos.key</code></td>
+<td><code>string</code></td>
+<td></td>
+<td>Este campo referencia a chave do objeto que será filtrado. <br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;camposPersonalizados&quot;</span><span class="p">}</span><span class="w"></span></code></td>
+</tr>
+<tr>
+<td><strong>↳</strong> <code>camposRetornos.campos</code></td>
+<td><code>array of string</code></td>
+<td></td>
+<td>Filtra quais campos do objeto referenciado serão retornados. <br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;campos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;campo_compl_proc&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code></td>
 </tr>
 <tr>
 <td><code>origem</code></td>

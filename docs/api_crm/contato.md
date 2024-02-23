@@ -352,8 +352,8 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 | `id` | `integer` | Condicional | Id do contato. | 
 | `codigo` | `string` | Condicional | Código do contato | 
 | `camposRetorno` | `array` | Não | Filtra quais campos das oportunidades serão retornados.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!array ['id', 'cursoNome', 'processoSeletivoNome']` | 
-| `camposRetorno` | `array of object` | Não | Existe também uma maneira para filtrar campos de objetos. Neste caso você pode enviar um objeto dentro do array de campos de retorno com uma estrutura para realizar esse filtro.<br>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json { "key": "camposPersonalizados", "campos": ["campo_compl_proc"]}`<br>|
-| **↳** `camposRetornos.key` | `string` |  | Este campo referencia a chave do objeto que será filtrado. <br>`#!json { "key": "camposPersonalizados"}` | 
+| `camposRetorno` | `array of object` | Não | Existe também uma maneira para filtrar campos de objetos. Neste caso você pode enviar um objeto dentro do array de campos de retorno com uma estrutura para realizar esse filtro.<br>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json { "key": "camposPersonalizados", "campos": ["campo_compl_proc"] }`<br>|
+| **↳** `camposRetornos.key` | `string` |  | Este campo referencia a chave do objeto que será filtrado. <br>`#!json { "key": "camposPersonalizados" }` | 
 | **↳** `camposRetornos.campos` | `array of string` | | Filtra quais campos do objeto referenciado serão retornados. <br>`#!json { "campos": ["campo_compl_proc"] }` |
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 

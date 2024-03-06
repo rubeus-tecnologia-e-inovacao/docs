@@ -111,8 +111,12 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
             "estadoCivil": 7,
             "cor": 2,
             "grauInstrucao": 7,
-            "tags": "exemplo",
-            "tagsRemovidas": "teste",
+            "tags": [
+                "exemplo"
+                ],
+            "tagsRemovidas": [
+                "teste"
+                ],
             "evento": {
                 "tipo": "3",
                 "codTipo": "teste",

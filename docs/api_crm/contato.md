@@ -40,8 +40,8 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
 | `exaluno` | `integer` | Não | Se o contato é ex-aluno ou não.<br>**Padrão: 1 se já foi aluno e 0 se nunca foi aluno.** | 
 | `escolaOrigem` | `string` | Não | Escola de origem do contato | 
 | `anoFormacao` | `string` | Não | Ano de formação do contato.<br>**Padrão: YYYY** | 
-| `naturalidade` | `string` | Não | Refere-se ao local de nascimento do contato. <br> **Ex: Cidade** |
-| `nacionalidade` | `string` | Não | Refere-se ao país de nascimento do contato. | 
+| `naturalidade` | `string` | Não | Refere-se ao local de nascimento do contato. <br> **Ex: Rio de Janeiro**
+| `nacionalidade` | `string` | Não | Refere-se ao país de nascimento do contato. <br> **Padrão: ID do país de acordo com tabela, disponivel em [Consultar Países](../metodosdelistagem/#listar-paises)** || 
 | `deficiencias` | `array[]` | Não | Usado para informar a(s) deficiência(s) do contato.<hr>**Usar os dados da tabela de** [deficiências](/tabelasauxiliares/#deficiencias). | 
 | **↳** `deficiencias.id` | `integer` | Não | Identificação da deficiência. | 
 | **↳** `deficiencias.tipos` | `array[]` | Não | Usar o método listarDeficiencias para obter o campo `id` para a passagem de parâmetro. | 

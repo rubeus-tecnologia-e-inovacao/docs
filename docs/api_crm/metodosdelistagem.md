@@ -269,6 +269,37 @@ Método utilizado para listar as cidades para posteriormente utilizar como parâ
     }
     ```
 
+## Listar Paises
+
+!!! done ""
+
+    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Paises/consultarPaises
+
+Método utilizado para listar os paises para posteriormente utilizar como parâmetro em outro método.
+
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+    "success": true,
+        "dados": [
+        {
+            "sigla": "AF",
+            "id": "1",
+            "nome": "Afeganistão"
+        },
+        {
+            "sigla": "ZA",
+            "id": "2",
+            "nome": "África do Sul"
+        }
+        ]
+    }
+    ```
+
 ## Listar bases legais
 
 !!! done ""

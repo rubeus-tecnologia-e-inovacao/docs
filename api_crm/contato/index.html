@@ -757,7 +757,7 @@
 
 <h1 id="contato">Contato</h1>
 <h2 id="cadastro-de-contato">Cadastro de contato</h2>
-<p>O cadastro de contatos no CRM Rubeus é realizado através de um método bem simples e, para isso, será necessário apenas alguns dados. Confira, abaixo, estes dados:</p>
+<p>O cadastro de contatos no CRM Rubeus é realizado através de um método bem simples e, para isso, será necessário apenas de alguns dados. Confira abaixo estes dados:</p>
 <div class="admonition info">
 <p class="admonition-title">Campos condicionais</p>
 <p>O campo <code>baselegal</code> é condicionado à ativação dos recursos de LGPD no sistema.</p>
@@ -924,6 +924,18 @@
 <td><code>string</code></td>
 <td>Não</td>
 <td>Ano de formação do contato.<br><strong>Padrão: YYYY</strong></td>
+</tr>
+<tr>
+<td><code>naturalidade</code></td>
+<td><code>string</code></td>
+<td>Não</td>
+<td>Refere-se ao local de nascimento do contato. <br> <strong>Ex: Rio de Janeiro</strong></td>
+</tr>
+<tr>
+<td><code>nacionalidade</code></td>
+<td><code>string</code></td>
+<td>Não</td>
+<td>Refere-se ao país de nascimento do contato. <br> <strong>Padrão: ID do país de acordo com tabela, disponivel em <a href="../metodosdelistagem/#listar-paises">Consultar Países</a></strong></td>
 </tr>
 <tr>
 <td><code>deficiencias</code></td>
@@ -1102,6 +1114,8 @@
 <span class="w">    </span><span class="nt">&quot;exaluno&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;escolaOrigem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Escola Exemplo&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;anoFormacao&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2015&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;nacionalidade&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brasil&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;naturalidade&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Muriae&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;deficiencias&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;tipos&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>

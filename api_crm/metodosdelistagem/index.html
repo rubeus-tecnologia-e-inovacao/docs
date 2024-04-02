@@ -420,6 +420,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#listar-paises" class="md-nav__link">
+    Listar Países
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#listar-bases-legais" class="md-nav__link">
     Listar bases legais
   </a>
@@ -753,6 +760,13 @@
         <li class="md-nav__item">
   <a href="#listar-cidades" class="md-nav__link">
     Listar cidades
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listar-paises" class="md-nav__link">
+    Listar Países
   </a>
   
 </li>
@@ -1116,6 +1130,36 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 </details>
+<h2 id="listar-paises">Listar Países</h2>
+<div class="admonition done">
+<p><strong class='REST GET'>GET</strong><strong class="MIME">application/json</strong> /api/Paises/consultarPaises</p>
+</div>
+<p>Método utilizado para listar os países para posteriormente utilizar como parâmetro em outro método.</p>
+<details class="exemplos">
+<summary>Exemplos</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Resposta</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p><em>JSON</em>:
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;dados&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;sigla&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AF&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Afeganistão&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;sigla&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZA&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;África do Sul&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</details>
 <h2 id="listar-bases-legais">Listar bases legais</h2>
 <div class="admonition done">
 <p><strong class='REST GET'>GET</strong><strong class="MIME">application/json</strong> /api/Lgpd/listarBasesLegais</p>
@@ -1123,7 +1167,7 @@
 <p>Método utilizado para listar as bases legais disponíveis no Rubeus para posteriormente utilizar como parâmetro em outro método.</p>
 <details class="exemplos">
 <summary>Exemplos</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Resposta</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Resposta</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -1183,7 +1227,7 @@
 <p>Método utilizado para listar as assinaturas disponíveis no Rubeus para posteriormente utilizar como parâmetro em outro método.</p>
 <details class="exemplos">
 <summary>Exemplos</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Resposta</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Resposta</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>

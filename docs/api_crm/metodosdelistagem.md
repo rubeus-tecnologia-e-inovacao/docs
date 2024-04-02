@@ -269,13 +269,13 @@ Método utilizado para listar as cidades para posteriormente utilizar como parâ
     }
     ```
 
-## Listar Paises
+## Listar Países
 
 !!! done ""
 
-    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Paises/consultarPaises
+    <strong class='REST GET'>GET</strong><strong class="MIME">application/json</strong> /api/Paises/consultarPaises
 
-Método utilizado para listar os paises para posteriormente utilizar como parâmetro em outro método.
+Método utilizado para listar os países para posteriormente utilizar como parâmetro em outro método.
 
 ??? Exemplos
 

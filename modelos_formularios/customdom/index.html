@@ -617,64 +617,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#metodos" class="md-nav__link">
-    Métodos
+  <a href="#metodos-especificos" class="md-nav__link">
+    Métodos específicos
   </a>
   
-    <nav class="md-nav" aria-label="Métodos">
+    <nav class="md-nav" aria-label="Métodos específicos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#customcallbackcallback" class="md-nav__link">
-    customCallback(callback)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getelementbyidid" class="md-nav__link">
-    getElementById(id)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getelementbynamename" class="md-nav__link">
-    getElementByName(name)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getelementsbynamename" class="md-nav__link">
-    getElementsByName(name)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getelementsbyclassnameclassname" class="md-nav__link">
-    getElementsByClassName(className)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#queryselector" class="md-nav__link">
-    querySelector()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#queryselectorall" class="md-nav__link">
-    querySelectorAll()
+  <a href="#customcallback" class="md-nav__link">
+    customCallback
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-de-manipulacao-do-dom" class="md-nav__link">
+    Métodos de manipulação do DOM
+  </a>
   
 </li>
       
@@ -694,6 +659,7 @@
 
 <h1 id="customdom-documentacao-da-classe">CustomDOM - Documentação da Classe</h1>
 <p>A classe <code>CustomDOM</code> é projetada para interagir com elementos dentro do ShadowDOM do modelo de formulário anexado em uma página da web. Ela oferece métodos convenientes para acessar e manipular elementos baseados no canal, versão e tipo especificados.</p>
+<p>Um objeto com essa classe já instanciada é disponibilizado no editor de código avançado nos modelos de formulários pela variável <code>RBChannel</code>.</p>
 <h2 id="construtor">Construtor</h2>
 <p>Cria uma instância da classe <code>CustomDOM</code>.</p>
 <ul>
@@ -701,36 +667,167 @@
 <li><code>version</code>: A versão do modelo de formulário (padrão: 3).</li>
 <li><code>type</code>: O tipo do modelo de formulário (padrão: 'page').</li>
 </ul>
-<h2 id="metodos">Métodos</h2>
-<h3 id="customcallbackcallback"><code>customCallback(callback)</code></h3>
+<h2 id="metodos-especificos">Métodos específicos</h2>
+<h3 id="customcallback">customCallback</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);}</span><span class="w"></span>
+<span class="nx">RBChannel</span><span class="p">.</span><span class="nx">customCallback</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 <p>Define um callback personalizado que será executado na ultima etapa do modelo de formulário (Préviamente <code>ActionsForm.customCallback</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Atributos</th>
+<th>Tipo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>callback</code></td>
+<td><code>function</code></td>
+<td>Sim</td>
+<td>A função de callback a ser executada.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metodos-de-manipulacao-do-dom">Métodos de manipulação do DOM</h2>
+<p>Para a manipulação do ShadowDOM, disponibilizamos as funções básicas de busca dos elementos e que estão escopadas apenas para o canal no qual o código foi adicionado.</p>
+<p>Os métodos abaixo támbem serão acessíveis pela váriavel <code>RBChannel</code>, exemplo:
+<div class="highlight"><pre><span></span><code><span class="nx">RBChannel</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Migração de versão</p>
+<p>Para o funcionamento correto ao realizar a migração de versão, será necessária a substituição da váriavel <code>document</code> por <code>RBChannel</code> nos casos de manipulação do DOM dos modelos de formulário.</p>
+</div>
 <ul>
-<li><code>callback</code>: A função de callback a ser chamada.</li>
+<li>
+<p><em><code>getElementById</code></em>: Retorna o primeiro elemento do modelo de formulário com o <code>ID</code> especificado.</p>
+<table>
+<thead>
+<tr>
+<th>Atributos</th>
+<th>Tipo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Sim</td>
+<td>O ID do elemento a ser buscado</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><em><code>getElementByName</code></em>: Retorna o primeiro elemento do modelo de formulário com o atributo <code>name</code> especificado.</p>
+<table>
+<thead>
+<tr>
+<th>Atributos</th>
+<th>Tipo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Sim</td>
+<td>O nome do elemento a ser buscado</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><em><code>getElementsByName</code></em>: Retorna uma lista de todos os elementos do modelo de formulário com o atributo <code>name</code> especificado.</p>
+<table>
+<thead>
+<tr>
+<th>Atributos</th>
+<th>Tipo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Sim</td>
+<td>O nome dos elementos a serem buscados</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><em><code>getElementsByClassName</code></em>: Retorna uma lista de todos os elementos do modelo de formulário com a classe especificada.</p>
+<table>
+<thead>
+<tr>
+<th>Atributos</th>
+<th>Tipo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>className</code></td>
+<td><code>string</code></td>
+<td>Sim</td>
+<td>A classe dos elementos a serem buscados</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><em><code>querySelector</code></em>: Retorna o primeiro elemento do modelo de formulário que corresponde ao seletor especificado.</p>
+<table>
+<thead>
+<tr>
+<th>Atributos</th>
+<th>Tipo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query</code></td>
+<td><code>string</code></td>
+<td>Sim</td>
+<td>O seletor de CSS a ser utilizado como chave.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><em><code>querySelectorAll</code></em>: Retorna uma lista de todos os elementos do modelo de formulário que correspondem ao seletor especificado.</p>
+<table>
+<thead>
+<tr>
+<th>Atributos</th>
+<th>Tipo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query</code></td>
+<td><code>string</code></td>
+<td>Sim</td>
+<td>O seletor de CSS a ser utilizado como chave.</td>
+</tr>
+</tbody>
+</table>
+</li>
 </ul>
-<h3 id="getelementbyidid"><code>getElementById(id)</code></h3>
-<p>Retorna o primeiro elemento do modelo de formulário com o ID especificado.</p>
-<ul>
-<li><code>id</code>: O ID do elemento.</li>
-</ul>
-<h3 id="getelementbynamename"><code>getElementByName(name)</code></h3>
-<p>Retorna o primeiro elemento do modelo de formulário com o atributo <code>name</code> especificado.</p>
-<ul>
-<li><code>name</code>: O nome do elemento.</li>
-</ul>
-<h3 id="getelementsbynamename"><code>getElementsByName(name)</code></h3>
-<p>Retorna uma lista de todos os elementos do modelo de formulário com o atributo <code>name</code> especificado.</p>
-<ul>
-<li><code>name</code>: O nome do elemento.</li>
-</ul>
-<h3 id="getelementsbyclassnameclassname"><code>getElementsByClassName(className)</code></h3>
-<p>Retorna uma lista de todos os elementos do modelo de formulário com a classe especificada.</p>
-<ul>
-<li><code>className</code>: A classe do elemento.</li>
-</ul>
-<h3 id="queryselector"><code>querySelector()</code></h3>
-<p>Retorna o primeiro elemento do modelo de formulário que corresponde ao seletor especificado.</p>
-<h3 id="queryselectorall"><code>querySelectorAll()</code></h3>
-<p>Retorna uma lista de todos os elementos do modelo de formulário que correspondem ao seletor especificado.</p>
 
               
             </article>

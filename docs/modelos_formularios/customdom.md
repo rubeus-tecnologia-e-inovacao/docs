@@ -35,6 +35,7 @@ Para a manipulação do ShadowDOM, disponibilizamos as funções básicas de bus
 Os métodos abaixo támbem serão acessíveis pela váriavel `RBChannel`, exemplo:
 ```js
 RBChannel.getElementById('foo');
+RBChannel.getElementByName('bar');
 ```
 
 !!! warning "Migração de versão"

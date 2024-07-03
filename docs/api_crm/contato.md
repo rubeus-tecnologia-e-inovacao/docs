@@ -77,7 +77,7 @@ O cadastro de contatos no CRM Rubeus é realizado através de um método bem sim
             "id": 1,
             "nome": "John Dude",
             "nomeSocial": "Alex",
-            "dataNascimento": "1998-15-03",
+            "dataNascimento": "1998-03-15",
             "telefonePrincipal": "+55 (32) 91234-5678",
             "emailPrincipal": "johndude@email.com",
             "telefone": [

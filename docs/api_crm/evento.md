@@ -178,8 +178,8 @@ Os tipos de eventos são utilizados para categorizar os eventos externos enviado
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
 | `codPessoa` | `string` | Sim | Código de identificação externa do contato | 
-| `codOferta` | `string` | Não | Código de identificação externa da oferta de curso | 
-| `codCurso` | `string` | Não | Código de identificação externa do curso | 
+| `codOferta` | `string` | <rb-tooltip text="Torna-se obrigatório caso seja informado a oferta de curso e curso no cadastro do evento">Condicional </rb-tooltip>| Código de identificação externa da oferta de curso | 
+| `codCurso` | `string` | <rb-tooltip text="Torna-se obrigatório caso seja informado a oferta de curso e curso no cadastro do evento">Condicional </rb-tooltip>| Código de identificação externa do curso | 
 | `dataVerificacao` | `dateTime` | Não | Data enviada no cadastro de evento | 
 | `tipoData` | `string` | Não | Tipo da data enviada no cadastro de evento | 
 | `tipoEvento` | `integer` | Condicional | Identificação do tipo de evento<br><br>[Listar Tipos de Eventos](#listar-tipos-de-eventos)<br>*Enviar o campo* `id` | 

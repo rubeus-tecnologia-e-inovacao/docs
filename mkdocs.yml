@@ -72,6 +72,13 @@ nav:
   #   - Objeto CustomDOM (RBChannel): modelos_formularios/customdom.md
   - Tabelas auxiliares: tabelasauxiliares.md
   - Gerador de URL's: urlbuilder.md
+  - API Inscrições e Matrículas (BETA) :
+    - Apresentação: api_im/apresentacao.md
+    - Métodos de listagem: api_im/listagem.md
+    - Métodos de Inscrição: api_im/metodosdeinscricao.md
+    - Login: api_im/login.md
+    - Portal do Inscrito: api_im/portaldoinscrito.md
+    - Opções: api_im/datasource.md
   # - Testar API's: methodstest.md
 
 markdown_extensions:

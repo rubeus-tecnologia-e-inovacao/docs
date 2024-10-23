@@ -1,6 +1,6 @@
-## Opções
+## Buscar opções da fonte de dados
 
-Busca opções que retornaram de uma consulta executada no passo
+Busca opções que retornaram de uma consulta executada na fonte de dados
 
 !!! done ""
     
@@ -12,8 +12,13 @@ Busca opções que retornaram de uma consulta executada no passo
 
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
-| `data` | `integer` | sim | Id do processo seletivo. |
-
+| `datasource` | `string` | sim | Código da execução da consulta |
+| `target` | `integer` | sim | Campo para o qual está buscando as opções |
+| `filter` | `array` | não | Valores dos campos já preenchidos |
+| **↳** `field` | `array` | sim | Id do campo do filtro |
+| **↳** `values` | `array` | sim | Valores do campo do filtro |
+| `nextFields` | `array` | não | Id dos campos que ainda não foram preenchidos |
+| `token` | `array` | sim | Token do candidato |
 
 ??? Exemplos
 
@@ -21,7 +26,16 @@ Busca opções que retornaram de uma consulta executada no passo
         _JSON_:
         ``` JSON
             {
-	            "process": 6190
+                "datasource":"884264764e0e234f1f8c68c24333103019b3a07943f5bc7093495f6f4bf6a3d7",
+                "target":113575,
+                "filter":[
+                    {
+                        "field":3123213,
+                        "values":"19"
+                    }
+                ],
+                "nextFields":[321321,321312,112331,3312321,312423545,4321321,2132132],
+                "token":"gRo3gESlgT0uUPJ2t7e4NsYv4ajZk3UfYUmg1tHb"
             }
         ```
     === "Resposta"
@@ -29,12 +43,19 @@ Busca opções que retornaram de uma consulta executada no passo
         ``` JSON
             {
                 "success": true,
-                "data": {
-                    "next": 80803,
-                    "name": "Dados básicos",
-                    "stage": 68676,
-                    "local": "step"
-                },
-                "token": "bsCSE9oCeDZpbHGB4Gc2tfe80GZ2ID6ZtdjCeZj4"
+                "data": [
+                    {
+                        "value": "1-22",
+                        "label": "CAMPUS - MURIAÉ"
+                    },
+                    {
+                        "value": "1-33",
+                        "label": "CAMPUS - RIO DE JANEIRO"
+                    },
+                    {
+                        "value": "1-44",
+                        "label": "CAMPUS - SÃO JOSÉ DOS CAMPOS"
+                    }
+                ]
             }
         ```

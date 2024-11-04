@@ -4,7 +4,7 @@ Busca opções que retornaram de uma consulta executada na fonte de dados
 
 !!! done ""
     
-    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/v1/start
+    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/v1/data-source
 
 | header | | 
 | --- | --- |
@@ -27,14 +27,14 @@ Busca opções que retornaram de uma consulta executada na fonte de dados
         ``` JSON
             {
                 "datasource":"884264764e0e234f1f8c68c24333103019b3a07943f5bc7093495f6f4bf6a3d7",
-                "target":113575,
+                "target":118,
                 "filter":[
                     {
-                        "field":3123213,
+                        "field":110,
                         "values":"19"
                     }
                 ],
-                "nextFields":[321321,321312,112331,3312321,312423545,4321321,2132132],
+                "nextFields":[112,113,114,115,116,117,119],
                 "token":"gRo3gESlgT0uUPJ2t7e4NsYv4ajZk3UfYUmg1tHb"
             }
         ```

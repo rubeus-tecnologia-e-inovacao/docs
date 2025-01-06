@@ -20,7 +20,8 @@ Este método tem a função de vincular ou remover contatos relacionados de um r
 | `codOferta` | `string` | Condicional | Código da oferta do curso principal. | 
 | `processo` | `integer` | Sim | Processo no qual o registro é pertencente. | 
 | `pessoas` | `array[]` | Sim | Neste modelo com os contatos relacionados que vão ser vinculadas a um registro de processo. | 
-| **↳** `codigo` | `string` | Não | Código de identificação externa do contato. | 
+| **↳** `codigo` | `string` |  <rb-tooltip text="Torna-se obrigatório caso não seja informado um `id`">Condicional </rb-tooltip> | Código de identificação externa do contato. | 
+| **↳** `id` | `integer` |  <rb-tooltip text="Torna-se obrigatório caso não seja informado um `codigo`">Condicional </rb-tooltip> | Código de identificação do contato no CRM. | 
 | **↳** `tipo` | `integer` | Não | Código de identificação do tipo do contato. <br><br>[Listar tipos do contato](/api_crm/metodosdelistagem/#listar-tipos-do-contato)<br>**Enviar o campo** `id` | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 

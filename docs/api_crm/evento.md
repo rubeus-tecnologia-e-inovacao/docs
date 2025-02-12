@@ -11,8 +11,8 @@ Os eventos são exibidos na linha do tempo do contato (*imagem abaixo*) e també
 </div>
 <img class="image" 
      id="tela-eventos" 
-     alt="Tela do CRM Rubeus para acessar o canal e token da API" 
-     title="Tela do CRM Rubeus para acessar o canal e token da API" 
+     alt="Tela da Plataforma Rubeus para acessar o canal e token da API" 
+     title="Tela da Plataforma Rubeus para acessar o canal e token da API" 
      src="/assets/images/api_crm/tela-eventos.png" 
      onclick="modalImg('tela-eventos')">
 
@@ -20,7 +20,7 @@ Cada evento deve possuir um [tipo de evento](#listar-tipos-de-eventos) e um [con
 
 ## Cadastro de eventos
 
-Método para cadastro de eventos no CRM Rubeus.
+Método para cadastro de eventos na Plataforma Rubeus.
 
 !!! done ""
 
@@ -34,9 +34,9 @@ Método para cadastro de eventos no CRM Rubeus.
 | `descricao` | `string` | Não | A Descrição pode ser enviada no formato HTML para deixar a apresentação dos dados do evento na linha do tempo mais organizados.<br><i>**É opcional o envio com as tags HTML.**</i> | 
 | `pessoa` | `object` | Sim | Vincule o contato ao evento. <hr>*Veja abaixo um exemplo do formato para envio.*<br>`#!json { "codigo": "1" }` (O mesmo código enviado no cadastro do contato, é necessário que a origem do contato na base e a origem do evento sejam o mesmo) ou `#!json { "id": 1 }` (O id retornado no cadastro do contato.) | 
 | `pessoasSecundarias` | `array` | Não | Vincule um ou mais contatos relacionados à um registro de processo, utilizando o atributo `tipo` para informar o [tipo do contato](/api_crm/metodosdelistagem/#listar-tipos-do-contato). <hr>*Veja abaixo um exemplo do formato para envio.*<br>`#!json [{ "codigo": "1", "tipo": "1" }]` (O mesmo código enviado no cadastro do contato). | 
-| `codOferta` | `string` | Não | Código de identificação da oferta do curso.<br>**O código da oferta do curso é obrigatório caso se deseje vincular um curso em um registro no CRM Rubeus, caso o `oferta` não seja enviado.<br>O canal (origem) do evento deve ser o mesmo da oferta e do curso enviado.** | 
+| `codOferta` | `string` | Não | Código de identificação da oferta do curso.<br>**O código da oferta do curso é obrigatório caso se deseje vincular um curso em um registro na Plataforma Rubeus, caso o `oferta` não seja enviado.<br>O canal (origem) do evento deve ser o mesmo da oferta e do curso enviado.** | 
 | `codCurso` | `string` | Não | Código de identificação do curso. |
-| `curso` | `string` | Não | Identificação da oferta do curso.<br>**O id da oferta do curso é obrigatório caso se deseje vincular um curso em um registro no CRM Rubeus, caso o `codOferta` não seja enviado.<br>No cenário onde é enviado o id da oferta, o canal (origem) do evento, não precisa ser necessariamente o mesmo da oferta e do curso.** |
+| `curso` | `string` | Não | Identificação da oferta do curso.<br>**O id da oferta do curso é obrigatório caso se deseje vincular um curso em um registro na Plataforma Rubeus, caso o `codOferta` não seja enviado.<br>No cenário onde é enviado o id da oferta, o canal (origem) do evento, não precisa ser necessariamente o mesmo da oferta e do curso.** |
 | `codRegistro` | `string` | Não | Habilita a criação de mais registros por oferta, sempre criando um **novo registro** independente dos dados, desde que, o código passado seja único. | 
 | `novoCodRegistro` | `string` | Não | O código passado neste campo atualizará o registro na próxima passagem pelo fluxo de automação | 
 | `cursosSecundarios` | `array[] of objects` | Não | O campo serve para definir os cursos secundários do registro de processo. | 

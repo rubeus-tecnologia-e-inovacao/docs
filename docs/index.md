@@ -1,14 +1,14 @@
 # Rubeus Developers
 
-Bem-vindo à documentação da Rubeus para os desenvolvedores. Nosso objetivo é auxiliar sua equipe de tecnologia de informação no processo de integração com o CRM Rubeus e os outros produtos para que possam aproveitar ao máximo todas as possibilidades que nossos sistemas podem oferecer.
+Bem-vindo à documentação da Rubeus para os desenvolvedores. Nosso objetivo é auxiliar sua equipe de tecnologia de informação no processo de integração com a Plataforma Rubeus e os outros produtos para que possam aproveitar ao máximo todas as possibilidades que nossos sistemas podem oferecer.
 
 Atualmente dispomos de integração via:
 
-* [API](api_crm/apresentacao.md) - Permite o envio de diversas informações para o CRM Rubeus como: cursos, processos seletivo, contatos e eventos.
+* [API](api_crm/apresentacao.md) - Permite o envio de diversas informações para a Plataforma Rubeus como: cursos, processos seletivo, contatos e eventos.
 
-* [Webhook](webhook.md) - Permite o envio de dados em tempo real do CRM Rubeus para aplicações de terceiros.
+* [Webhook](webhook.md) - Permite o envio de dados em tempo real da Plataforma Rubeus para aplicações de terceiros.
 
-* [Endpoint](endpoint.md) - Permite que sua equipe configure endpoints que retornando dados em formato JSON que serão consumidos pelo CRM Rubeus podendo ser utilizados para cadastrar contatos e eventos.
+* [Endpoint](endpoint.md) - Permite que sua equipe configure endpoints que retornando dados em formato JSON que serão consumidos pela Plataforma Rubeus podendo ser utilizados para cadastrar contatos e eventos.
 
 * [Monitoramento de Páginas](monitoramento/apresentacao.md) - Biblioteca para o monitoramento de visitantes da página no qual fora instalado e gerando possíveis leads no CRM.
 

@@ -1,18 +1,18 @@
 # Webhook - Integração customizável com sistema próprio
-**Como funciona:** esta integração possibilita o envio de dados em tempo real do CRM Rubeus para uma aplicação de destino.
+**Como funciona:** esta integração possibilita o envio de dados em tempo real da Plataforma Rubeus para uma aplicação de destino.
 
 ## O que esta integração faz?
-Essa configuração permite enviar dados do CRM Rubeus para outras aplicações que disponham de uma URL de entrada de dados. Para isso, essa URL precisa conseguir ler e consumir dados enviados em formato JSON.
+Essa configuração permite enviar dados da Plataforma Rubeus para outras aplicações que disponham de uma URL de entrada de dados. Para isso, essa URL precisa conseguir ler e consumir dados enviados em formato JSON.
 
 ## Observações e requisitos
 * Possuir a URL do outro sistema, que vai receber dados em formato JSON;
 * A URL deve ser fixa, não é possível parametrizar URLs na parametrização dos *Webhooks*.
 
 ## Passo a passo para realizar a integração
-* No CRM Rubeus, clique na engrenagem (configurações no canto superior direito) e selecione **Integrações**;
+* Na Plataforma Rubeus, clique na engrenagem (configurações no canto superior direito) e selecione **Integrações**;
 * Em *Webhooks*, clique em **Adicionar**. Na tela seguinte, você vai ver uma nova tela com alguns campos a serem preenchidos:
 **Nome:** defina um nome para sua integração. O ideal é criar um nome que identifica para qual ferramenta essas informações estão sendo enviadas. Exemplo: Envio para aplicação X;
-**URL:** cole a URL da ferramenta que vai receber os dados do CRM Rubeus com as informações enviadas;
+**URL:** cole a URL da ferramenta que vai receber os dados da Plataforma Rubeus com as informações enviadas;
 **Gatilho:** escolha o gatilho que vai acionar o envio da notificação:
 * Ao clicar no botão **Salvar**, você vai ser redirecionado para a tela de *Webhooks* configurados. Nela, você pode validar se a integração com o *webhook* funcionou. Para isso, clique no botão **Testar**;
 
@@ -25,12 +25,12 @@ A resposta negativa abaixo é a mais comum, indica que a URL destino não repres
 
 <img class="image"
 	 id="webhook"
-	 alt="Tela do CRM Rubeus - retorno do webhook" 
-	 title="Tela do CRM Rubeus - retorno do webhook"
+	 alt="Tela da Plataforma Rubeus - retorno do webhook" 
+	 title="Tela da Plataforma Rubeus - retorno do webhook"
 	 src="/assets/images/webhook.jpg" 
 	 onclick="modalImg('webhook')">
 
-Exemplo de dados enviados pelo CRM Rubeus
+Exemplo de dados enviados pela Plataforma Rubeus
 
 Os dados serão enviados via **POST** seguindo a estrutura abaixo, que é a de um JSON padrão:
 

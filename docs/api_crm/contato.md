@@ -2,7 +2,7 @@
 
 ## Cadastro de contato
 
-O cadastro de contatos no CRM Rubeus é realizado através de um método bem simples e, para isso, será necessário apenas de alguns dados. Confira abaixo estes dados:
+O cadastro de contatos na Plataforma Rubeus é realizado através de um método bem simples e, para isso, será necessário apenas de alguns dados. Confira abaixo estes dados:
 
 !!! info "Campos condicionais"
 

@@ -1,9 +1,9 @@
 # Integração customizável com sistema próprio através de endpoint
 
-**Como funciona:** esta integração possibilita parametrizar serviços dentro da plataforma CRM Rubeus para consumir informações de uma aplicação externa.
+**Como funciona:** esta integração possibilita parametrizar serviços dentro da Plataforma Rubeus para consumir informações de uma aplicação externa.
 
 ## O que esta integração faz?
-Essa configuração permite consumir dados disponibilizados em um *endpoint* no formato JSON para realizar atualizações no CRM Rubeus. Para a execução deste serviço é indispensável que siga a estrutura de retorno dos modelos citados abaixo.
+Essa configuração permite consumir dados disponibilizados em um *endpoint* no formato JSON para realizar atualizações na Plataforma Rubeus. Para a execução deste serviço é indispensável que siga a estrutura de retorno dos modelos citados abaixo.
 
 ### Observações e requisitos
 * Possuir a URL do outro sistema, que irá retornar os dados em formato JSON;
@@ -11,7 +11,7 @@ Essa configuração permite consumir dados disponibilizados em um *endpoint* no 
 
 ## Passo a passo para realizar a integração
 
-* No CRM Rubeus, clique na engrenagem (configurações no canto superior direito) e selecione **Integrações**;
+* Na Plataforma Rubeus, clique na engrenagem (configurações no canto superior direito) e selecione **Integrações**;
 * Em **Serviços**, clique em **Adicionar**. Na tela seguinte, você vai ver uma nova tela com alguns campos a serem preenchidos:
 **Nome:** defina um nome para sua integração. O ideal é criar um nome que identifique qual *endpoint* será responsável por enviar as informações. Exemplo: Envio dos egressos;
 **URL base:** cole a URL que será utilizada como base de autenticação para o *endpoint* que que irá disponibilizar os dados;
@@ -21,7 +21,7 @@ Essa configuração permite consumir dados disponibilizados em um *endpoint* no 
 **Validar <i>endpoint</i> por tipo de evento:** você pode validar se a integração com o serviço funcionou. Para isso, clique no botão no menu de configurações e selecione a opção **Validar**.
 
 !!! note "Nota"
-    * Os tipos de evento são relacionados ao contato já existente no CRM Rubeus, por exemplo: foi matriculado, efetuou o pagamento da mensalidade ou está insatisfeito com a instituição.
+    * Os tipos de evento são relacionados ao contato já existente na Plataforma Rubeus, por exemplo: foi matriculado, efetuou o pagamento da mensalidade ou está insatisfeito com a instituição.
     * Ao clicar no botão **Salvar**, você vai ser redirecionado para a tela de Serviços configurados.
 
 
@@ -34,7 +34,7 @@ Os dados devem ser disponibilizados seguindo a estrutura abaixo, que é a de um 
 
 === "Contato"
 
-	Utilize essa estrutura quando quiser sincronizar os contatos de uma aplicação com o CRM Rubeus.
+	Utilize essa estrutura quando quiser sincronizar os contatos de uma aplicação com a Plataforma Rubeus.
 
 	| **Atributo** | **Tipo** | **Obrigatoriedade** | **Descrição** |
 	| --- | --- | --- | --- |
@@ -118,7 +118,7 @@ Os dados devem ser disponibilizados seguindo a estrutura abaixo, que é a de um 
 
 === "Evento"
 
-	Utilize essa estrutura quando quiser enviar informações relacionadas a um contato já existente no CRM Rubeus.
+	Utilize essa estrutura quando quiser enviar informações relacionadas a um contato já existente na Plataforma Rubeus.
 
 	| **Atributo** | **Tipo** | **Obrigatoriedade** | **Descrição** |
 	| --- | --- | --- | --- |

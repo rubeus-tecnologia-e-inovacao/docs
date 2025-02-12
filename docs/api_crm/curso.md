@@ -50,8 +50,8 @@ Após realizar o cadastro do curso, você pode cadastrar suas ofertas. É a ofer
 | `terminoMatricula` | `date` | Não | Data de término das matrículas.<br>**Padrão: YYYY-MM-DD** | 
 | `inicioCurso` | `date` | Não | Data de início do curso.<br>**Padrão: YYYY-MM-DD** | 
 | `terminoCurso` | `date` | Não | Data de término do curso.<br>**Padrão: YYYY-MM-DD** | 
-| `modalidade` | `integer` | Sim | Identificação da modalidade, que pode ser obtido através do método abaixo no CRM Rubeus.<br><br>[Consulta modalidades](#listar-modalidades) | 
-| `codModalidade` | `string` | Sim | Código único de identificação da modalidade, que pode ser obtido através do método abaixo no CRM Rubeus.<br><br>[Consulta modalidades](#listar-modalidades) | 
+| `modalidade` | `integer` | Sim | Identificação da modalidade, que pode ser obtido através do método abaixo na Plataforma Rubeus.<br><br>[Consulta modalidades](#listar-modalidades) | 
+| `codModalidade` | `string` | Sim | Código único de identificação da modalidade, que pode ser obtido através do método abaixo na Plataforma Rubeus.<br><br>[Consulta modalidades](#listar-modalidades) | 
 | `codCurso` | `string` | Sim | O curso pai pode ser adicionado no momento do cadastro da oferta caso ele já não tenha sido cadastrado pelo método [cadastro curso](/api_crm/curso/#cadastro-de-curso).<br><br>Para cadastrar ele basta informar também os campos `nomeCurso` e `descricaoCurso`.<br><br>Caso já tenha cadastrado o curso pai, basta informar o `codCurso` com o código definido no cadastro.<br><br>**É obrigatório estar vinculado a um curso pai.** | 
 | `nomeCurso` | `string` | Não | Nome do curso pai.<br>**Deve ser informado caso queira adicionar o curso pai junto com o cadastro da oferta. Caso já tenha cadastrado o curso pai basta informar o codCurso.** | 
 | `descricaoCurso` | `string` | Não | Descrição do curso pai.<br>**Deve ser informado caso queira adicionar o curso pai junto com o cadastro da oferta. Caso já tenha cadastrado o curso pai basta informar o codCurso.** | 

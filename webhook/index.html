@@ -768,9 +768,9 @@
 
 
 <h1 id="webhook-integracao-customizavel-com-sistema-proprio">Webhook - Integração customizável com sistema próprio</h1>
-<p><strong>Como funciona:</strong> esta integração possibilita o envio de dados em tempo real do CRM Rubeus para uma aplicação de destino.</p>
+<p><strong>Como funciona:</strong> esta integração possibilita o envio de dados em tempo real da Plataforma Rubeus para uma aplicação de destino.</p>
 <h2 id="o-que-esta-integracao-faz">O que esta integração faz?</h2>
-<p>Essa configuração permite enviar dados do CRM Rubeus para outras aplicações que disponham de uma URL de entrada de dados. Para isso, essa URL precisa conseguir ler e consumir dados enviados em formato JSON.</p>
+<p>Essa configuração permite enviar dados da Plataforma Rubeus para outras aplicações que disponham de uma URL de entrada de dados. Para isso, essa URL precisa conseguir ler e consumir dados enviados em formato JSON.</p>
 <h2 id="observacoes-e-requisitos">Observações e requisitos</h2>
 <ul>
 <li>Possuir a URL do outro sistema, que vai receber dados em formato JSON;</li>
@@ -778,10 +778,10 @@
 </ul>
 <h2 id="passo-a-passo-para-realizar-a-integracao">Passo a passo para realizar a integração</h2>
 <ul>
-<li>No CRM Rubeus, clique na engrenagem (configurações no canto superior direito) e selecione <strong>Integrações</strong>;</li>
+<li>Na Plataforma Rubeus, clique na engrenagem (configurações no canto superior direito) e selecione <strong>Integrações</strong>;</li>
 <li>Em <em>Webhooks</em>, clique em <strong>Adicionar</strong>. Na tela seguinte, você vai ver uma nova tela com alguns campos a serem preenchidos:
 <strong>Nome:</strong> defina um nome para sua integração. O ideal é criar um nome que identifica para qual ferramenta essas informações estão sendo enviadas. Exemplo: Envio para aplicação X;
-<strong>URL:</strong> cole a URL da ferramenta que vai receber os dados do CRM Rubeus com as informações enviadas;
+<strong>URL:</strong> cole a URL da ferramenta que vai receber os dados da Plataforma Rubeus com as informações enviadas;
 <strong>Gatilho:</strong> escolha o gatilho que vai acionar o envio da notificação:</li>
 <li>Ao clicar no botão <strong>Salvar</strong>, você vai ser redirecionado para a tela de <em>Webhooks</em> configurados. Nela, você pode validar se a integração com o <em>webhook</em> funcionou. Para isso, clique no botão <strong>Testar</strong>;</li>
 </ul>
@@ -793,11 +793,11 @@
 <p>A resposta negativa abaixo é a mais comum, indica que a URL destino não representa um servidor disponível (está incorreta). Em ambos os casos, o ideal é validar esses pontos com o seu desenvolvedor ou suporte da ferramenta que lhe forneceu a URL.</p>
 <p><img class="image"
      id="webhook"
-     alt="Tela do CRM Rubeus - retorno do webhook" 
-     title="Tela do CRM Rubeus - retorno do webhook"
+     alt="Tela da Plataforma Rubeus - retorno do webhook" 
+     title="Tela da Plataforma Rubeus - retorno do webhook"
      src="/assets/images/webhook.jpg" 
      onclick="modalImg('webhook')"></p>
-<p>Exemplo de dados enviados pelo CRM Rubeus</p>
+<p>Exemplo de dados enviados pela Plataforma Rubeus</p>
 <p>Os dados serão enviados via <strong>POST</strong> seguindo a estrutura abaixo, que é a de um JSON padrão:</p>
 <h3 id="exemplos">Exemplos</h3>
 <div class="admonition done">

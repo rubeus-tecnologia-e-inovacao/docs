@@ -726,13 +726,13 @@
 </div>
 <p><img class="image" 
      id="tela-eventos" 
-     alt="Tela do CRM Rubeus para acessar o canal e token da API" 
-     title="Tela do CRM Rubeus para acessar o canal e token da API" 
+     alt="Tela da Plataforma Rubeus para acessar o canal e token da API" 
+     title="Tela da Plataforma Rubeus para acessar o canal e token da API" 
      src="/assets/images/api_crm/tela-eventos.png" 
      onclick="modalImg('tela-eventos')"></p>
 <p>Cada evento deve possuir um <a href="#listar-tipos-de-eventos">tipo de evento</a> e um <a href="/api_crm/contato/#cadastro-de-contato">contato</a> para serem enviados ao Rubeus, e caso o tipo de evento esteja devidamente configurado ou utilizado em um fluxo de automação, como gatilho, este evento irá criar um registro de processo.</p>
 <h2 id="cadastro-de-eventos">Cadastro de eventos</h2>
-<p>Método para cadastro de eventos no CRM Rubeus.</p>
+<p>Método para cadastro de eventos na Plataforma Rubeus.</p>
 <div class="admonition done">
 <p><strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Evento/cadastro</p>
 </div>
@@ -786,7 +786,7 @@
 <td><code>codOferta</code></td>
 <td><code>string</code></td>
 <td>Não</td>
-<td>Código de identificação da oferta do curso.<br><strong>O código da oferta do curso é obrigatório caso se deseje vincular um curso em um registro no CRM Rubeus, caso o <code>oferta</code> não seja enviado.<br>O canal (origem) do evento deve ser o mesmo da oferta e do curso enviado.</strong></td>
+<td>Código de identificação da oferta do curso.<br><strong>O código da oferta do curso é obrigatório caso se deseje vincular um curso em um registro na Plataforma Rubeus, caso o <code>oferta</code> não seja enviado.<br>O canal (origem) do evento deve ser o mesmo da oferta e do curso enviado.</strong></td>
 </tr>
 <tr>
 <td><code>codCurso</code></td>
@@ -798,7 +798,7 @@
 <td><code>curso</code></td>
 <td><code>string</code></td>
 <td>Não</td>
-<td>Identificação da oferta do curso.<br><strong>O id da oferta do curso é obrigatório caso se deseje vincular um curso em um registro no CRM Rubeus, caso o <code>codOferta</code> não seja enviado.<br>No cenário onde é enviado o id da oferta, o canal (origem) do evento, não precisa ser necessariamente o mesmo da oferta e do curso.</strong></td>
+<td>Identificação da oferta do curso.<br><strong>O id da oferta do curso é obrigatório caso se deseje vincular um curso em um registro na Plataforma Rubeus, caso o <code>codOferta</code> não seja enviado.<br>No cenário onde é enviado o id da oferta, o canal (origem) do evento, não precisa ser necessariamente o mesmo da oferta e do curso.</strong></td>
 </tr>
 <tr>
 <td><code>codRegistro</code></td>

@@ -1,12 +1,12 @@
 
 # Instalação
 
-Para a implementação é necessário obter o link da biblioteca junto com o código do cliente para a identificação da instituição no CRM Rubeus, depois basta incluir o script na página desejada, após concluído, as funções básicas da API já estão implementadas.
+Para a implementação é necessário obter o link da biblioteca junto com o código do cliente para a identificação da instituição na Plataforma Rubeus, depois basta incluir o script na página desejada, após concluído, as funções básicas da API já estão implementadas.
 
 <img class="image"
      id="dashboard"
-     alt="Tela do CRM Rubeus para adquirir o script de acesso ao monitoramento de páginas"
-     title="Tela do CRM Rubeus para adquirir o script de acesso ao monitoramento de páginas"
+     alt="Tela da Plataforma Rubeus para adquirir o script de acesso ao monitoramento de páginas"
+     title="Tela da Plataforma Rubeus para adquirir o script de acesso ao monitoramento de páginas"
      src="/assets/images/monitoramento/instalacao/dashboard.png"
      onclick="modalImg('dashboard')">
 

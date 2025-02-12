@@ -10,7 +10,7 @@ O método `sendEvent()` é utilizado para o envio de dados relevantes ao servido
 #### Função
 | Parâmetros | Tipo | Obrigatoriedade | Descrição |
 | --- | --- | --- | --- |
-| `eventParameters` | `object` | Sim | Objeto que contenha quaisquer dados presentes na lista de dados que o método [cadastrar eventos](/api_crm/evento/#cadastro-de-eventos) que se deseja enviar para o CRM Rubeus.<br>**Obs.: o campo** `pessoa` **pode ser ignorado já que é enviado automaticamente, porém, se enviado tem que se respeitar a mesma origem entre evento e contato caso seja passado o campo** `codigo`**, caso seja o campo** `id`**, o mesmo não ocorre podendo assim enviar eventos e contato com origem diferentes.** |
+| `eventParameters` | `object` | Sim | Objeto que contenha quaisquer dados presentes na lista de dados que o método [cadastrar eventos](/api_crm/evento/#cadastro-de-eventos) que se deseja enviar para a Plataforma Rubeus.<br>**Obs.: o campo** `pessoa` **pode ser ignorado já que é enviado automaticamente, porém, se enviado tem que se respeitar a mesma origem entre evento e contato caso seja passado o campo** `codigo`**, caso seja o campo** `id`**, o mesmo não ocorre podendo assim enviar eventos e contato com origem diferentes.** |
 | `callbackSuccess` | `function` | Não | Função que será executada após o retorno do evento.  |
 | `callbackError` | `function` | Não | Função que será executada após um retorno falho do evento.  |
 

@@ -36,7 +36,7 @@ Na requisição que fora enviada, deverá conter os dados adicionais do tracking
 | Atributos | Tipo | Obrigatoriedade | Descrição |
 | --- | --- | --- | --- |
 | `session_id` | `string` | Sim | Código da sessão do tracking no navegador.<hr>**Adquirido no método** `RBTracking.getHash()`. |
-| `substitute_id` | `string` | Sim | Código gerado que serve de identificação secudária do contato no CRM Rubeus.<hr>**Adquirido no método** `RBTracking.idGenerator()`. |
+| `substitute_id` | `string` | Sim | Código gerado que serve de identificação secudária do contato na Plataforma Rubeus.<hr>**Adquirido no método** `RBTracking.idGenerator()`. |
 | `hostClient` | `string` | Sim | Código de identificação do Rubeus.<hr>**Adquirido no método** `RBTracking.getHostClient()`. |
 | Dados do contato |  |  | Os dados do [contato](/api_crm/contato/#cadastro-de-contato) deverão estar mesclados no objeto de envio. |
 

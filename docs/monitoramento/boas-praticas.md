@@ -23,7 +23,7 @@ O UTM são divididos em cinco parâmetros que são.
 
 ### Parâmetros source e medium
 
-No serviço de monitoramento de páginas presente no CRM Rubeus, dá a possibilidade de rastrear esses parâmetros seguindo algumas recomendações de boas práticas para o funcionamento conciso da funcionalidade.
+No serviço de monitoramento de páginas presente na Plataforma Rubeus, dá a possibilidade de rastrear esses parâmetros seguindo algumas recomendações de boas práticas para o funcionamento conciso da funcionalidade.
 
 Dentre as possibilidades dos tipos de origem já disponíveis na ferramenta  temos:
 

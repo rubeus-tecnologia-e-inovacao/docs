@@ -5,7 +5,7 @@ Bem-vindo à biblioteca de monitoramento da Rubeus. Nosso objetivo é auxiliar s
 
 De posse dessas informações é factível, por exemplo, a otimização das suas páginas a fim de oferecer a melhor experiência de navegação possível aos usuários do website da sua instituição de ensino.
 
-Para facilitar a compreensão dos dados dessa ferramenta, através de um eficiente processo de integração com o CRM Rubeus, oferece a possibilidade de gerar relatórios, visualizar em forma de gráficos e gerenciar campanhas.
+Para facilitar a compreensão dos dados dessa ferramenta, através de um eficiente processo de integração com a Plataforma Rubeus, oferece a possibilidade de gerar relatórios, visualizar em forma de gráficos e gerenciar campanhas.
 
 Como padrão esta biblioteca tem a responsabilidade de armazenar vários dados dos potenciais alunos, a saber:
 

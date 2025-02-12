@@ -1,7 +1,7 @@
 
 # Enviar dados ao CRM
 
-Utilizando a função `sendData()` para enviar os dados do contato ao CRM Rubeus, assim transformando os visitantes em leads.
+Utilizando a função `sendData()` para enviar os dados do contato à Plataforma Rubeus, assim transformando os visitantes em leads.
 
 ## Estrutura
 

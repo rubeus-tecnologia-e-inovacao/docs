@@ -23,7 +23,7 @@ O método `sendEvent()` é utilizado para o envio de dados relevantes ao servido
 
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
-| `eventData` | `object` | Sim | Objeto que contenha quaisquer dados presentes na lista de dados que o método [cadastrar eventos](/api_crm/evento/#cadastro-de-eventos) que se deseja enviar para o CRM Rubeus.<br>**Obs.: o campo** `pessoa` **pode ser ignorado já que é enviado automaticamente, porém, se enviado tem que se respeitar a mesma origem entre evento e contato caso seja passado o campo** `codigo`**, caso seja o campo** `id`**, o mesmo não ocorre podendo assim enviar eventos e contato com origem diferentes.** | 
+| `eventData` | `object` | Sim | Objeto que contenha quaisquer dados presentes na lista de dados que o método [cadastrar eventos](/api_crm/evento/#cadastro-de-eventos) que se deseja enviar para a Plataforma Rubeus.<br>**Obs.: o campo** `pessoa` **pode ser ignorado já que é enviado automaticamente, porém, se enviado tem que se respeitar a mesma origem entre evento e contato caso seja passado o campo** `codigo`**, caso seja o campo** `id`**, o mesmo não ocorre podendo assim enviar eventos e contato com origem diferentes.** | 
 | `eventType` | `string` | Condicional | Utilizado para especificar o id [tipo de evento](/api_crm/evento/#listar-tipos-de-eventos) que irá para o CRM.**<br>Obs.: O campo torna-se obrigatório perante a ausência do campo** `codEventType` | 
 | `codEventType` | `string` | Condicional | Utilizado para especificar o código do [tipo de evento](/api_crm/evento/#listar-tipos-de-eventos) que irá para o CRM.**<br>Obs.: O campo torna-se obrigatório perante a ausência do campo** `eventType` | 
 

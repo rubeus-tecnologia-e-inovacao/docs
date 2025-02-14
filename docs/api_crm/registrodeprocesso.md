@@ -10,7 +10,7 @@ Este método tem a função de vincular ou remover contatos relacionados de um r
 
 !!! warning "Obrigatoriedade condicional"
 
-    Neste caso, se for passado o `codRegistro`, não serão necessário os outros parâmetros condicionais, caso contrário os demais deverão ser passados.
+    Neste caso, se for passado o `codRegistro`, não serão necessários os outros parâmetros condicionais, caso contrário os demais deverão ser passados.
 
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |

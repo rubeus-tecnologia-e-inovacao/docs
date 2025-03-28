@@ -87,3 +87,324 @@ Este método retorna os dados de um registro de processo passando a referência 
         "success": true
     }
     ```
+    
+## Listar Etapas
+
+!!! done ""
+
+    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Processo/listarEtapas
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição |
+| --- | --- | --- | --- |
+| `id` | `integer` | Sim | Código de identificação (ID)* do tipo processo ao qual você deseja listar as etapas. *Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. |
+
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": {
+            "id": "0",
+            "indice": "0",
+            "titulo": "Sem etapa"
+        }
+    }
+    ```
+
+
+## Listar Processos
+
+!!! done ""
+
+    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Processo/listarProcessos
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição |
+| --- | --- | --- | --- |
+| `todosDados` | `boolean` | Não | --- |
+| `etapas` | `boolean` | Não | 1 - msotra etapas e 0 - nao mostra etapas |
+| `origem` | `integer` | Não | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Não | Chave de acesso única referente ao canal. |
+| `app` | `boolean` | Não | enviar como 1 |
+
+
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": {
+            "id": "0",
+            "indice": "0",
+            "titulo": "Sem etapa"
+        }
+    }
+    ```
+
+## Listar Oportunidades por Processo
+
+!!! done ""
+
+    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Oportunidade/listarOportunidades
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição |
+| --- | --- | --- | --- |
+| `processo` | `integer` | Não | Id do Processo |
+| `status` | `string` | Não | Id do status |
+| `colunaPesquisa` | `string` | Não | Nome referente a coluna a ser pesquisada |
+| `pesquisa` | `string` | Não | Trecho a ser pesquisado de acordo com o valor da colunaPesquisa |
+| `origem` | `integer` | Não | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Não | Chave de acesso única referente ao canal. |
+
+
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados": {
+            "origem": "",
+            "token": "",
+            "processo": ,
+            "status" : [],
+            "colunaPesquisa": "",
+            "pesquisa": ""
+        }
+    }
+    ```
+
+
+## Alterar Cursos
+
+!!! done ""
+
+    <strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Oportunidade/alterarCursos
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição | 
+| --- | --- | --- | --- |
+| `id` | `integer` | Sim | Código de identificação (ID)* do registro do processo (Oportunidade) ao qual você deseja listar as etapas. 
+**Utilize o método de listagem para obter os códigos de identificação correspondentes. | 
+| `cursos` | `string` | Sim | Código do contato | 
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
+
+??? Exemplos
+
+    === "Envio"
+
+         _JSON_:
+        ``` JSON
+        {
+            "id": 1,
+            "origem": "1",
+            "token": "token",
+            "cursos":
+                {
+                    "id": "1"
+                }
+        }
+        ```
+
+    === "Resposta"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true,
+            "dados": [
+                {
+                    "id": "1",
+                    "nome": "Nome do curto",
+                    "valor": "1.23",
+                    "unidade": "1",
+                    "nivelEnsino": "4",
+                    "processoSeletivo": null,
+                    "processoSeletivoNome": null,
+                    "contextoSubItem": "1",
+                    "contextoProcesso": null,
+                    "imagem": "img/1.svg",
+                    "principal": "1"
+                }
+            ],
+        }
+        ```
+
+## Alterar Etapa
+
+!!! done ""
+
+    <strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Oportunidade/alterarEtapa
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição |
+| --- | --- | --- | --- |
+| `id` | `integer` | Sim | Id da Oportunidade. |
+| `etapa` | `string` | Sim | Código da Etapa |
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. |
+
+??? Exemplos
+
+    === "Envio"
+
+         _JSON_:
+        ``` JSON
+        {
+            "id": 1,
+            "etapa": "1",
+            "origem": "1",
+            "token": "token",
+        }
+        ```
+
+    === "Resposta"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true
+        }
+        ```
+
+## Alterar Pessoas
+
+!!! done ""
+
+    <strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Oportunidade/alterarPessoas
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição |
+| --- | --- | --- | --- |
+| `id` | `integer` | Sim | Id da Oportunidade. |
+| `pessoas` | `string` | Sim | --- |
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. |
+
+??? Exemplos
+
+    === "Envio"
+
+         _JSON_:
+        ``` JSON
+        {
+            "id": "1",
+            "pessoas": [
+                {
+                    "id": "4",
+                    "tipo": "1",
+                    "principal": "1",
+                    "tipoNome": "Aluno",
+                    "nome":"Nome do Aluno"
+                }
+            ],
+            "origem": "5",
+            "token": "046cf582e8ae77132a307b86d407ccaf"
+        }
+        ```
+
+    === "Resposta"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true
+        }
+        ```
+
+## Alterar responsável
+
+!!! done ""
+
+    <strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Oportunidade/alterarResponsavel
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição |
+| --- | --- | --- | --- |
+| `id` | `integer` | Sim | Id da Oportunidade. |
+| `responsavel` | `integer` | Sim | Id do Responsável |
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. |
+
+??? Exemplos
+
+    === "Envio"
+
+         _JSON_:
+        ``` JSON
+        {
+            "id": "16",
+            "responsavel": "",
+            "origem": "5",
+            "token": "SEuToken"
+        }
+        ```
+
+    === "Resposta"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true
+        }
+        ```
+
+## Alterar Dados
+
+!!! done ""
+
+    <strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Oportunidade/alterarDados
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição |
+| --- | --- | --- | --- |
+| `id` | `integer` | Sim | Id da Oportunidade. |
+| `notaEnem` | `string` | Não | Nota do candidato no Enem |
+| `dataAtividade` | `string` | Não | Data da atividade |
+| `localOferta` | `integer` | Não | Id do local da oferta |
+| `responsavel` | `integer` | Sim | Id do Responsável |
+| `razaoOportunidade` | `integer` | Não | --- |
+| `formaIngresso` | `string` | Não | Descrição da forma de ingresso |
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. |
+
+??? Exemplos
+
+    === "Envio"
+
+         _JSON_:
+        ``` JSON
+        {
+            "id": "1",
+            "notaEnem": "100",
+            "dataAtividade": "2025-03-21 12:00",
+            "localOferta": "1",
+            "responsavel": "00", 
+            "razaoOportunidade": "2",
+            "formaIngresso": "vestibular",
+            "origem": "1",
+            "token": "SeuToken"
+        }
+        ```
+
+    === "Resposta"
+
+        _JSON_:
+        ``` JSON
+        {
+            "success": true
+        }
+        ```

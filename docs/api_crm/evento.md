@@ -226,3 +226,49 @@ Método utilizado para listar os tipos de evento para posteriormente utilizar co
         ]
     }
     ```
+
+## Listagem de Eventos
+
+!!! done ""
+
+	<strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Evento/listarEventos
+
+| Atributos | Tipo | Obrigatoriedade | Descrição | 
+| --- | --- | --- | --- |
+| `tipo` | `integer` | Não | Código de identificação (ID)* do [tipo do evento cadastrado](https://crmrubeus.zendesk.com/hc/pt-br/articles/16788651161101-Cadastrando-um-tipo-de-evento-personalizado-na-Plataforma-Rubeus). | 
+| `origemevento` | `integer` | Não | Código de identificação (ID)* do [canal de origem do evento](https://crmrubeus.zendesk.com/hc/pt-br/articles/16788633531917-Cadastrando-um-canal-na-Plataforma-Rubeus). | 
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
+
+
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "success": true,
+        "dados":
+            {
+                "id": "0",
+                "descricao": "Descrição do evento",
+                "momento": "2025-03-20 00:00:00",
+                "pessoa": "1",
+                "curso": "1",
+                "tipo": "1",
+                "tipoNome": "",
+                "imagem": null,
+                "origem": "1",
+                "origemNome": "",
+                "agendamento": null,
+                "modeloEmail": null,
+                "emailEnviado": null,
+                "arquivoEnviado": null,
+                "modeloSms": null,
+                "smsEnviado": null,
+                "permitirExclusao": "0"
+            },
+    }
+    ```
+

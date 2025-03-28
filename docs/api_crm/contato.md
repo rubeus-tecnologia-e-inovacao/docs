@@ -421,3 +421,68 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
         }
     }
     ```
+
+## Listar Contatos
+
+!!! done ""
+
+    <strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Pessoa/listarPessoas
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição | 
+| --- | --- | --- | --- |
+| `colunaPesquisa` | `string` | Não | Nome referente a coluna a ser pesquisada |
+| `pesquisa` | `string` | Não | Trecho a ser pesquisado de acordo com o valor da colunaPesquisa |
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
+
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "resultado": "success": true,
+        "qtdTotal": 1,
+        "dados": [
+                    {
+                        "id": "1",
+                        "pessoaprincipal_id": "1",
+                        "codigo": null,
+                        "cidade_id": null,
+                        "endereco": null,
+                        "cep": null,
+                        "numero": null,
+                        "bairro": null,
+                        "sexo_id": null,
+                        "cor_id": null,
+                        "nome": "Nome completo",
+                        "nomeSocial": null,
+                        "telefone": "+12341234",
+                        "email": "email@email.com",
+                        "origem": "",
+                        "grauinstrucao_id": null,
+                        "profissao": null,
+                        "escolaorigem": null,
+                        "anoformacao": null,
+                        "outrasdeficiencias": null,
+                        "aluno": "",
+                        "exaluno": "",
+                        "canhoto": "",
+                        "origemNome": "",
+                        "criadoEm": "2025-03-20 11:50:07",
+                        "cpf": null,
+                        "dataNascimento": null,
+                        "idade": null,
+                        "desinscreveu": "-1",
+                        "usuario_id": "",
+                        "campopersonalizado_1_compl_cont": null,
+                        "camposPersonalizados": {
+                            "campopersonalizado_1_compl_cont": null
+                        }
+                    },
+                ]
+    }
+
+    ```

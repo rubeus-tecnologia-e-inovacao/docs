@@ -31,7 +31,7 @@ Os campos personalizados tem o objetivo de auxiliar a armazenar dados não prese
 
 !!! done ""
     
-    <strong class='REST GET'>GET</strong><strong class="MIME">application/json</strong> /api/Instituicao/campoPersonalizado
+    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Instituicao/campoPersonalizado
 
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |

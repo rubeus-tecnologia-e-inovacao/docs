@@ -37,6 +37,14 @@ Os campos personalizados tem o objetivo de auxiliar a armazenar dados não prese
 | --- | --- | --- | --- |
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
+| `contexto` | `string` | Não | --- |
+| `apenasHabilitados` | `string` | Não | --- |
+| `tipoLocal` | `string` | Não | --- |
+| `tipoCampo` | `string` | Não | --- |
+| `nome` | `string` | Não | --- |
+
+
+
 
 ??? Exemplos
 

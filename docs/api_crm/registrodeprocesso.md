@@ -150,7 +150,7 @@ Este método retorna os dados de um registro de processo passando a referência 
     }
     ```
 
-## Listar Oportunidades por Processo
+## Listar oportunidades por processo
 
 !!! done ""
 
@@ -159,10 +159,10 @@ Este método retorna os dados de um registro de processo passando a referência 
 
 | Atributos | Tipo | Obrigatoriedade | Descrição |
 | --- | --- | --- | --- |
-| `processo` | `integer` | Não | Id do Processo |
-| `status` | `string` | Não | Id do status |
+| `processo` | `integer` | Não | Código de identificação (ID)\* do processo, caso queira listar as etapas de um em específico. <br> \*Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `status` | `string` | Não | Código de identificação (ID)\* do status do registro (oportunidade), caso queira listar registros de um status específico. <br><br> \*Utilize o método de listagem para obter os códigos de identificação correspondentes.|
+| `pesquisa` | `string` | Não | Trecho a ser pesquisado de acordo com o valor do atributo “colunaPesquisa”. |
 | `colunaPesquisa` | `string` | Não | Nome referente a coluna a ser pesquisada |
-| `pesquisa` | `string` | Não | Trecho a ser pesquisado de acordo com o valor da colunaPesquisa |
 | `origem` | `integer` | Não | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
 | `token` | `string` | Não | Chave de acesso única referente ao canal. |
 

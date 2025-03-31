@@ -431,8 +431,57 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
-| `colunaPesquisa` | `string` | Não | Nome referente a coluna a ser pesquisada |
-| `pesquisa` | `string` | Não | Trecho a ser pesquisado de acordo com o valor da colunaPesquisa |
+| `pesquisa` | `string` | Não | Trecho a ser pesquisado de acordo com o valor do atributo “colunaPesquisa”. |
+| `colunaPesquisa` | `string` | Não | Nome referente à informação a ser pesquisada no campo de pesquisa. <br><br>** Atributos <br><br> 'nomePessoa', 'pessoaEmail', 'telefone', 'cpf', 'nomeSocial' **|
+| `filtro` | `string` | Não | --- |
+| `canal` | `string` | Não | --- |
+| `processo` | `string` | Não | --- |
+| `etapa` | `string` | Não | --- |
+| `ofertaCurso` | `string` | Não | --- |
+| `localOferta` | `string` | Não | --- |
+| `grauInstrucao` | `string` | Não | --- |
+| `escolaOrigem` | `string` | Não | --- |
+| `profissao` | `string` | Não | --- |
+| `anoFormacao` | `string` | Não | --- |
+| `aluno` | `string` | Não | --- |
+| `exAluno` | `string` | Não | --- |
+| `canhoto` | `string` | Não | --- |
+| `deficiencia` | `string` | Não | --- |
+| `deficienciaEspecifica` | `string` | Não | --- |
+| `outraDeficiencia` | `string` | Não | --- |
+| `cidade` | `string` | Não | --- |
+| `estado` | `string` | Não | --- |
+| `genero` | `string` | Não | --- |
+| `tipoEvento` | `string` | Não | --- |
+| `periodo` | `string` | Não | --- |
+| `idade` | `string` | Não | --- |
+| `campanha` | `string` | Não | --- |
+| `unidade` | `string` | Não | --- |
+| `tag` | `string` | Não | --- |
+| `tipoOrigem` | `string` | Não | --- |
+| `tipoPessoa` | `string` | Não | --- |
+| `urlOrigem` | `string` | Não | --- |
+| `campanhaTracking` | `string` | Não | --- |
+| `primeiraPagina` | `string` | Não | --- |
+| `ultimaPagina` | `string` | Não | --- |
+| `pagina` | `string` | Não | --- |
+| `naoIdentificada` | `string` | Não | --- |
+| `campoPersonalizado` | `string` | Não | --- |
+| `campoPersonalizadoOportunidade` | `string` | Não | --- |
+| `limite` | `string` | Não | --- |
+| `zerouFiltro` | `string` | Não | --- |
+| `exportar` | `string` | Não | --- |
+| `quantidade` | `string` | Não | --- |
+| `ordenacao` | `string` | Não | --- |
+| `assinatura` | `string` | Não | --- |
+| `baseLegal` | `string` | Não | --- |
+| `tokenUsuario` | `string` | Não | --- |
+| `colunaPesquisa` | `string` | Não | --- |
+| `dataNascimento` | `string` | Não | --- |
+| `desinscreveu` | `string` | Não | --- |
+| `origemnavegacao` | `string` | Não | --- |
+| `ListarPessoas` | `string` | Não | --- |
+| `SetarFiltroPadraoPessoa` | `string` | Não | --- |
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

@@ -1,6 +1,6 @@
 # Agendamento
 
-## Cadastro/Edição de Atividades
+## Cadastro/Edição de atividades
 
 !!! done ""
 
@@ -9,17 +9,16 @@
 
 | Atributos | Tipo | Obrigatoriedade | Descrição |
 | --- | --- | --- | --- |
-| `id` | `string` | Não | Código de identificação da atividade, se enviar em branco, será criado uma nova atividade |
-| `contato` | `string` | Sim | Nome da Atividade |
-| `vencimento` | `string` | Sim | Data de Vencimento da Atividade |
-| `formaContato` | `string` | Sim | 1 - Ativo; 2 - Receptivo; 0 -Nenhum |
-| `tipo` | `string` | Sim | 1 - Ligação; 2 - Email; 3 - Mensagem; 4 - Visita; 5 - Tarefa; |
-| `duracao` | `string` | Não | Duração sempre colocado em minutos exemplo: 5 horas = 300 minutos, então o valor de duracao será 300 |
+| `id` | `integer` | Não | Código de identificação (ID)\* da atividade. Caso este campo seja deixado em branco, uma nova atividade será criada automaticamente. \*Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `contato` | `string` | Sim | Nome da atividade. |
+| `vencimento` | `date` | Sim | Data de vencimento da atividade. <br>**Padrão: YYYY-MM-DD HH-MM-SS**|
+| `formaContato` | `integer` | Sim | Envie a opção correspondente à forma de contato desejada: <br>Nenhum = 0. <br>Ativo = 1. <br> Receptivo = 2. |
+| `tipo` | `integer` | Sim | Envie a opção correspondente ao tipo de atividade desejado:<br>Ligação = 1. <br>E-mail = 2. <br>Mensagem = 3.  <br>Visita = 4  <br>Tarefa = 5 |
+| `duracao` | `integer` | Não | A duração da atividade deve ser informada sempre em minutos. Por exemplo, para uma duração de 5 horas, o valor a ser inserido será 300. |
 | `descricao` | `string` | Não | Descrição breve da ativadade, máximo de 2000 caracteres |
-| `concluido` | `string` | Não | --- |
-| `responsavel` | `integer` | Não | Código de identificação do responsável pela atividade |
-| `agendamentoUnico` | `string` | Não | --- |
-| `assinatura` | `string` | Não | --- |
+| `concluido` | `integer` | Não | Envie a opção correspondente ao status da atividade: <br>Atividade concluída = 1. <br>Atividade planejada = 0. |
+| `responsavel` | `integer` | Não | Código de identificação (ID)\* do responsável pela atividade. \*Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `assinatura` | `integer` | Não | Código de identificação (ID)\* da assinatura associada à atividade. Este atributo deve ser utilizado caso a LGPD esteja ativada na Plataforma Rubeus. \*Utilize o [método de listagem](https://docs.rubeus.com.br/api_crm/metodosdelistagem/#listar-assinaturas-ativas) para obter os códigos de identificação correspondentes. |
 | `registroVinculadosId` | `string` | Não | --- |
 | `registroVinculados` | `string` | Não | --- |
 | `dados` | `string` | Sim | --- |
@@ -80,7 +79,7 @@
             }
     ```
 
-## Listar Atividades
+## Listar atividades
 
 !!! done ""
 
@@ -89,40 +88,39 @@
 
 | Atributos | Tipo | Obrigatoriedade | Descrição |
 | --- | --- | --- | --- |
-| `id` | `integer` | Não | Código da Atividade. |
-| `pesquisa` | `string` | Não |  |
-| `filtro` | `integer` | Não | --- |
-| `status` | `string` | Não | --- |
-| `atividade` | `string` | Não | --- |
-| `razaoOportunidade` | `string` | Não | --- |
-| `statusOportunidade` | `string` | Não | --- |
-| `objecao` | `string` | Não | --- |
-| `curso` | `integer` | Não | --- |
-| `ofertaCurso` | `string` | Não | --- |
-| `responsavel` | `integer` | Não | --- |
-| `vencimento` | `date` | Não | --- |
-| `conclusao` | `string`  | Não | --- |
-| `criacao` | `date` | Não | --- |
-| `formaContato` | `integer` | Não | --- |
-| `tipo` | `integer` | Não | --- |
-| `unidade` | `string` | Não | --- |
-| `localOferta` | `string` | Não | --- |
-| `processoSeletivo` | `string` | Não | --- |
-| `processo` | `integer` | Não | --- |
-| `etapa` | `string` | Não | --- |
-| `tag` | `string` | Não | --- |
-| `campoPersonalizado` | `integer` | Não | --- |
+| `id` | `integer` | Não | Código de identificação (ID) da atividade. |
+| `pesquisa` | `string` | Não | Trecho a ser pesquisado de acordo com o valor do atributo “colunaPesquisa”. |
+| `colunaPesquisa` | `enum` | Não | Nome referente à informação a ser pesquisada no campo de pesquisa. <br><br>** Atributos <br><br> 'nomePessoa', 'pessoaEmail', 'pessoaTelefone', 'processo', 'nomeOferta', 'tituloAtividade', 'responsavelAtividade', 'vencimentoAtividade', 'momentoConclusaoAtividade', 'momentoCriacaoAtividade', 'idRegistro' ** |
+| `filtro` | `integer` | Não | Código de identificação (ID)\* do filtro a ser aplicado. O retorno será feito de acordo com as condições do filtro escolhido.<br> \*Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `status` | `integer` | Não | Envie a opção correspondente ao status da atividade: <br>Atividade planejada = 1  <br>Atividade atrasada = 2  <br>Atividade concluída = 3 |
+| `atividade` | `string` | Não | Título da atividade |
+| `razaoOportunidade` | `integer` | Não | Código de identificação (ID)\* do resumo atual dos registros do processo (oportunidades). <br> Serão listadas as atividades que tiverem registros associados a elas, com o respectivo resumo.<br>\*Utilize o método de listagem para obter os códigos de identificação correspondentes. <br><br> O termo ***Razão oportunidade*** é identificado como ***Resumo atual*** na Plataforma Rubeus. |
+| `statusOportunidade` | `integer` | Não | Envie a opção correspondente ao status do registro do processo (oportunidade): <br>Em andamento = 1<br>Ganho = 2<br>Perdido = 3 <br><br>Serão listadas as atividades que tiverem registros associados a elas, com o respectivo status. |
+| `objecao` | `integer` | Não | Código de identificação (ID)\* da objeção dos registros do processo (oportunidades). Serão listadas as atividades que tiverem registros associados a elas, com o respectivo resumo. <br><br>\*Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `curso` | `integer` | Não | Código de identificação (ID)\* do curso associado aos registros do processo (oportunidades).<br><br>\*Utilize o [método de listagem](https://docs.rubeus.com.br/api_crm/curso/#listar-cursos) para obter os códigos de identificação correspondentes. |
+| `ofertaCurso` | `integer` | Não | Código de identificação (ID)\* da oferta de curso associada aos registros do processo (oportunidades).<br><br>\*Utilize o [método de listagem](https://docs.rubeus.com.br/api_crm/curso/#listar-ofertas) para obter os códigos de identificação correspondentes. |
+| `responsavel` | `integer` | Não | Código de identificação (ID)\* do usuário que é responsável pela atividade. <br> <br> \*Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `vencimento` | `date` | Não | Data de vencimento da atividade. Serão listadas apenas as atividades com data de vencimento correspondente à data informada. |
+| `conclusao` | `date`  | Não | Data de conclusão da atividade. Serão listadas apenas as atividades com data de conclusão correspondente à data informada. |
+| `criacao` | `date` | Não | Data de criação da atividade. Serão listadas apenas as atividades com data de criação correspondente à data informada. |
+| `formaContato` | `integer` | Não | Envie a opção correspondente à forma de contato da atividade: <br>Nenhum = 0 <br> Ativo = 1 <br>Receptivo = 2 |
+| `tipo` | `integer` | Não | Envie a opção correspondente ao tipo de atividade desejado: <br>Ligação = 1.  <br>E-mail = 2.  <br>Mensagem = 3.   <br>Visita = 4   <br>Tarefa = 5  
+ |
+| `unidade` | `integer` | Não | Código de identificação (ID)\* da unidade associada aos registros do processo (oportunidades).<br><br> \*Utilize o [método de listagem](https://docs.rubeus.com.br/api_crm/unidade/#listar-unidades) para obter os códigos de identificação correspondentes. |
+| `localOferta` | `integer` | Não | Código de identificação (ID)\* do local de oferta associado aos registros do processo (oportunidades). <br><br> \*Utilize o [método de listagem](https://docs.rubeus.com.br/api_crm/locaisdeoferta/) para obter os códigos de identificação correspondentes. |
+| `processoSeletivo` | `integer` | Não | Código de identificação (ID)\* do processo seletivo associado aos registros do processo (oportunidades). <br><br> \*Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `processo` | `integer` | Não | Código de identificação (ID)\* do processo que os registros estão vinculados. <br><br>\*Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `etapa` | `integer` | Não | Código de identificação (ID)\* da etapa que os registros estão atualmente.<br><br>\*Utilize o método de listagem para obter os códigos de identificação correspondentes. |
+| `tag` | `string` | Não | Texto a ser pesquisado conforme o valor da tag atribuída ao contato. |
+| `campoPersonalizado` | `object` | Não | Usado para atribuir algum campo específico que não está presente no escopo da API.<br>**Os campos devem ser informados como no exemplo abaixo:** <br>`#!json camposPersonalizados : { coluna: "valor" }` <br>Os nomes das colunas dos campos personalizados são informados no método "Listar campos personalizados". O valor poderá ser uma string ou um array de strings, caso o campo seja multi valorado. |
 | `retornarDadosBasicos` | `string` | Não | --- |
-| `limite` | `integer` | Não | Limite de resposta no retorno |
+| `limite` | `integer` | Não | Limite de resposta dos dados retornados. Por padrão o limite adotado é de 10000 linhas.|
 | `zerouFiltro` | `string` | Não | --- |
-| `quantidade` | `integer` | Não | --- |
+| `quantidade` | `integer` | Não | Divide o retorno de acordo com o valor inserido na quantidade. |
 | `comunicacaoContato` | `integer` | Não | --- |
 | `ordenacao` | `string` | Não | --- |
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. |
-| `colunaPesquisa` | `string` | Sim | --- |
-
-
 
 ??? Exemplos
 
@@ -182,7 +180,7 @@
             },
     ```
 
-## Excluir Atividades
+## Excluir atividades
 
 !!! done ""
 

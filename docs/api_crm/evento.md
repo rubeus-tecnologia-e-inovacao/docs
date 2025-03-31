@@ -227,7 +227,7 @@ Método utilizado para listar os tipos de evento para posteriormente utilizar co
     }
     ```
 
-## Listagem de Eventos
+## Listar Eventos
 
 !!! done ""
 

@@ -163,6 +163,35 @@ Este método retorna os dados de um registro de processo passando a referência 
 | `status` | `string` | Não | Código de identificação (ID)\* do status do registro (oportunidade), caso queira listar registros de um status específico. <br><br> \*Utilize o método de listagem para obter os códigos de identificação correspondentes.|
 | `pesquisa` | `string` | Não | Trecho a ser pesquisado de acordo com o valor do atributo “colunaPesquisa”. |
 | `colunaPesquisa` | `string` | Não | Nome referente a coluna a ser pesquisada |
+| `etapa` | `array[] of integer` | Não | Etapa do registro de processo vinculado ao contato |
+| `formaIngresso` | `string` | Não | Forma de ingresso do registro de processo. |
+| `responsavel` | `integer` | Não | Identificação do responsável |
+| `nivelEnsino` | `integer` | Condicional | Identificação do nível de ensino.<br><br>[Listar niveis de ensino](/api_crm/metodosdelistagem/#listar-niveis-de-ensino)<br>**Enviar o campo** `id` <hr> **Caso não seja enviado deverá ser o utilizado o campo** `codNivelEnsino`**.** | 
+| `processoSeletivo` | `integer` | Não | Identificação do processo seletivo  |
+| `curso` | `integer` | Não | Identificação do curso |
+| `unidade` | `array[] of integer` | Não | Identificação da unidade |
+| `periodo` | `array[] of object` | Não | Período de crição do contato <br> Exemplo: **[{"de": "YYYY-MM-DD", "ate": "YYYY-MM-DD"}]** |
+| `periodoGanho` | `date` | Não | Oportunidade ganha no período informado <br> Exemplo: **[{"de": "YYYY-MM-DD", "ate": "YYYY-MM-DD"}]** |
+| `periodoPerda` | `date` | Não | Oportunidade perdida no período informado <br> Exemplo: **[{"de": "YYYY-MM-DD", "ate": "YYYY-MM-DD"}]** |
+| `modalidade` | `array[] of integer` | Não | Identificação da modalidade |
+| `data` | `array[] of date` | Não | Data da atividade que gerou o registro <br> **Padrão: YYYY-MM-DD** |
+| `canal` | `array[] of integer` | Não | Canal de origem da oportunidade |
+| `objecao` | `array[] of integer` | Não | Identificação da objeção |
+| `concorrente` | `array[] of integer` | Não | Identificação do concorrente |
+| `campoPersonalizado` | `array[] of object` | Não | Usado para buscar por algum campo específico de contato que não está presente no escopo da API.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json camposPersonalizados : { coluna: "valor" }`<hr>Os nomes das colunas dos campos personalizados são informados no método [Instituicao/campoPersonalizado](/api_crm/campopersonalizados/#listar-campos-personalizados). |
+| `statusContato` | `integer` | Não | Identificação do status da atividade |
+| `razaoOportunidade` | `integer` | Não | Identificação do resumo atual da oportunidade |
+| `statusProva` | `boolean` | Não | Se o compareceu ou não a ativade <br> 1 - comparaceu <br> 2 - Não compareceu  |
+| `localOferta` | `array[] of integer` | Não | Código de identificação do Local da oferta |
+| `ofertaCurso` | `array[] of integer` | Não | Identificação da oferta do curso |
+| `dataConclusaoAtividade` | `array[] of date` | Não | Período da atividade foi concluída <br> Exemplo: **[{"de": "YYYY-MM-DD", "ate": "YYYY-MM-DD"}]** |
+| `atividade` | `array[] of string` | Não | Nome da atividade usada para gerar o registro |
+| `responsavelAtividade` | `array of integer` | Não | Identificação do responsável da atividade |
+| `dataVencimentoAtividade` | `array[] of date` | Não | Data de vencimento da atividade <br> **Padrão: YYYY-MM-DD** |
+| `tag` | `array[] of integer` | Não | Identificação da tag |
+| `periodoTempoMesmaEtapa` | `array[] of object` | Não | Período em que o contato não avançou no processo <br> Exemplo: **[{"de": "YYYY-MM-DD", "ate": "YYYY-MM-DD"}]** |
+| `limite` | `integer` | Não | Limite de oportunidades retornadas no método, usado para fazer paginação|
+| `quantidade` | `integer` | Não | Quantidade de oportunidades retornadas no método, usada para fazer paginação |
 | `origem` | `integer` | Não | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
 | `token` | `string` | Não | Chave de acesso única referente ao canal. |
 
@@ -196,8 +225,7 @@ Este método retorna os dados de um registro de processo passando a referência 
 
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
-| `id` | `integer` | Sim | Código de identificação (ID)* do registro do processo (Oportunidade) ao qual você deseja listar as etapas. 
-**Utilize o método de listagem para obter os códigos de identificação correspondentes. | 
+| `id` | `integer` | Sim | Código de identificação (ID)* do registro do processo (Oportunidade) ao qual você deseja listar as etapas. <br>**Utilize o método de listagem para obter os códigos de identificação correspondentes. | 
 | `cursos` | `string` | Sim | Código do contato | 
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
@@ -289,8 +317,8 @@ Este método retorna os dados de um registro de processo passando a referência 
 
 | Atributos | Tipo | Obrigatoriedade | Descrição |
 | --- | --- | --- | --- |
-| `id` | `integer` | Sim | Id da Oportunidade. |
-| `pessoas` | `string` | Sim | --- |
+| `id` | `integer` | Sim | Id da oportunidade. |
+| `pessoas` | `string` | Sim | Código da pessoa |
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. |
 
@@ -311,8 +339,8 @@ Este método retorna os dados de um registro de processo passando a referência 
                     "nome":"Nome do Aluno"
                 }
             ],
-            "origem": "5",
-            "token": "046cf582e8ae77132a307b86d407ccaf"
+            "origem": "",
+            "token": "token"
         }
         ```
 
@@ -348,8 +376,8 @@ Este método retorna os dados de um registro de processo passando a referência 
         {
             "id": "16",
             "responsavel": "",
-            "origem": "5",
-            "token": "SEuToken"
+            "origem": "",
+            "token": "token"
         }
         ```
 

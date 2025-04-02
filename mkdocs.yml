@@ -54,7 +54,7 @@ nav:
     - Métodos de listagem: api_crm/metodosdelistagem.md
     - Níveis de ensino: api_crm/niveisensino.md
     - Modalidade: api_crm/modalidades.md
-    - Atividades: api_crm/agendamentos.md
+    - Atividades: api_crm/atividades.md
     # - Usuários: api_crm/usuarios.md
   - Webhook: webhook.md
   - Endpoint: endpoint.md

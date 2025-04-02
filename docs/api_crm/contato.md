@@ -433,55 +433,30 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 | --- | --- | --- | --- |
 | `pesquisa` | `string` | Não | Trecho a ser pesquisado de acordo com o valor do atributo “colunaPesquisa”. |
 | `colunaPesquisa` | `string` | Não | Nome referente à informação a ser pesquisada no campo de pesquisa. <br><br>** Atributos <br><br> 'nomePessoa', 'pessoaEmail', 'telefone', 'cpf', 'nomeSocial' **|
-| `filtro` | `string` | Não | --- |
-| `canal` | `string` | Não | --- |
-| `processo` | `string` | Não | --- |
-| `etapa` | `string` | Não | --- |
-| `ofertaCurso` | `string` | Não | --- |
-| `localOferta` | `string` | Não | --- |
-| `grauInstrucao` | `string` | Não | --- |
-| `escolaOrigem` | `string` | Não | --- |
-| `profissao` | `string` | Não | --- |
-| `anoFormacao` | `string` | Não | --- |
-| `aluno` | `string` | Não | --- |
-| `exAluno` | `string` | Não | --- |
-| `canhoto` | `string` | Não | --- |
-| `deficiencia` | `string` | Não | --- |
-| `deficienciaEspecifica` | `string` | Não | --- |
-| `outraDeficiencia` | `string` | Não | --- |
-| `cidade` | `string` | Não | --- |
-| `estado` | `string` | Não | --- |
-| `genero` | `string` | Não | --- |
-| `tipoEvento` | `string` | Não | --- |
-| `periodo` | `string` | Não | --- |
-| `idade` | `string` | Não | --- |
-| `campanha` | `string` | Não | --- |
-| `unidade` | `string` | Não | --- |
-| `tag` | `string` | Não | --- |
-| `tipoOrigem` | `string` | Não | --- |
-| `tipoPessoa` | `string` | Não | --- |
-| `urlOrigem` | `string` | Não | --- |
-| `campanhaTracking` | `string` | Não | --- |
-| `primeiraPagina` | `string` | Não | --- |
-| `ultimaPagina` | `string` | Não | --- |
-| `pagina` | `string` | Não | --- |
-| `naoIdentificada` | `string` | Não | --- |
-| `campoPersonalizado` | `string` | Não | --- |
-| `campoPersonalizadoOportunidade` | `string` | Não | --- |
-| `limite` | `string` | Não | --- |
-| `zerouFiltro` | `string` | Não | --- |
-| `exportar` | `string` | Não | --- |
-| `quantidade` | `string` | Não | --- |
-| `ordenacao` | `string` | Não | --- |
-| `assinatura` | `string` | Não | --- |
-| `baseLegal` | `string` | Não | --- |
-| `tokenUsuario` | `string` | Não | --- |
-| `colunaPesquisa` | `string` | Não | --- |
-| `dataNascimento` | `string` | Não | --- |
-| `desinscreveu` | `string` | Não | --- |
-| `origemnavegacao` | `string` | Não | --- |
-| `ListarPessoas` | `string` | Não | --- |
-| `SetarFiltroPadraoPessoa` | `string` | Não | --- |
+| `canal` | `array[] of integer` | Não | Canal de origem do contao |
+| `processo` | `array[] of integer` | Não | Registro de Processo vinculado ao contato |
+| `etapa` | `array[] of integer` | Não | Etapa do registro de processo vinculado ao contato |
+| `ofertaCurso` | `array[] of integer` | Não | Identificação da oferta do curso |
+| `localOferta` | `array[] of integer` | Não | Código de identificação do Local da oferta |
+| `grauInstrucao` | `array[] of integer` | Não | Identificação do grau de Instrução de acordo com a [Tabela auxiliar](/tabelasauxiliares/#grau-de-instrucao) |
+| `escolaOrigem` | `array[] of string` | Não | Escola de origem do contato |
+| `profissao` | `array[] of string` | Não | Profissão do contato |
+| `anoFormacao` | `integer` | Não | Ano de formação do contato. <br> **Padrão: YYYY** |
+| `aluno` | `array[] of integer` | Não | Se o contato é ou não aluno. <br> **Padrão: 1 para quando for aluno e 0 para quando não for aluno.** |
+| `exAluno` | `array[] of integer` | Não | Se o contato é ex-aluno ou não. <br>**Padrão: 1 se já foi aluno e 0 se nunca foi aluno.** |
+| `canhoto` | `array[] of integer` | Não | Campo para filtrar se o contato é ou não canhoto.<br>**Padrão: 1 para** `sim` **ou 0 para** `não`.  |
+| `deficiencias` | `array[] of integer` | Não | Usado para filtrar a(s) deficiência(s) do contato.<hr>**Usar os dados da tabela de** [deficiências](/tabelasauxiliares/#deficiencias). | 
+| `outrasDeficiencias` | `array[] of strings` | Não | Campo destinado à descrição da deficiência do contato se ela não existir nas opções pré-definidas. | 
+| `cidade` | `array[] of integer` | Não | Identificação da cidade do contato **Usar os metodo de listagem** [cidades](/api_crm/metodosdelistagem/#listar-cidades). |
+| `genero` | `integer` | Não | informar 1 para masculino e 2 para feminino |
+| `tipoEvento` | `array[] of integer` | Não | Verificar listagem de [evento](/api_crm/evento/#listar-tipos-de-eventos)|
+| `periodo` | `array[] of object` | Não | Período de crição do contato <br> Exemplo: **[{"de": "YYYY-MM-DD", "ate": "YYYY-MM-DD"}]** |
+| `idade` | `string` | Não | Idade do contato |
+| `campoPersonalizado` | `array[] of object` | Não | Usado para buscar por algum campo específico de contato que não está presente no escopo da API.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json camposPersonalizados : { coluna: "valor" }`<hr>Os nomes das colunas dos campos personalizados são informados no método [Instituicao/campoPersonalizado](/api_crm/campopersonalizados/#listar-campos-personalizados). |
+| `campoPersonalizadoOportunidade` | `array[] of object` | Não | Usado para buscar por algum campo específico de oportunidade que não está presente no escopo da API.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json camposPersonalizados : { coluna: "valor" }`<hr>Os nomes das colunas dos campos personalizados são informados no método [Instituicao/campoPersonalizado](/api_crm/campopersonalizados/#listar-campos-personalizados). |
+| `dataNascimento` | `array[] of date` | Não | Data de nascimento do contato <br> Padrão: YYYY-MM-DD |
+| `limite` | `integer` | Não | Limite de oportunidades retornadas no método, usado para fazer paginação|
+| `quantidade` | `integer` | Não | Quantidade de oportunidades retornadas no método, usada para fazer paginação |
 | `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
 | `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
 

@@ -4,7 +4,7 @@
 
 !!! done ""
 
-    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Atividade/cadastroApi
+    <strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Atividade/cadastro
 
 
 | Atributos | Tipo | Obrigatoriedade | Descrição |
@@ -43,25 +43,28 @@
          _JSON_:
         ``` JSON
         {
-            "id": "18",
-            "contato": "Nome da Atividade",
-            "vencimento": "2025-03-17 18:00:00",
+            "id": "",
+            "contato": "Colocando o nome atividade",
+            "vencimento": "2025-05-08 16:00:00",
             "formaContato": "1",
-            "tipo": "5",
-            "razaoOportunidade": "",
-            "duracao": "",
-            "descricao": "",
-            "concluido": "",
+            "tipo": "1",
+            "tipoVinculo": "pessoa",
+            "razaoOportunidade": "1",
+            "duracao": "300",
+            "descricao": "Descrição",
+            "concluido": "0",
             "tempoNotificacao": "",
-            "tipoTempo": "",
-            "responsavel": "66",
-            "agendamentoUnico": "",
-            "assinatura": "",
-            "registroVinculadosId": " ",
-            "registroVinculados": " ",
-            "dados": "{\r\n\"processo\": 1,\r\n        \"idPessoaCrm\": \"1\",\r\n        \"codPessoa\": \"2\"\r\n    }",
-            "origem": "",
-            "token": ""
+            "tipoTempo": " ",
+            "responsavelUnico": "1",
+            "pessoas": [1],
+            "oportunidades": " ",
+            "agendamentoUnico": "true",
+            "assinatura": "1",
+            "enviarSemAssinatura": "0",
+            "baseLegalEnvioSemAssinatura": "",
+            "justificativaEnvioSemAssinatura": "",
+            "origem": "123",
+            "token": "a79ca40b4cf7498645bb6452f8391584"
         }
         ```
 
@@ -70,22 +73,28 @@
         _JSON_:
         ``` JSON
                 "dados": {
-                    "id": "1",
+                    "id": "18612",
                     "status": "1",
                     "statusNome": "Planejada",
-                    "tipo": "5",
-                    "tipoNome": "Tarefa",
-                    "contato": "Atividade para testar AP2",
+                    "tipo": "1",
+                    "tipoNome": "Ligação",
+                    "contato": "Colocando atividade em demonstração",
                     "oportunidade": false,
-                    "pessoa": "1",
-                    "pessoaNome": "Nome da pessoa",
-                    "email": "",
-                    "telefone": "",
-                    "vencimento": "2025-03-17 18:00:00",
-                    "responsavel": "",
-                    "responsavelNome": "Nome responsável",
-                    "momentoConcluido": null
-                } 
+                    "pessoa": "21287",
+                    "pessoaNome": "Teste responsável",
+                    "email": "responsavel@email.com.br",
+                    "telefone": "328493987946",
+                    "vencimento": "2025-05-08 16:00:00",
+                    "responsavel": "1",
+                    "responsavelNome": "Nome do Responsável",
+                    "momentoConcluido": null,
+                    "assinatura": "1",
+                    "nomeAssinatura": "Comunicação de atendimento ao cliente",
+                    "enviarSemAssinatura": "0",
+                    "baseLegalEnvioSemAssinatura": null,
+                    "justificativaEnvioSemAssinatura": null,
+                    "nomeBaseLegal": null
+                }
         ```
 
 ## Listar atividades

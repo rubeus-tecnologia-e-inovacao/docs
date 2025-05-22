@@ -1,7 +1,7 @@
 
 # Tracking multidomínio
 
-Utilizando a função `getHash()` é possível obter o `hash` armazenado no dispositivo, e posteriormente, usar para identificar o usuário em outro domínio, passando o hash obtido pela a url que irá para a próxima página e nela é necessário também ter instalado o script de monitoramento para se obter os dados passados e assim obter relatórios mais sólidos.
+Utilizando a função `getHash()` é possível obter o `hash` armazenado no dispositivo, e posteriormente, usar para identificar o usuário em outro domínio, passando o hash obtido pela a URL que irá para a próxima página e nela é necessário também ter instalado o script de monitoramento para se obter os dados passados da página anterior.
 
 ## Estrutura
 
@@ -27,8 +27,11 @@ Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno po
 
 ###### Formulário exemplo
 
-``` html tab="HTML"
-<<h2>Formulário de Contato</h2>
+??? Exemplos
+
+    _HTML_:
+    ```html
+    <h2>Formulário de Contato</h2>
         <form id="meuFormulario">
             <div class="form-group">
                 <label for="nome">Nome:</label>
@@ -44,47 +47,50 @@ Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno po
             </div>
             <button type="button" onclick="enviarFicha()">Enviar</button>
         </form>
-```
+    ```
+
 ###### Função para capturar os dados e enviar para a próxima página
 
-``` javascript tab="Função JavaScript para enviar os dados"
+??? Exemplos
 
-function enviarFicha() {
-    // 1. Pegar os dados dos inputs
-    const nome = document.getElementById('nome').value;
-    const emailPrincipal = document.getElementById('emailPrincipal').value;
-    const telefonePrincipal = document.getElementById('telefonePrincipal').value;
+    _JavaScript_:
+    ```javascript
+    function enviarFicha() {
+        // 1. Pegar os dados dos inputs
+        const nome = document.getElementById('nome').value;
+        const emailPrincipal = document.getElementById('emailPrincipal').value;
+        const telefonePrincipal = document.getElementById('telefonePrincipal').value;
 
-    // 2. Criar o objeto de dados a ser enviado
-    const userData = {
-        nome: nome,
-        telefonePrincipal: telefonePrincipal,
-        emailPrincipal: emailPrincipal,
-        idSession: session
-    };
-
-    // 3. Enviar os dados usando RBTracking.sendData()
-    RBTracking.sendData(userData, function(response) {
+        // 2. Criar o objeto de dados a ser enviado
+        const userData = {
+            nome: nome,
+            telefonePrincipal: telefonePrincipal,
+            emailPrincipal: emailPrincipal,
+            idSession: session
+        };
+        // 3. Enviar os dados usando RBTracking.sendData()
+        RBTracking.sendData(userData, function(response) {
         // 4. Abrir a página de inscrição APÓS o envio dos dados
         window.open(RBTracking.getHash('https://inscricao.uniexemplo.edu.br'));
         return 'success!';
-    });
-
-}
-
-```
+        });
+    }
+    ```
 
 ## Próxima página
 
-Já na página seguinte, com o serviço de monitoramento já instalado e a comunicação efetuada com sucesso, o algoritmo será iniciado com o hash que foi passado pela URL, identificando assim que é o mesmo usuário.  Para capturar os dados que foram enviados anteriormente, é necessário utilizar o método [getData()](recuperando-informacoes.md), com um parâmetro de callback de resposta, para verificar o sucesso da requisição de recuperação dos dados.
+Já na página seguinte, com o serviço de monitoramento já instalado e a comunicação efetuada com sucesso, o algoritmo será iniciado com o hash que foi passado pela URL, identificando que é o mesmo usuário.  Para capturar os dados que foram enviados anteriormente, é necessário utilizar o método [getData()](recuperando-informacoes.md), com um parâmetro de callback de resposta, para verificar o sucesso da requisição de recuperação dos dados.
 
 #### Na prática
 
-##### Script exemplo de recuperação de dados
+###### Script para recuperar os dados e inseri-los nos inputs corretos
 
-``` javascript tab="Utilizando o método getData() para recuperação de dados"
+??? Exemplos
 
-RBTracking.getData((r) => {
+    _JavaScript_:
+    ```javascript
+
+    RBTracking.getData((r) => {
 
     if (r.success && r.data) { //Verifica se a response da API deu sucess e se existe dados enviados
       const nome = r.data.nome;
@@ -94,14 +100,14 @@ RBTracking.getData((r) => {
       // Preenche os inputs com os dados recuperados
       document.querySelector('Identificador do input Nome').value = nome;
       document.querySelector('Identificador do input E-mail').value = email;
-      document.querySelector('Identificador do input Telefone]').value = telefone;
+      document.querySelector('Identificador do input Telefone').value = telefone;
     } else {
       console.log("Dados não retornaram com sucesso.");
     }
-  });
+    });
+    
+    ```
 
-```
+## Utilização prática
 
-###### Utilização prática
-
-Você conseguirá utilizar o script de recuperação de dados tanto para a Ficha de Inscrição e Matrícula Integrado, aplicando o script de recuperação em um componente HTML/Script na primeira etapa da Ficha onde aparecem as informações que você recuperou, quanto para a Ficha de Inscrição dos Modelos de Formulários, atentando-se a detalhes como: a identificação correta dos inputs, o link de redirecionamento correto e afins.
+Você conseguirá utilizar o script de recuperação de dados tanto para a Ficha de Inscrição e Matrícula Integrado, aplicando o script de recuperação em um componente HTML/Script na primeira etapa da Ficha onde aparecem as informações que você recuperou, quanto para a Ficha de Inscrição dos Modelos de Formulários, atentando-se a detalhes como: a identificação correta dos inputs, o link de redirecionamento correto e entre outros detalhes.

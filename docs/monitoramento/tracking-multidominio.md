@@ -23,7 +23,7 @@ Tendo como exemplo a situação de ter uma página para a captação de alunos, 
 
 Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno pode preencher seus dados básicos como: Nome, e-mail e telefone na primeira página. Logo após, ao clicar em um botão que o direcionará à página de inscrição, podemos enviar os dados pelo Monitoramento de Páginas utilizando o método [sendData()](http://enviando-data.md), que deve receber dois parâmetros: o primeiro é um objeto com os dados adquiridos no formulário e o segundo é um callback de resposta para vermos a resposta da API. Nesse redirecionamento, o hash atual da primeira página será carregado para a segunda, identificando que é o mesmo usuário.
 
-#### Na prática
+#### Primeira página
 
 ###### Formulário exemplo
 
@@ -81,7 +81,7 @@ Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno po
 
 Já na página seguinte, com o serviço de monitoramento já instalado e a comunicação efetuada com sucesso, o algoritmo será iniciado com o hash que foi passado pela URL, identificando que é o mesmo usuário.  Para capturar os dados que foram enviados anteriormente, é necessário utilizar o método [getData()](recuperando-informacoes.md), com um parâmetro de callback de resposta, para verificar o sucesso da requisição de recuperação dos dados.
 
-#### Na prática
+#### Segunda página
 
 ###### Script para recuperar os dados e inseri-los nos inputs corretos
 

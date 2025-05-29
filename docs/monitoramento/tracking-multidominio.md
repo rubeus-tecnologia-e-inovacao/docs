@@ -1,7 +1,7 @@
 
 # Tracking multidomínio
 
-Utilizando a função `getHash()` é possível obter o `hash` armazenado no dispositivo, e posteriormente, usar para identificar o usuário em outro domínio, passando o hash obtido pela a url que irá para a próxima página e nela é necessário também ter instalado o script de monitoramento para se obter os dados passados e assim obter relatórios mais sólidos.
+Utilizando a função `getHash()` é possível obter o `hash` armazenado no dispositivo, e posteriormente, usar para identificar o usuário em outro domínio, passando o hash obtido pela a URL que irá para a próxima página e nela é necessário também ter instalado o script de monitoramento para se obter os dados passados da página anterior.
 
 ## Estrutura
 
@@ -21,53 +21,88 @@ Utilizando a função `getHash()` é possível obter o `hash` armazenado no disp
 ## Aplicação no uso
 Tendo como exemplo a situação de ter uma página para a captação de alunos, chamado de *https://captacao.exemplounivesidade.com.br*, e outra para a inscrição *https://inscricao.uniexemplo.edu.br* em domínios diferentes.
 
-Ná página de captação, o aluno escolhe um curso e preenche alguns dados e clica em um botão que irá direcioná-lo à página de inscrição, esses dados precisam ser enviados pelo método [sendEvent()](http://enviando-eventos.md) primeiro, no envio dos dados terá que ser passado um segundo parâmetro, que nesse caso é um `callback` contendo o link para qual o usuário será redirecionado, nesse link carrega o hash atual da máquina para haver a comunicação da API com outro domínio.
+Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno pode preencher seus dados básicos como: Nome, e-mail e telefone na primeira página. Logo após, ao clicar em um botão que o direcionará à página de inscrição, podemos enviar os dados pelo Monitoramento de Páginas utilizando o método [sendData()](http://enviando-data.md), que deve receber dois parâmetros: o primeiro é um objeto com os dados adquiridos no formulário e o segundo é um callback de resposta para vermos a resposta da API. Nesse redirecionamento, o hash atual da primeira página será carregado para a segunda, identificando que é o mesmo usuário.
 
-### Código Exemplo
+## Primeira página
 
-#### Exemplo 1
 
-``` javascript tab="Pegar apenas o hash"
-RBTracking.getHash();
-```
+=== "HTML"
+    Formulário exemplo
 
----
+    ```html
+    <h2>Formulário de Contato</h2>
+    <form id="meuFormulario">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+            <label for="emailPrincipal">Email:</label>
+            <input type="email" id="emailPrincipal" name="emailPrincipal" required>
+        </div>
+        <div class="form-group">
+            <label for="telefonePrincipal">Telefone:</label>
+            <input type="tel" id="telefonePrincipal" name="telefonePrincipal" required>
+        </div>
+        <button type="button" onclick="enviarFicha()">Enviar</button>
+    </form>
+    ```
 
-#### Exemplo 2
+=== "JavaScript"
+    Função para capturar os dados e enviar para a próxima página
 
-``` html tab="HTML"
-<form>
-<select id="curso" onchange="javascript:myFunction()">
-        <option>SELECIONAR</option>
-        <option value="1-123-001">ADMINISTRAÇÃO</option>
-        <option value="2-321-032">AGRONOMIA</option>
-        <option value="1-123-003">DIREITO</option>
-</select>
-</form>
-```
+    ```javascript
+    function enviarFicha() {
+        // 1. Pegar os dados dos inputs
+        const nome = document.getElementById('nome').value;
+        const emailPrincipal = document.getElementById('emailPrincipal').value;
+        const telefonePrincipal = document.getElementById('telefonePrincipal').value;
 
-``` javascript tab="Função JavaScript"
-function myFunction() {
-    var curso = document.getElementById('curso');
-    var p = {
-        eventData: {
-            curso: {
-                id: curso.value,
-                nome: curso.options[curso.selectedIndex].text
-            }
-        },
-        eventType: 1
-    };
-    RBTracking.sendEvent(p, function () {
-            window.open(
-                RBTracking.getHash('https://inscricao.uniexemplo.edu.br')
-            );
-            return 'success!';
-        }
-    );
-}
-```
+        // 2. Criar o objeto de dados a ser enviado
+        const userData = {
+            nome: nome,
+            telefonePrincipal: telefonePrincipal,
+            emailPrincipal: emailPrincipal,
+            idSession: session
+        };
+        // 3. Enviar os dados usando RBTracking.sendData()
+        RBTracking.sendData(userData, function(response) {
+        // 4. Abrir a página de inscrição APÓS o envio dos dados
+        window.open(RBTracking.getHash('https://inscricao.uniexemplo.edu.br'));
+        return 'success!';
+        });
+    }
+    ```
+    
 
-## Próximo passo
+## Próxima página
 
-Já na página seguinte tendo o serviço de monitoramento já instalado e com a comunicação ter sido efetuada com sucesso, o algoritmo será iniciado com o hash que foi passado pela URL e assim identificando que é o mesmo usuário. Para fazer o reprocessamento dos dados que foram previamente passados, é necessário adicionar um [getData()](recuperando-informacoes.md) para recuperar as informações e adicioná-las ao fluxo de sua aplicação.
+Já na página seguinte, com o serviço de monitoramento já instalado e a comunicação efetuada com sucesso, o algoritmo será iniciado com o hash que foi passado pela URL, identificando que é o mesmo usuário.  Para capturar os dados que foram enviados anteriormente, é necessário utilizar o método [getData()](recuperando-informacoes.md), com um parâmetro de callback de resposta, para verificar o sucesso da requisição de recuperação dos dados.
+
+## Segunda página
+
+=== "JavaScript"
+    Script para recuperar os dados e inseri-los nos inputs corretos
+
+    ```javascript
+    RBTracking.getData((r) => {
+
+    if (r.success && r.data) { //Verifica se a response da API deu sucess e se existe dados enviados
+        const nome = r.data.nome;
+        const email = r.data.emailPrincipal;
+        const telefone = r.data.telefonePrincipal;
+
+        // Preenche os inputs com os dados recuperados
+        document.querySelector('Identificador do input Nome').value = nome;
+        document.querySelector('Identificador do input E-mail').value = email;
+        document.querySelector('Identificador do input Telefone').value = telefone;
+    } else {
+        console.log("Dados não retornaram com sucesso.");
+    }
+    });
+
+    ```
+
+## Utilização prática
+
+Você conseguirá utilizar o script de recuperação de dados tanto para a Ficha de Inscrição e Matrícula Integrado, aplicando o script de recuperação em um componente HTML/Script na primeira etapa da Ficha onde aparecem as informações que você recuperou, quanto para a Ficha de Inscrição dos Modelos de Formulários, atentando-se a detalhes como: a identificação correta dos inputs, o link de redirecionamento correto e entre outros detalhes.

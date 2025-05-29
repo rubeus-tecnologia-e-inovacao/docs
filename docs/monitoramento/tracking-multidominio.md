@@ -26,33 +26,31 @@ Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno po
 ## Primeira página
 
 
-??? Exemplos
+=== "HTML"
+    Formulário exemplo
 
-    _HTML_:
     ```html
     <h2>Formulário de Contato</h2>
-        <form id="meuFormulario">
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-            </div>
-            <div class="form-group">
-                <label for="emailPrincipal">Email:</label>
-                <input type="email" id="emailPrincipal" name="emailPrincipal" required>
-            </div>
-            <div class="form-group">
-                <label for="telefonePrincipal">Telefone:</label>
-                <input type="tel" id="telefonePrincipal" name="telefonePrincipal" required>
-            </div>
-            <button type="button" onclick="enviarFicha()">Enviar</button>
-        </form>
+    <form id="meuFormulario">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+            <label for="emailPrincipal">Email:</label>
+            <input type="email" id="emailPrincipal" name="emailPrincipal" required>
+        </div>
+        <div class="form-group">
+            <label for="telefonePrincipal">Telefone:</label>
+            <input type="tel" id="telefonePrincipal" name="telefonePrincipal" required>
+        </div>
+        <button type="button" onclick="enviarFicha()">Enviar</button>
+    </form>
     ```
 
-###### Função para capturar os dados e enviar para a próxima página
+=== "JavaScript"
+    Função para capturar os dados e enviar para a próxima página
 
-??? Exemplos
-
-    _JavaScript_:
     ```javascript
     function enviarFicha() {
         // 1. Pegar os dados dos inputs
@@ -75,6 +73,7 @@ Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno po
         });
     }
     ```
+    
 
 ## Próxima página
 

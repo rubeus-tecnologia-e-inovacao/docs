@@ -79,7 +79,7 @@ Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno po
 
 Já na página seguinte, com o serviço de monitoramento já instalado e a comunicação efetuada com sucesso, o algoritmo será iniciado com o hash que foi passado pela URL, identificando que é o mesmo usuário.  Para capturar os dados que foram enviados anteriormente, é necessário utilizar o método [getData()](recuperando-informacoes.md), com um parâmetro de callback de resposta, para verificar o sucesso da requisição de recuperação dos dados.
 
-#### Segunda página
+## Segunda página
 
 ###### Script para recuperar os dados e inseri-los nos inputs corretos
 

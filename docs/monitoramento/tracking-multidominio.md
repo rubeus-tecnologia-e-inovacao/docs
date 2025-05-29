@@ -23,7 +23,7 @@ Tendo como exemplo a situação de ter uma página para a captação de alunos, 
 
 Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno pode preencher seus dados básicos como: Nome, e-mail e telefone na primeira página. Logo após, ao clicar em um botão que o direcionará à página de inscrição, podemos enviar os dados pelo Monitoramento de Páginas utilizando o método [sendData()](http://enviando-data.md), que deve receber dois parâmetros: o primeiro é um objeto com os dados adquiridos no formulário e o segundo é um callback de resposta para vermos a resposta da API. Nesse redirecionamento, o hash atual da primeira página será carregado para a segunda, identificando que é o mesmo usuário.
 
-#### Primeira página
+## Primeira página
 
 ###### Formulário exemplo
 

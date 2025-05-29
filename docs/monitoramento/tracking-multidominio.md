@@ -81,29 +81,26 @@ Já na página seguinte, com o serviço de monitoramento já instalado e a comun
 
 ## Segunda página
 
-###### Script para recuperar os dados e inseri-los nos inputs corretos
+=== "JavaScript"
+    Script para recuperar os dados e inseri-los nos inputs corretos
 
-??? Exemplos
-
-    _JavaScript_:
     ```javascript
-
     RBTracking.getData((r) => {
 
     if (r.success && r.data) { //Verifica se a response da API deu sucess e se existe dados enviados
-      const nome = r.data.nome;
-      const email = r.data.emailPrincipal;
-      const telefone = r.data.telefonePrincipal;
+        const nome = r.data.nome;
+        const email = r.data.emailPrincipal;
+        const telefone = r.data.telefonePrincipal;
 
-      // Preenche os inputs com os dados recuperados
-      document.querySelector('Identificador do input Nome').value = nome;
-      document.querySelector('Identificador do input E-mail').value = email;
-      document.querySelector('Identificador do input Telefone').value = telefone;
+        // Preenche os inputs com os dados recuperados
+        document.querySelector('Identificador do input Nome').value = nome;
+        document.querySelector('Identificador do input E-mail').value = email;
+        document.querySelector('Identificador do input Telefone').value = telefone;
     } else {
-      console.log("Dados não retornaram com sucesso.");
+        console.log("Dados não retornaram com sucesso.");
     }
     });
-    
+
     ```
 
 ## Utilização prática

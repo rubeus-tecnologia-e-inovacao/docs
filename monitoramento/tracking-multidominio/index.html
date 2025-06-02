@@ -413,12 +413,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -547,6 +549,116 @@
 
             
           
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tracking multidomínio
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tracking multidomínio
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura" class="md-nav__link">
+    Estrutura
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros" class="md-nav__link">
+    Parâmetros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retorno" class="md-nav__link">
+    Retorno
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao-no-uso" class="md-nav__link">
+    Aplicação no uso
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primeira-pagina" class="md-nav__link">
+    Primeira página
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxima-pagina" class="md-nav__link">
+    Próxima página
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segunda-pagina" class="md-nav__link">
+    Segunda página
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilizacao-pratica" class="md-nav__link">
+    Utilização prática
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -641,37 +753,32 @@
     Aplicação no uso
   </a>
   
-    <nav class="md-nav" aria-label="Aplicação no uso">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#codigo-exemplo" class="md-nav__link">
-    Código Exemplo
-  </a>
-  
-    <nav class="md-nav" aria-label="Código Exemplo">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-1" class="md-nav__link">
-    Exemplo 1
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#primeira-pagina" class="md-nav__link">
+    Primeira página
+  </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#proximo-passo" class="md-nav__link">
-    Próximo passo
+  <a href="#proxima-pagina" class="md-nav__link">
+    Próxima página
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segunda-pagina" class="md-nav__link">
+    Segunda página
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilizacao-pratica" class="md-nav__link">
+    Utilização prática
   </a>
   
 </li>
@@ -691,7 +798,7 @@
 
 
 <h1 id="tracking-multidominio">Tracking multidomínio</h1>
-<p>Utilizando a função <code>getHash()</code> é possível obter o <code>hash</code> armazenado no dispositivo, e posteriormente, usar para identificar o usuário em outro domínio, passando o hash obtido pela a url que irá para a próxima página e nela é necessário também ter instalado o script de monitoramento para se obter os dados passados e assim obter relatórios mais sólidos.</p>
+<p>Utilizando a função <code>getHash()</code> é possível obter o <code>hash</code> armazenado no dispositivo, e posteriormente, usar para identificar o usuário em outro domínio, passando o hash obtido pela a URL que irá para a próxima página e nela é necessário também ter instalado o script de monitoramento para se obter os dados passados da página anterior.</p>
 <h2 id="estrutura">Estrutura</h2>
 <h3 id="parametros">Parâmetros</h3>
 <table>
@@ -736,47 +843,84 @@
 </table>
 <h2 id="aplicacao-no-uso">Aplicação no uso</h2>
 <p>Tendo como exemplo a situação de ter uma página para a captação de alunos, chamado de <em>https://captacao.exemplounivesidade.com.br</em>, e outra para a inscrição <em>https://inscricao.uniexemplo.edu.br</em> em domínios diferentes.</p>
-<p>Ná página de captação, o aluno escolhe um curso e preenche alguns dados e clica em um botão que irá direcioná-lo à página de inscrição, esses dados precisam ser enviados pelo método <a href="http://enviando-eventos.md">sendEvent()</a> primeiro, no envio dos dados terá que ser passado um segundo parâmetro, que nesse caso é um <code>callback</code> contendo o link para qual o usuário será redirecionado, nesse link carrega o hash atual da máquina para haver a comunicação da API com outro domínio.</p>
-<h3 id="codigo-exemplo">Código Exemplo</h3>
-<h4 id="exemplo-1">Exemplo 1</h4>
-<p>``` javascript tab="Pegar apenas o hash"
-RBTracking.getHash();
-<div class="highlight"><pre><span></span><code>---
+<p>Com o nosso Monitoramento de Páginas instalado em ambas as páginas, o aluno pode preencher seus dados básicos como: Nome, e-mail e telefone na primeira página. Logo após, ao clicar em um botão que o direcionará à página de inscrição, podemos enviar os dados pelo Monitoramento de Páginas utilizando o método <a href="http://enviando-data.md">sendData()</a>, que deve receber dois parâmetros: o primeiro é um objeto com os dados adquiridos no formulário e o segundo é um callback de resposta para vermos a resposta da API. Nesse redirecionamento, o hash atual da primeira página será carregado para a segunda, identificando que é o mesmo usuário.</p>
+<h2 id="primeira-pagina">Primeira página</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">HTML</label><label for="__tabbed_1_2">JavaScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Formulário exemplo</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Formulário de Contato<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;meuFormulario&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nome&quot;</span><span class="p">&gt;</span>Nome:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;emailPrincipal&quot;</span><span class="p">&gt;</span>Email:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;emailPrincipal&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;emailPrincipal&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;telefonePrincipal&quot;</span><span class="p">&gt;</span>Telefone:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;tel&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;telefonePrincipal&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;telefonePrincipal&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;enviarFicha()&quot;</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Função para capturar os dados e enviar para a próxima página</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">enviarFicha</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 1. Pegar os dados dos inputs</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;nome&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">emailPrincipal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;emailPrincipal&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">telefonePrincipal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;telefonePrincipal&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
 
-#### Exemplo 2
+<span class="w">    </span><span class="c1">// 2. Criar o objeto de dados a ser enviado</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">userData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="nx">nome</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">telefonePrincipal</span><span class="o">:</span><span class="w"> </span><span class="nx">telefonePrincipal</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">emailPrincipal</span><span class="o">:</span><span class="w"> </span><span class="nx">emailPrincipal</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">idSession</span><span class="o">:</span><span class="w"> </span><span class="nx">session</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 3. Enviar os dados usando RBTracking.sendData()</span><span class="w"></span>
+<span class="w">    </span><span class="nx">RBTracking</span><span class="p">.</span><span class="nx">sendData</span><span class="p">(</span><span class="nx">userData</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 4. Abrir a página de inscrição APÓS o envio dos dados</span><span class="w"></span>
+<span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">RBTracking</span><span class="p">.</span><span class="nx">getHash</span><span class="p">(</span><span class="s1">&#39;https://inscricao.uniexemplo.edu.br&#39;</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;success!&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="proxima-pagina">Próxima página</h2>
+<p>Já na página seguinte, com o serviço de monitoramento já instalado e a comunicação efetuada com sucesso, o algoritmo será iniciado com o hash que foi passado pela URL, identificando que é o mesmo usuário.  Para capturar os dados que foram enviados anteriormente, é necessário utilizar o método <a href="../recuperando-informacoes/">getData()</a>, com um parâmetro de callback de resposta, para verificar o sucesso da requisição de recuperação dos dados.</p>
+<h2 id="segunda-pagina">Segunda página</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">JavaScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Script para recuperar os dados e inseri-los nos inputs corretos</p>
+<div class="highlight"><pre><span></span><code><span class="nx">RBTracking</span><span class="p">.</span><span class="nx">getData</span><span class="p">((</span><span class="nx">r</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-``` html tab=&quot;HTML&quot;
-&lt;form&gt;
-&lt;select id=&quot;curso&quot; onchange=&quot;javascript:myFunction()&quot;&gt;
-        &lt;option&gt;SELECIONAR&lt;/option&gt;
-        &lt;option value=&quot;1-123-001&quot;&gt;ADMINISTRAÇÃO&lt;/option&gt;
-        &lt;option value=&quot;2-321-032&quot;&gt;AGRONOMIA&lt;/option&gt;
-        &lt;option value=&quot;1-123-003&quot;&gt;DIREITO&lt;/option&gt;
-&lt;/select&gt;
-&lt;/form&gt;
-</code></pre></div></p>
-<p><code>javascript tab="Função JavaScript"
-function myFunction() {
-    var curso = document.getElementById('curso');
-    var p = {
-        eventData: {
-            curso: {
-                id: curso.value,
-                nome: curso.options[curso.selectedIndex].text
-            }
-        },
-        eventType: 1
-    };
-    RBTracking.sendEvent(p, function () {
-            window.open(
-                RBTracking.getHash('https://inscricao.uniexemplo.edu.br')
-            );
-            return 'success!';
-        }
-    );
-}</code></p>
-<h2 id="proximo-passo">Próximo passo</h2>
-<p>Já na página seguinte tendo o serviço de monitoramento já instalado e com a comunicação ter sido efetuada com sucesso, o algoritmo será iniciado com o hash que foi passado pela URL e assim identificando que é o mesmo usuário. Para fazer o reprocessamento dos dados que foram previamente passados, é necessário adicionar um <a href="../recuperando-informacoes/">getData()</a> para recuperar as informações e adicioná-las ao fluxo de sua aplicação.</p>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">success</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//Verifica se a response da API deu sucess e se existe dados enviados</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">nome</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">emailPrincipal</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">telefone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">telefonePrincipal</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Preenche os inputs com os dados recuperados</span><span class="w"></span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;Identificador do input Nome&#39;</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nome</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;Identificador do input E-mail&#39;</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">email</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;Identificador do input Telefone&#39;</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">telefone</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Dados não retornaram com sucesso.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="utilizacao-pratica">Utilização prática</h2>
+<p>Você conseguirá utilizar o script de recuperação de dados tanto para a Ficha de Inscrição e Matrícula Integrado, aplicando o script de recuperação em um componente HTML/Script na primeira etapa da Ficha onde aparecem as informações que você recuperou, quanto para a Ficha de Inscrição dos Modelos de Formulários, atentando-se a detalhes como: a identificação correta dos inputs, o link de redirecionamento correto e entre outros detalhes.</p>
 
               
             </article>
@@ -787,6 +931,42 @@ function myFunction() {
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+      
+        
+        <a href="../modo-manual/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Utilizando o modo manual" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              Utilizando o modo manual
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../tabelasauxiliares/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Tabelas auxiliares" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              Tabelas auxiliares
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -81,7 +81,7 @@ Retorna os dados nescessários para montar um formulário
                         "content": {
                             "inputs": [
                                 {
-                                    "field": 113571,
+                                    "field_id": 113571,
                                     "field_settings": 757229,
                                     "label": "Nome completo",
                                     "type": "text",
@@ -139,7 +139,7 @@ Retorna os dados nescessários para montar um formulário
                                     }
                                 },
                                 {
-                                    "field": 113632,
+                                    "field_id": 113632,
                                     "field_settings": 756606,
                                     "label": "Possuo nome social",
                                     "type": "checkbox",
@@ -162,7 +162,7 @@ Retorna os dados nescessários para montar um formulário
                                     "case": null
                                 },
                                 {
-                                    "field": 113633,
+                                    "field_id": 113633,
                                     "field_settings": 756607,
                                     "label": "Nome social",
                                     "type": "text",
@@ -222,7 +222,7 @@ Retorna os dados nescessários para montar um formulário
                                     }
                                 },
                                 {
-                                    "field": 113892,
+                                    "field_id": 113892,
                                     "field_settings": 756608,
                                     "label": "E-mail",
                                     "type": "email",
@@ -266,7 +266,7 @@ Retorna os dados nescessários para montar um formulário
                                     }
                                 },
                                 {
-                                    "field": 113572,
+                                    "field_id": 113572,
                                     "field_settings": 756609,
                                     "label": "Celular",
                                     "type": "text",

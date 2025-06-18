@@ -204,5 +204,5 @@
 | Atributos | Tipo | Obrigatoriedade | Descrição |
 | --- | --- | --- | --- |
 | `id` | `integer` | Não | Código de identificação (ID)* da atividade. *Utilize o [método de listagem](/api_crm/agendamentos/#listar-atividades) para obter os códigos de identificação correspondentes. |
-| `origem` | `integer` | Não | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
-| `token` | `string` | Não | Chave de acesso única referente ao canal. |
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. |

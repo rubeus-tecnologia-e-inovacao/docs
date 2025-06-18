@@ -129,8 +129,8 @@ Este método retorna os dados de um registro de processo passando a referência 
 | --- | --- | --- | --- |
 | `todosDados` | `boolean` | Não | --- |
 | `etapas` | `boolean` | Não | 1 - msotra etapas e 0 - nao mostra etapas |
-| `origem` | `integer` | Não | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
-| `token` | `string` | Não | Chave de acesso única referente ao canal. |
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. |
 | `app` | `boolean` | Não | enviar como 1 |
 
 
@@ -192,8 +192,8 @@ Este método retorna os dados de um registro de processo passando a referência 
 | `periodoTempoMesmaEtapa` | `array[] of object` | Não | Período em que o contato não avançou no processo <br> Exemplo: **[{"de": "YYYY-MM-DD", "ate": "YYYY-MM-DD"}]** |
 | `limite` | `integer` | Não | Limite de oportunidades retornadas no método, usado para fazer paginação|
 | `quantidade` | `integer` | Não | Quantidade de oportunidades retornadas no método, usada para fazer paginação |
-| `origem` | `integer` | Não | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
-| `token` | `string` | Não | Chave de acesso única referente ao canal. |
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). |
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. |
 
 
 ??? Exemplos

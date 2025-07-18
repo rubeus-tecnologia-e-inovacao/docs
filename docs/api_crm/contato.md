@@ -31,6 +31,7 @@ O cadastro de contatos na Plataforma Rubeus é realizado através de um método 
 | `bairro` | `string` | Não | Bairro (limite de caracteres: 45). | 
 | `sexo` | `integer` | Não | Para informar o sexo utilize: **1** para Masculino e **2** para Feminino. | 
 | `imagemUrl` | `string` | Não | URL para foto de perfil do contato.<br>**Em alguns casos, o contato pode já estar cadastrado em um sistema e ter uma foto de perfil. Caso esteja disponível para acesso externo, basta informar a URL de acesso.** | 
+| `imagemBase64` | `string` | Não | Conteúdo da imagem em Base64 para foto de perfil do contato.<br>**Informe com ou sem o prefixo `data:image/<tipo>;base64,`** |
 | `estadoCidade` | `object` | Não | Deve ser informado um objeto com os dados necessários para vincular o contato a uma [cidade](/api_crm/metodosdelistagem/#listar-cidades).<br>**Se não for encontrada uma cidade com esse nome nessa UF, o contato não será vinculado a uma cidade.** | 
 | **↳** `estadoCidade.cidade` | `string` | Não | Nome da cidade | 
 | **↳** `estadoCidade.estado` | `string` | Não | Utiliza-se a UF do estado, exemplo: `MG` para Minas Gerais | 

@@ -46,26 +46,33 @@ Atualmente, possuímos os seguintes sources mapeados, recomendamos a utilizaçã
 
 | 0-E | E-R | R-Y | Y-S |
 | --- | --- | --- | --- |
-| 360.cn | Eniro | Rambler | Yandex |
-| AOL | Facebook | Search-results | Youtube |
-| Alice | Facebook Messenger | Sesam | go.mail.ru |
-| Alltheweb | Globo | Seznam | goo.ne |
-| Altavista | Gmail | So.com | haosou.com |
-| Ask | Google | Sogou | search.smt.docomo |
-| Auone | Incredimail | Startsiden | - |
-| Avg | Instagram | Szukacz | - |
-| Babylon | Kvasir | Telegram | - |
-| Baidu | LinkedIn | Terra | - |
-| Biglobe | Lycos | TikTok | - |
-| Bing | MSN | Tut.by | - |
-| CNN | Mamma | Twitter | - |
-| Centrum.cz | Mynet | Ukr | - |
-| Comcast | Najdi | Virgilio | - |
-| Conduit | Naver | Voila | - |
-| Daum | Netscape | WhatsApp | - |
-| DuckDuckGo | ONET | Wirtulana Polska | - |
-| Ecosia | Ozu | Yahoo | - |
-| Ekolay | Rakuten | Yam | - |
+| 360.cn | eniro | portal administradores | x |
+| aol | estadão | rambler | yandex |
+| alice | facebook | ruf (ranking universitário folha) | youtube |
+| alltheweb | facebook messenger | search-results | go.mail.ru |
+| altavista | folha de são paulo | seznam | goo.ne |
+| amazon | globo | so.com | haosou.com |
+| ask | gmail | sogou | out of home |
+| auone | guia da faculdade | spotify | portal administradores |
+| avg | incredimail | startsiden | search.smt.docomo |
+| babylon | instagram | szukacz | taboola |
+| baidu | kvasir | telegram | tecmundo |
+| biglobe | linkedin | terra | uol |
+| bing | lycos | tiktok | - |
+| brasil-escola | msn | tut.by | - |
+| catraca-livre | mamma | twitter | - |
+| ctv | mynet | ukr | - |
+| cnn | najdi | virgilio | - |
+| centrum.cz | naver | voila | - |
+| comcast | netscape | whatsapp | - |
+| conduit | onet | wirtulana polska | - |
+| daum | outbrain | yahoo | - |
+| discovery | ozu | yam | - |
+| duckduckgo | rakuten | - | - |
+| dv360 | guia da faculdade | out of home | - |
+| ecosia | - | - | - |
+| ekolay | - | - | - |
+
 
 ### Parâmetros campaign, terms e content
 

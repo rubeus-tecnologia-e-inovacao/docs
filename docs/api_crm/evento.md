@@ -83,7 +83,6 @@ Método para cadastro de eventos na Plataforma Rubeus.
             ],
             "codOferta": "oferta-1",
             "codCurso": "curso-1",
-            "oferta": 1,
             "curso": 1,
             "codRegistro": "registro-1",
             "cursosSecundarios": [

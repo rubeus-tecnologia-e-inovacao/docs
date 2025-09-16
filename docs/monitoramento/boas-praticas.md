@@ -49,27 +49,27 @@ Atualmente, possuímos os seguintes sources mapeados, recomendamos a utilizaçã
 | 360.cn | eniro | out of home | go.mail.ru |
 | alice | estadão | portal administradores | goo.ne |
 | alltheweb | facebook | rambler | haosou.com |
-| altavista | facebook messenger | ruf (ranking universitário folha) | search.smt.docomo |
-| amazon | folha de são paulo | search-results | taboola |
-| aol | globo | seznam | tecmundo |
-| ask | gmail | so.com | uol |
-| auone | guia da faculdade | sogou | yandex |
-| avg | incredimail | spotify | youtube |
-| babylon | instagram | startsiden | - |
-| baidu | kvasir | szukacz | - |
-| biglobe | linkedin | telegram | - |
-| bing | lycos | terra | - |
-| brasil-escola | mamma | tiktok | - |
-| catraca-livre | msn | tut.by | - |
-| centrum.cz | mynet | X (twitter) | - |
-| cnn | najdi | ukr | - |
-| comcast | naver | virgilio | - |
-| conduit | netscape | voila | - |
-| ctv | onet | whatsapp | - |
-| daum | outbrain | wirtulana polska | - |
-| discovery | ozu | yahoo | - |
-| duckduckgo | rakuten | yam | - |
-| dv360 | - | - | - |
+| altavista | facebook messenger | ruf (ranking universitário folha) | pinterest |
+| amazon | folha de são paulo | search-results | search.smt.docomo |
+| aol | globo | seznam | taboola |
+| ask | gmail | so.com | tecmundo |
+| auone | google | sogou | uol |
+| avg | guia da faculdade | spotify | yandex |
+| babylon | incredimail | startsiden | youtube |
+| baidu | instagram | szukacz | - |
+| biglobe | kvasir | telegram | - |
+| bing | linkedin | terra | - |
+| brasil-escola | lycos | tiktok | - |
+| catraca-livre | mamma | tut.by | - |
+| centrum.cz | msn | X (twitter) | - |
+| cnn | mynet | ukr | - |
+| comcast | najdi | virgilio | - |
+| conduit | naver | voila | - |
+| ctv | netscape | whatsapp | - |
+| daum | onet | wirtulana polska | - |
+| discovery | outbrain | yahoo | - |
+| duckduckgo | ozu | yam | - |
+| dv360 | rakuten | - | - |
 | ecosia | - | - | - |
 | ekolay | - | - | - |
 

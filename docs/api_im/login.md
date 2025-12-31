@@ -18,7 +18,7 @@ Lista campos nescessarios para executar o login no devido portal e o tipo do dad
 ??? Exemplos
 
     === "Envio"
-         `https://admin.portal.apprbs.com.br/api/v1/stages?portal=54`
+         `https://admin.portal.apprbs.com.br/api/v1/info?portal=54`
 
     === "Resposta"
         _JSON_:
@@ -83,18 +83,13 @@ Executa o login no portal do inscrito retornando o id da sessão do candidato pa
         _JSON_:
         ``` JSON
             {
-                "success": true,
-                "data": [
-                    {
-                        "key": "LOGIN",
-                        "label": "CPF ou EMAIL",
-                        "type": "text"
-                    },
-                    {
-                        "key": "DATANASCIMENTO",
-                        "label": "Data de Nascimento",
-                        "type": "date"
+                {
+                    "success": true,
+                    "data": {
+                        "person_id": 4245,
+                        "applyment_id": 12424,
+                        "session_id": "X78Up1GG6KK17LLQ1qIBr6wQvyO5Ui2mHMyEacf9"
                     }
-                ]
+                }
             }
         ```

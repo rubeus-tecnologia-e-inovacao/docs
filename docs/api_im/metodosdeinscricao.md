@@ -53,8 +53,8 @@ Retorna os dados nescessários para montar um formulário
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
 | `target` | `integer` | sim | Id do local que está o formulário esse dado é retornado como next em outros métodos. |
-| `local` | `integer` | sim | Tipo do local que está o formulário esse dado é retornado como local em outros métodos. |
-| `token` | `integer` | sim | Token de sessão do candidato. |
+| `local` | `string` | sim | Tipo do local que está o formulário esse dado é retornado como local em outros métodos. |
+| `token` | `string` | sim | Token de sessão do candidato. |
 
 
 ??? Exemplos
@@ -379,7 +379,7 @@ Envia os dados preeenchidos no formulário e executa uma ação de botão
 | **↳** `field_id` | `integer` | condicional | Id do campo. |
 | **↳** `component_id` | `integer` | condicional | Id do componente. |
 | **↳** `value` | `any` | sim | valor do campo ou do componente. |
-| `token` | `integer` | sim | Token de sessão do candidato. |
+| `token` | `string` | sim | Token de sessão do candidato. |
 
 
 ??? Exemplos

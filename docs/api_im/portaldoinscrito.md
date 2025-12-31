@@ -13,8 +13,8 @@ Lista informações do portal do inscrito e a inscrição atual, passando o appl
 | Atributos | Tipo | Obrigatoriedade | Descrição | 
 | --- | --- | --- | --- |
 | `portal` | `integer` | sim | Id do portal. |
-| `applyment_id` | `integer` | nao | Id da inscrição, caso esteja presente será trocado a inscrição atual do candidato |
-| `token` | `integer` | sim | Token de sessão do candidato. |
+| `applyment_id` | `integer` | não | Id da inscrição, caso esteja presente será trocado a inscrição atual do candidato |
+| `token` | `string` | sim | Token de sessão do candidato. |
 
 
 ??? Exemplos

@@ -47,7 +47,7 @@
 ??? Exemplos
 
     === "Envio"
-         `https://admin.portal.apprbs.com.br/api/v1/stages?portal=12`
+         `https://admin.portal.apprbs.com.br/api/v1/selective-processes?portal=12`
 
     === "Resposta"
         _JSON_:
@@ -149,7 +149,7 @@
 ??? Exemplos
 
     === "Envio"
-         `https://admin.portal.apprbs.com.br/api/v1/stages?stage=54`
+         `https://admin.portal.apprbs.com.br/api/v1/steps?stage=54`
 
     === "Resposta"
         _JSON_:

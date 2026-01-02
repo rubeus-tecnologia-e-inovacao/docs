@@ -35,8 +35,8 @@ Método utilizado para se fazer login na plataforma Rubeus.
 
 === "Resposta"
     
-    !!!warning "Callback obrigatório"
-        Apenas 1.0.0, versões posteriores passará esses dados para o callback
+    !!!warning ""
+        Versões superiores a 2.0.0 passarão esses dados para o callback
 
     _Promisse_:
     ``` JavaScript

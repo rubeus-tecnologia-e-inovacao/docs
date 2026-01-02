@@ -11,7 +11,7 @@ Método para verificar a versão do login utilizado no cliente.
 
 === "Resposta"
     
-    _Promisse_:
+    _Promise_:
     ``` JavaScript
     {
         version: '1.0.0'
@@ -38,7 +38,7 @@ Método utilizado para se fazer login na plataforma Rubeus.
     !!!warning ""
         Versões superiores a 2.0.0 passarão esses dados para o callback
 
-    _Promisse_:
+    _Promise_:
     ``` JavaScript
     {
         success:true,
@@ -61,7 +61,7 @@ Para o login na versão 1.0.0, segue no mesmo padrão de login do CRM (email+sen
 
 Para o login nas versões superiores a 2.0.0, será aberto um popup/guia com a URL do account e o login será realizado por essa tela, após a conclusão do login, o callback será executado.
 
-Após o login ser realizado com sucesso, será criado uma sessão na página e a partir desse ponto, todas as requisições e redirecionamentos que dependam de da sessão do usuário, deverão utilizar os métodos de `callMethod` e `redirect` respectivamente.
+Após o login ser realizado com sucesso, será criado uma sessão na página e a partir desse ponto, todas as requisições e redirecionamentos que dependam da sessão do usuário, deverão utilizar os métodos de `callMethod` e `redirect` respectivamente.
 
 ## getUsuario
 Retorna dados do usuário logado.
@@ -74,7 +74,7 @@ Retorna dados do usuário logado.
     ```
 === "Resposta"
 
-    _Promisse_:
+    _Promise_:
     ``` JavaScript
     {
         nome: 'Usuário',
@@ -95,7 +95,7 @@ Chama um endpoint do CRM passando autenticação de usuário.
     ```
 === "Resposta"
 
-    Retorna uma promisse com o retorno do CRM.
+    Retorna uma promise com o retorno do CRM.
 
 ## redirect
 Faz o redirect/abre numa nova guia a url solicitada.

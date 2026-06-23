@@ -399,13 +399,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#listar-perfis-de-usuarios" class="md-nav__link">
-    Listar perfis de usuários
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#listar-logs-da-api" class="md-nav__link">
     Listar logs da API
   </a>
@@ -876,13 +869,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#listar-perfis-de-usuarios" class="md-nav__link">
-    Listar perfis de usuários
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#listar-logs-da-api" class="md-nav__link">
     Listar logs da API
   </a>
@@ -1089,77 +1075,6 @@
 </code></pre></div></p>
 </details>
 <hr />
-<h2 id="listar-perfis-de-usuarios">Listar perfis de usuários</h2>
-<div class="admonition done">
-<p><strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/PerfilUsuario/listar</p>
-</div>
-<table>
-<thead>
-<tr>
-<th>Atributos</th>
-<th>Tipo</th>
-<th>Obrigatoriedade</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>retornarUsuarios</code></td>
-<td><code>integer</code></td>
-<td>Não</td>
-<td>Retorna os usuários que contêm o perfil perfil.</td>
-</tr>
-</tbody>
-</table>
-<details class="exemplos">
-<summary>Exemplos</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Resposta</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
-<p><em>JSON</em>:
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;dados&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Administrador&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;cor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#808080&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;permissoes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;198&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;ultimaAlteracao&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;momento&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;usuario&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;usuarioNome&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Líder de equipe&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;cor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#FFB946&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;permissoes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;110&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;ultimaAlteracao&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;momento&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;usuario&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;usuarioNome&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Consultor&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;cor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#F7685B&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;permissoes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;44&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;ultimaAlteracao&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;momento&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;usuario&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
-<span class="w">                </span><span class="nt">&quot;usuarioNome&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div></p>
-</details>
-<hr />
 <h2 id="listar-logs-da-api">Listar logs da API</h2>
 <div class="admonition done">
 <p><strong class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Log/listarLogs</p>
@@ -1214,7 +1129,7 @@
 </table>
 <details class="exemplos">
 <summary>Exemplos</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Resposta</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Resposta</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -1243,7 +1158,7 @@
 <p>Método utilizado para listar as cidades para posteriormente utilizar como parâmetro em outro método.</p>
 <details class="exemplos">
 <summary>Exemplos</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Resposta</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Resposta</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -1269,7 +1184,7 @@
 <p>Método utilizado para listar os países para posteriormente utilizar como parâmetro em outro método.</p>
 <details class="exemplos">
 <summary>Exemplos</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Resposta</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Resposta</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -1299,7 +1214,7 @@
 <p>Método utilizado para listar as bases legais disponíveis no Rubeus para posteriormente utilizar como parâmetro em outro método.</p>
 <details class="exemplos">
 <summary>Exemplos</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Resposta</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Resposta</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>
@@ -1359,7 +1274,7 @@
 <p>Método utilizado para listar as assinaturas disponíveis no Rubeus para posteriormente utilizar como parâmetro em outro método.</p>
 <details class="exemplos">
 <summary>Exemplos</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Resposta</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Resposta</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block"></div>
 </div>

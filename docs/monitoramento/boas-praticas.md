@@ -44,35 +44,34 @@ Dentre as possibilidades dos tipos de origem já disponíveis na ferramenta  tem
 
 Atualmente, possuímos os seguintes sources mapeados, recomendamos a utilização dos mesmos com todas as letras minúsculas.
 
-| 0-E           | E-R                | R-Y                               | Y-S               |
-| ------------- | ------------------ | --------------------------------- | ----------------- |
-| 360.cn        | eniro              | out of home                       | go.mail.ru        |
-| alice         | estadão            | portal administradores            | goo.ne            |
-| alltheweb     | facebook           | rambler                           | haosou.com        |
-| altavista     | facebook messenger | ruf (ranking universitário folha) | pinterest         |
-| amazon        | folha de são paulo | search-results                    | search.smt.docomo |
-| aol           | globo              | seznam                            | taboola           |
-| ask           | gmail              | so.com                            | tecmundo          |
-| auone         | google             | sogou                             | uol               |
-| avg           | guia da faculdade  | spotify                           | yandex            |
-| babylon       | incredimail        | startsiden                        | youtube           |
-| baidu         | instagram          | szukacz                           | -                 |
-| biglobe       | kvasir             | telegram                          | -                 |
-| bing          | linkedin           | terra                             | -                 |
-| brasil-escola | lycos              | tiktok                            | -                 |
-| catraca-livre | mamma              | tut.by                            | -                 |
-| centrum.cz    | meta               | X (twitter)                       | -                 |
-| cnn           | msn                | ukr                               | -                 |
-| comcast       | mynet              | virgilio                          | -                 |
-| conduit       | najdi              | voila                             | -                 |
-| ctv           | naver              | whatsapp                          | -                 |
-| daum          | netscape           | wirtulana polska                  | -                 |
-| discovery     | onet               | yahoo                             | -                 |
-| duckduckgo    | outbrain           | yam                               | -                 |
-| dv360         | ozu                | -                                 | -                 |
-| ecosia        | rakuten            | -                                 | -                 |
-| ekolay        | -                  | -                                 | -                 |
-
+| 0-E | E-R | R-Y | Y-S |
+| --- | --- | --- | --- |
+| 360.cn | eniro | out of home | go.mail.ru |
+| alice | estadão | portal administradores | goo.ne |
+| alltheweb | facebook | rambler | haosou.com |
+| altavista | facebook messenger | ruf (ranking universitário folha) | pinterest |
+| amazon | folha de são paulo | search-results | search.smt.docomo |
+| aol | globo | seznam | taboola |
+| ask | gmail | so.com | tecmundo |
+| auone | google | sogou | uol |
+| avg | guia da faculdade | spotify | yandex |
+| babylon | incredimail | startsiden | youtube |
+| baidu | instagram | szukacz | - |
+| biglobe | kvasir | telegram | - |
+| bing | linkedin | terra | - |
+| brasil-escola | lycos | tiktok | - |
+| catraca-livre | mamma | tut.by | - |
+| centrum.cz | meta | X (twitter) | - |
+| cnn | msn | ukr | - |
+| comcast | mynet | virgilio | - |
+| conduit | najdi | voila | - |
+| ctv | naver | whatsapp | - |
+| daum | netscape | wirtulana polska | - |
+| discovery | onet | yahoo | - |
+| duckduckgo | outbrain | yam | - |
+| dv360 | ozu | - | - |
+| ecosia | rakuten | - | - |
+| ekolay | - | - | - |
 
 
 ### Parâmetros campaign, terms e content

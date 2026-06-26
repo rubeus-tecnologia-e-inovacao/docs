@@ -61,16 +61,16 @@ Atualmente, possuímos os seguintes sources mapeados, recomendamos a utilizaçã
 | bing | linkedin | terra | - |
 | brasil-escola | lycos | tiktok | - |
 | catraca-livre | mamma | tut.by | - |
-| centrum.cz | msn | X (twitter) | - |
-| cnn | mynet | ukr | - |
-| comcast | najdi | virgilio | - |
-| conduit | naver | voila | - |
-| ctv | netscape | whatsapp | - |
-| daum | onet | wirtulana polska | - |
-| discovery | outbrain | yahoo | - |
-| duckduckgo | ozu | yam | - |
-| dv360 | rakuten | - | - |
-| ecosia | - | - | - |
+| centrum.cz | meta | X (twitter) | - |
+| cnn | msn | ukr | - |
+| comcast | mynet | virgilio | - |
+| conduit | najdi | voila | - |
+| ctv | naver | whatsapp | - |
+| daum | netscape | wirtulana polska | - |
+| discovery | onet | yahoo | - |
+| duckduckgo | outbrain | yam | - |
+| dv360 | ozu | - | - |
+| ecosia | rakuten | - | - |
 | ekolay | - | - | - |
 
 

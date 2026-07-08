@@ -234,7 +234,7 @@ class Tooltip extends HTMLElement {
 
       .tooltip .tooltiptext {
         visibility: hidden;
-        width: 140px;
+        width: 300px;
         background-color: #555;
         color: #fff;
         text-align: center;
@@ -244,7 +244,7 @@ class Tooltip extends HTMLElement {
         z-index: 1;
         bottom: 150%;
         left: 50%;
-        margin-left: -75px;
+        margin-left: -155px;
         opacity: 0;
         transition: opacity 0.3s;
       }

@@ -997,13 +997,13 @@
 <td><code>modoAlteracaoNaturezaPessoasMescladas</code></td>
 <td><code>integer</code></td>
 <td>Não</td>
-<td>Este campo define o comportamento ao alterar a natureza jurídica de um contato onde o mesmo possui contatos relacionados.<hr>Utilize: <strong>1</strong> para <strong>alterar</strong> a natureza jurídica dos contatos relacionados para a natureza jurídica enviada e <strong>2</strong> para <strong>não alterar</strong> a natureza jurídica dos contatos relacionados para a natureza jurídica enviada, <strong>causando a desmesclagem do contato principal</strong>.</td>
+<td>Este campo define o comportamento ao alterar a natureza jurídica de um contato que possui contatos relacionados.<hr>Utilize: <strong>1</strong> para <strong>alterar</strong> a natureza jurídica dos contatos relacionados para a natureza jurídica enviada e <strong>2</strong> para <strong>não alterar</strong> a natureza jurídica dos contatos relacionados para a natureza jurídica enviada, <strong>causando a desmesclagem do contato principal</strong>.</td>
 </tr>
 <tr>
 <td><code>alterarNaturezaPessoasMescladasEspecificas</code></td>
 <td><code>array of integer</code></td>
 <td><rb-tooltip text="Pode ser usado quando utilizado modoAlteracaoNaturezaPessoasMescladas = 2">Condicional </rb-tooltip></td>
-<td>Usado para definir quais contatos relacionados deverão receber a natureza jurídica do contato principal que teve sua natureza jurídica alterada<hr><strong>O campo deve ser informado como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="err">al</span><span class="kc">terar</span><span class="err">Na</span><span class="kc">ture</span><span class="err">zaPessoasMescladasEspeci</span><span class="kc">f</span><span class="err">icas</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">125</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">129</span><span class="p">]</span><span class="w"></span></code><hr>Para  encontrar possíveis contatos relacionados utilize o método <a href="/api_crm/contato/#listar-contatos-relacionados">Contato/listarPessoasMescladas</a>.</td>
+<td>Usado para definir quais contatos relacionados deverão receber a natureza jurídica do contato principal que teve sua natureza jurídica alterada<hr><strong>O campo deve ser informado como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;alterarNaturezaPessoasMescladasEspecificas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">125</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">129</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code><hr>Para  encontrar possíveis contatos relacionados utilize o método <a href="/api_crm/contato/#listar-contatos-relacionados">Contato/listarPessoasMescladas</a>.</td>
 </tr>
 <tr>
 <td><code>endereco</code></td>
@@ -1553,13 +1553,13 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 <tr>
 <td><code>cpf</code></td>
 <td><code>string</code></td>
-<td>Não</td>
+<td>Condicional</td>
 <td>Campo para informar o CPF do contato.</td>
 </tr>
 <tr>
 <td><code>cnpj</code></td>
 <td><code>string</code></td>
-<td>Não</td>
+<td>Condicional</td>
 <td>Campo para informar o CNPJ do contato.</td>
 </tr>
 <tr>
@@ -1837,7 +1837,7 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 </code></pre></div></p>
 </details>
 <h2 id="listar-contatos-relacionados">Listar contatos relacionados</h2>
-<p>Quando o mesmo contato é identificado mais de uma vez em nossa plataforma nós o exibimos apenas uma vez para evitar uma poluição visual e melhorar a organização de seus dados.</br>
+<p>Quando um mesmo contato é identificado mais de uma vez em nossa plataforma, nós o exibimos apenas uma vez para evitar uma poluição visual e melhorar a organização de seus dados.<br>
 Para visualizar todos os contatos relacionados que um contato possa ter, utilize este método:</p>
 <div class="admonition done">
 <p><strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Contato/listarPessoasMescladas</p>

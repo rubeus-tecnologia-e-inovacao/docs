@@ -323,7 +323,7 @@ tr.father-row {
 
 .narrow-text code{
   max-width: 215px;
-  display: block; /* Ensures width attributes apply properly to inline blocks */
+  display: block;
   overflow: auto;
 }
 

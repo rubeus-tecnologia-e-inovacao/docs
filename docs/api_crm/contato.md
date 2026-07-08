@@ -24,7 +24,7 @@ O cadastro de contatos na Plataforma Rubeus é realizado através de um método 
 | `emailPrincipal` | `string` | Não | E-mail principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
 | `telefone` | `array[]` | Não | É possível enviar uma lista de telefones secundários para o cadastro de contato. | 
 | `email` | `array[]` | Não | É possível enviar uma lista de emails secundários para o cadastro de contato. |
-|`naturezaJuridica` | `integer` | Não | Usado para informar a natureza jurídica do contato, caso não seja informado, o contato será considerado como **Pessoa Física**.<br>**Padrão: 1 para** `Pessoa Física` **e 2 para** `Pessoa Jurídica`.|
+| `naturezaJuridica` | `integer` | Não | Usado para informar a natureza jurídica do contato, caso não seja informado, o contato será considerado como **Pessoa Física**.<br>**Padrão: 1 para** `Pessoa Física` **e 2 para** `Pessoa Jurídica`.|
 | `cpf` | `string` | Não | CPF do contato.<br>**Padrão: xxxxxxxxxxx**.|
 | `cnpj` | `string` | Não | CNPJ do contato.<br>**Padrão: xxxxxxxxxxxxxx**.| 
 | `modoAlteracaoNaturezaPessoasMescladas` | `integer` | Não | Este campo define o comportamento ao alterar a natureza jurídica de um contato onde o mesmo possui contatos relacionados.<hr>Utilize: **1** para **alterar** a natureza jurídica dos contatos relacionados para a natureza jurídica enviada e **2** para **não alterar** a natureza jurídica dos contatos relacionados para a natureza jurídica enviada, **causando a desmesclagem do contato principal**.| 
@@ -294,7 +294,7 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 | `telefone` | `string` | Condicional | Campo para informar o telefone do contato. | 
 | `naturezaJuridica` | `integer` | Não | Campo para informar a natureza jurídica dos contatos retornados.<br>**Padrão: 1 para** `Pessoa Física` **e 2 para** `Pessoa Jurídica`.| 
 | `cpf` | `string` | Não | Campo para informar o CPF do contato. | 
-|`cnpj` | `string` | Não | Campo para informar o CNPJ do contato. | 
+| `cnpj` | `string` | Não | Campo para informar o CNPJ do contato. | 
 | `camposRetorno` | `array` | Não | Filtra quais campos dos contatos serão retornados.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!array ['nome', 'dataNascimento', 'emailPrincipal']` | 
 | `camposRetorno` | `array of object` | Não | Existe também uma maneira para filtrar campos de objetos retornados em um array. Neste caso você pode enviar um objeto dentro do array de campos de retorno com uma estrutura para realizar esse filtro.<br>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json { "key": "camposPersonalizados", "campos": [ "nome", "valor", "tipo" ], "filtros": [{"tipo": [1,9]}]`<br>|
 | **↳** `camposRetornos.key` | `string` |  | Este campo referencia a chave do objeto que contem o array de dados que será filtrado. <br>`#!json { "key": "camposPersonalizados"}` | 

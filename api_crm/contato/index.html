@@ -994,16 +994,16 @@
 <td>CNPJ do contato.<br><strong>Padrão: xxxxxxxxxxxxxx</strong>.</td>
 </tr>
 <tr>
-<td><div class="narrow-text"><code>modoAlteracaoNaturezaPessoasMescladas</code></div></td>
+<td><span class="narrow-text"><code>modoAlteracaoNaturezaPessoasMescladas</code></span></td>
 <td><code>integer</code></td>
 <td>Não</td>
 <td>Este campo define o comportamento ao alterar a natureza jurídica de um contato que possui contatos relacionados.<hr>Utilize: <strong>1</strong> para <strong>alterar</strong> a natureza jurídica dos contatos relacionados para a natureza jurídica enviada e <strong>2</strong> para <strong>não alterar</strong> a natureza jurídica dos contatos relacionados para a natureza jurídica enviada, <strong>causando a desmesclagem do contato principal</strong>.</td>
 </tr>
 <tr>
-<td><div class="narrow-text"><code>alterarNaturezaPessoasMescladasEspecificas</code></div></td>
+<td><span class="narrow-text"><code>alterarNaturezaPessoasMescladasEspecificas</code></span></td>
 <td><code>array of integer</code></td>
 <td><rb-tooltip text="Pode ser usado quando utilizado modoAlteracaoNaturezaPessoasMescladas = 2">Condicional </rb-tooltip></td>
-<td>Usado para definir quais contatos relacionados deverão receber a natureza jurídica do contato principal que teve sua natureza jurídica alterada<hr><strong>O campo deve ser informado como no exemplo abaixo</strong>:<br><br><div class="narrow-text"><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;alterarNaturezaPessoasMescladasEspecificas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">125</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">129</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code></div><hr>Para  encontrar possíveis contatos relacionados utilize o método <a href="/api_crm/contato/#listar-contatos-relacionados">Contato/listarPessoasMescladas</a>.</td>
+<td>Usado para definir quais contatos relacionados deverão receber a natureza jurídica do contato principal que teve sua natureza jurídica alterada<hr><strong>O campo deve ser informado como no exemplo abaixo</strong>:<br><br><span class="narrow-text"><code class="highlight"><span class="p">{</span><span class="w"> </span><span class="nt">&quot;alterarNaturezaPessoasMescladasEspecificas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">125</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">129</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span></code></span><hr>Para encontrar possíveis contatos relacionados utilize o método <a href="/api_crm/contato/#listar-contatos-relacionados">Contato/listarPessoasMescladas</a>.</td>
 </tr>
 <tr>
 <td><code>endereco</code></td>

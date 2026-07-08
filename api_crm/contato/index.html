@@ -306,6 +306,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#listar-contatos-relacionados" class="md-nav__link">
+    Listar contatos relacionados
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -873,6 +880,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#listar-contatos-relacionados" class="md-nav__link">
+    Listar contatos relacionados
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -962,10 +976,34 @@
 <td>É possível enviar uma lista de emails secundários para o cadastro de contato.</td>
 </tr>
 <tr>
+<td><code>naturezaJuridica</code></td>
+<td><code>integer</code></td>
+<td>Não</td>
+<td>Usado para informar a natureza jurídica do contato, caso não seja informado, o contato será considerado como <strong>Pessoa Física</strong>.<br><strong>Padrão: 1 para</strong> <code>Pessoa Física</code> <strong>e 2 para</strong> <code>Pessoa Jurídica</code>.</td>
+</tr>
+<tr>
 <td><code>cpf</code></td>
 <td><code>string</code></td>
 <td>Não</td>
-<td>CPF do contato.<br><strong>Padrão: xxxxxxxxxxx</strong></td>
+<td>CPF do contato.<br><strong>Padrão: xxxxxxxxxxx</strong>.</td>
+</tr>
+<tr>
+<td><code>cnpj</code></td>
+<td><code>string</code></td>
+<td>Não</td>
+<td>CNPJ do contato.<br><strong>Padrão: xxxxxxxxxxxxxx</strong>.</td>
+</tr>
+<tr>
+<td><code>modoAlteracaoNaturezaPessoasMescladas</code></td>
+<td><code>integer</code></td>
+<td>Não</td>
+<td>Este campo define o comportamento ao alterar a natureza jurídica de um contato onde o mesmo possui contatos relacionados.<hr>Utilize: <strong>1</strong> para <strong>alterar</strong> a natureza jurídica dos contatos relacionados para a natureza jurídica enviada e <strong>2</strong> para <strong>não alterar</strong> a natureza jurídica dos contatos relacionados para a natureza jurídica enviada, <strong>causando a desmesclagem do contato principal</strong>.</td>
+</tr>
+<tr>
+<td><code>alterarNaturezaPessoasMescladasEspecificas</code></td>
+<td><code>array of integer</code></td>
+<td><rb-tooltip text="Pode ser usado quando utilizado modoAlteracaoNaturezaPessoasMescladas = 2">Condicional </rb-tooltip></td>
+<td>Usado para definir quais contatos relacionados deverão receber a natureza jurídica do contato principal que teve sua natureza jurídica alterada<hr><strong>O campo deve ser informado como no exemplo abaixo</strong>:<br><br><code class="highlight"><span class="err">al</span><span class="kc">terar</span><span class="err">Na</span><span class="kc">ture</span><span class="err">zaPessoasMescladasEspeci</span><span class="kc">f</span><span class="err">icas</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">125</span><span class="p">,</span><span class="w"> </span><span class="mi">127</span><span class="p">,</span><span class="w"> </span><span class="mi">129</span><span class="p">]</span><span class="w"></span></code><hr>Para  encontrar possíveis contatos relacionados utilize o método <a href="/api_crm/contato/#listar-contatos-relacionados">Contato/listarPessoasMescladas</a>.</td>
 </tr>
 <tr>
 <td><code>endereco</code></td>
@@ -1507,10 +1545,22 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 <td>Campo para informar o telefone do contato.</td>
 </tr>
 <tr>
+<td><code>naturezaJuridica</code></td>
+<td><code>integer</code></td>
+<td>Não</td>
+<td>Campo para informar a natureza jurídica dos contatos retornados.<br><strong>Padrão: 1 para</strong> <code>Pessoa Física</code> <strong>e 2 para</strong> <code>Pessoa Jurídica</code>.</td>
+</tr>
+<tr>
 <td><code>cpf</code></td>
 <td><code>string</code></td>
-<td>Condicional</td>
+<td>Não</td>
 <td>Campo para informar o CPF do contato.</td>
+</tr>
+<tr>
+<td><code>cnpj</code></td>
+<td><code>string</code></td>
+<td>Não</td>
+<td>Campo para informar o CNPJ do contato.</td>
 </tr>
 <tr>
 <td><code>camposRetorno</code></td>
@@ -1780,6 +1830,91 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 <span class="w">                </span><span class="nt">&quot;camposPersonalizados&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                    </span><span class="nt">&quot;campo_compl_proc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;campo&quot;</span><span class="w"></span>
 <span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+</details>
+<h2 id="listar-contatos-relacionados">Listar contatos relacionados</h2>
+<p>Quando o mesmo contato é identificado mais de uma vez em nossa plataforma nós o exibimos apenas uma vez para evitar uma poluição visual e melhorar a organização de seus dados.</br>
+Para visualizar todos os contatos relacionados que um contato possa ter, utilize este método:</p>
+<div class="admonition done">
+<p><strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Contato/listarPessoasMescladas</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Atributos</th>
+<th>Tipo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Sim</td>
+<td>Id do contato.</td>
+</tr>
+<tr>
+<td><code>origem</code></td>
+<td><code>integer</code></td>
+<td>Sim</td>
+<td>Código de identificação do <a href="/api_crm/apresentacao/#autenticacao">canal</a>.</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td><code>string</code></td>
+<td>Sim</td>
+<td>Chave de acesso única referente ao canal.</td>
+</tr>
+</tbody>
+</table>
+<details class="exemplos">
+<summary>Exemplos</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Resposta</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p><em>JSON</em>:
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;resultado&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;dados&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;mesclagem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;80&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;303&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contato Exemplo&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;codigo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;222&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;origem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;origemNome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CRM&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;cpf&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;54249243010&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;cnpj&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;naturezaJuridica&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;criadoEm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-07-08 10:01:53&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;dataNascimento&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1994-05-30&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contatoexemplo@gmail.com&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;telefone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;32941114111&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;endereco&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rua Eloar Enneo Stoque Junior&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;numero&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;80&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;bairro&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bairro&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;cidade&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Muriaé - MG&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="nt">&quot;camposPersonalizados&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">                    </span><span class="p">{</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Propriedade teste&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;coluna&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;campopersonalizado_3_compl_cont&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;tipoLocal&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;multiValorado&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;regra&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;opcaoPreDefinida&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;opcoes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">                        </span><span class="nt">&quot;valor&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="p">]</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="p">]</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>

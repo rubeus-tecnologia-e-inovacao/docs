@@ -23,8 +23,12 @@ O cadastro de contatos na Plataforma Rubeus é realizado através de um método 
 | `telefonePrincipal` | `string` | Não | Telefone principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
 | `emailPrincipal` | `string` | Não | E-mail principal de contato.<br>**No cadastro de contato é obrigatório informar o e-mail principal ou o telefone principal.** | 
 | `telefone` | `array[]` | Não | É possível enviar uma lista de telefones secundários para o cadastro de contato. | 
-| `email` | `array[]` | Não | É possível enviar uma lista de emails secundários para o cadastro de contato. | 
-| `cpf` | `string` | Não | CPF do contato.<br>**Padrão: xxxxxxxxxxx** | 
+| `email` | `array[]` | Não | É possível enviar uma lista de emails secundários para o cadastro de contato. |
+| `naturezaJuridica` | `integer` | Não | Usado para informar a natureza jurídica do contato, caso não seja informado, o contato será considerado como **Pessoa Física**.<br>**Padrão: 1 para** `Pessoa Física` **e 2 para** `Pessoa Jurídica`.|
+| `cpf` | `string` | Não | CPF do contato.<br>**Padrão: xxxxxxxxxxx**.|
+| `cnpj` | `string` | Não | CNPJ do contato.<br>**Padrão: xxxxxxxxxxxxxx**.| 
+| `modoAlteracaoNaturezaPessoasMescladas` | `integer` | Não | Este campo define o comportamento ao alterar a natureza jurídica de um contato que possui contatos relacionados.<hr>Utilize: **1** para **alterar** a natureza jurídica dos contatos relacionados para a natureza jurídica enviada e **2** para **não alterar** a natureza jurídica dos contatos relacionados para a natureza jurídica enviada, **causando a desmesclagem do contato principal**.| 
+| `alterarNaturezaPessoasMescladasEspecificas` | `array of integer` | <rb-tooltip text="Pode ser usado quando utilizado modoAlteracaoNaturezaPessoasMescladas = 2">Condicional </rb-tooltip> | Usado para definir quais contatos relacionados deverão receber a natureza jurídica do contato principal que teve sua natureza jurídica alterada<hr>**O campo deve ser informado como no exemplo abaixo**:<br><br>`#!json { "alterarNaturezaPessoasMescladasEspecificas": [125, 127, 129] }`<hr>Para  encontrar possíveis contatos relacionados utilize o método [Contato/listarPessoasMescladas](/api_crm/contato/#listar-contatos-relacionados).| 
 | `endereco` | `string` | Não | Endereço (limite de caracteres: 255). | 
 | `cep` | `string` | Não | CEP.<br>**Padrão:xxxxx-xxx** | 
 | `numero` | `string` | Não | Número (endereço). | 
@@ -288,7 +292,9 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
 | `nome` | `string` | Condicional | Campo para informar o nome do contato. | 
 | `email` | `string` | Condicional | Campo para informar o email do contato. | 
 | `telefone` | `string` | Condicional | Campo para informar o telefone do contato. | 
+| `naturezaJuridica` | `integer` | Não | Campo para informar a natureza jurídica dos contatos retornados.<br>**Padrão: 1 para** `Pessoa Física` **e 2 para** `Pessoa Jurídica`.| 
 | `cpf` | `string` | Condicional | Campo para informar o CPF do contato. | 
+| `cnpj` | `string` | Condicional | Campo para informar o CNPJ do contato. | 
 | `camposRetorno` | `array` | Não | Filtra quais campos dos contatos serão retornados.<hr>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!array ['nome', 'dataNascimento', 'emailPrincipal']` | 
 | `camposRetorno` | `array of object` | Não | Existe também uma maneira para filtrar campos de objetos retornados em um array. Neste caso você pode enviar um objeto dentro do array de campos de retorno com uma estrutura para realizar esse filtro.<br>**Os campos devem ser informados como no exemplo abaixo**:<br><br>`#!json { "key": "camposPersonalizados", "campos": [ "nome", "valor", "tipo" ], "filtros": [{"tipo": [1,9]}]`<br>|
 | **↳** `camposRetornos.key` | `string` |  | Este campo referencia a chave do objeto que contem o array de dados que será filtrado. <br>`#!json { "key": "camposPersonalizados"}` | 
@@ -417,6 +423,69 @@ Os dados retornados estarão disponíveis dentro de um array, estruturados exata
                     "camposPersonalizados": {
                         "campo_compl_proc": "campo"
                     }
+                }
+            ]
+        }
+    }
+    ```
+
+## Listar contatos relacionados
+
+Quando um mesmo contato é identificado mais de uma vez em nossa plataforma, nós o exibimos apenas uma vez para evitar uma poluição visual e melhorar a organização de seus dados.<br>
+Para visualizar todos os contatos relacionados que um contato possa ter, utilize este método:
+
+!!! done ""
+
+    <strong  class='REST POST'>POST</strong><strong class="MIME">application/json</strong> /api/Contato/listarPessoasMescladas
+
+
+| Atributos | Tipo | Obrigatoriedade | Descrição | 
+| --- | --- | --- | --- |
+| `id` | `integer` | Sim | Id do contato. | 
+| `origem` | `integer` | Sim | Código de identificação do [canal](/api_crm/apresentacao/#autenticacao). | 
+| `token` | `string` | Sim | Chave de acesso única referente ao canal. | 
+
+??? Exemplos
+
+    === "Resposta"
+
+    _JSON_:
+    ``` JSON
+    {
+        "resultado": {
+            "success": true,
+            "dados": [
+                {
+                    "mesclagem": "80",
+                    "id": "303",
+                    "nome": "Contato Exemplo",
+                    "codigo": "222",
+                    "origem": "1",
+                    "origemNome": "CRM",
+                    "cpf": "54249243010",
+                    "cnpj": null,
+                    "naturezaJuridica": "1",
+                    "criadoEm": "2026-07-08 10:01:53",
+                    "dataNascimento": "1994-05-30",
+                    "email": "contatoexemplo@gmail.com",
+                    "telefone": "32941114111",
+                    "endereco": "Rua Eloar Enneo Stoque Junior",
+                    "numero": "80",
+                    "bairro": "Bairro",
+                    "cidade": "Muriaé - MG",
+                    "camposPersonalizados": [
+                        {
+                            "nome": "Propriedade teste",
+                            "coluna": "campopersonalizado_3_compl_cont",
+                            "tipo": "1",
+                            "tipoLocal": "1",
+                            "multiValorado": "0",
+                            "regra": false,
+                            "opcaoPreDefinida": "0",
+                            "opcoes": [],
+                            "valor": null
+                        }
+                    ]
                 }
             ]
         }
